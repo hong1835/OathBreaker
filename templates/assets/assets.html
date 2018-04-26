@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load custom_tag %}
+{% block header-css %}
+<link rel="stylesheet" type="text/css" href="/static/plugins/DataTables/datatables.min.css"/>
+{% endblock %}
+
+{% block page-content-title %}
+资产列表
+{% endblock %}
+
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">资产列表</li>
+</ol>
+{% endblock %}
+
+
+
+{% block page-content %}
+<div class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">所有资产</h3>
+            {{ table_ob.admin_class.list_display }}
+        </div>
+        <div class="panel-body" >
+           {% include 'assets/model_list_filter_component.html' %}
+
+           {% include 'assets/model_obj_list_components.html' %}
+
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+
+{% block bottom-js %}
+<script type="text/javascript">
+
+$(document).ready( function () {
+    //$("#container").removeClass("mainnav-lg");
+
+
+    //$('#asset_list td:first-child').addClass("btn-info");
+    $('#asset_list').on('click', 'td:first-child', function () {
+        console.log($(this).text());
+    } );
+
+
+} );//end doc ready
+
+</script>
+{% endblock %}

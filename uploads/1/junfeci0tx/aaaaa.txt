@@ -1,0 +1,97 @@
+
+key:    HostConfig::192.168.189.128
+value:  {'linux_memory': ['get_memory_status', 60], 'linux_network': ['get_network_status', 60], 'linux_cpu': ['get_cpu_status', 90]}
+
+key:    "ServiceData::192.168.189.130::linux_cpu"
+value:  "{\"time_stamp\": 1515576091.855, \"host\": \"192.168.189.130\", \"data\": {\"status\": 0, \"iowait\": \"0.00\", \"system\": \"1.03\", \"idle\": \"98.97\", \"user\": \"0.00\", \"steal\": \"0.00\", \"nice\": \"0.00\"}, \"service\": \"linux_cpu\"}"
+
+
+
+
+
+{u'linux_memory': [u'get_memory_status', 60], u'linux_cpu': [u'get_cpu_status', 90], u'linux_network': [u'get_network_status', 60]}
+
+
+
+
+
+
+
+gsl-arkpark.snail.com
+
+
+164.52.25.242
+
+
+
+http://snailzw.oss-cn-hangzhou.aliyuncs.com/test/ARKPARKDedicatedOfficialSetup.exe
+
+
+
+http://164.52.25.242:8099/bnet/cache/officialserverlist.json
+
+
+
+Visual C++ 2015 Redistributable
+
+wusa.exe Windows8.1-KB2999226-x64.msu /extract:XXXX
+
+
+DISM.exe /Online /Add-Package /PackagePath:C:\temp\Windows8.1-KB2999226-x64.cab
+
+
+vc_redist.x64.exe /repair 
+
+
+
+
+Client ==> Redis
+['message', 'fm87.7', '{"host": "192.168.189.130", "data": {"status": 0, "iowait": "0.00", "system": "2.00", "idle": "97.67", "user": "0.33", "steal": "0.00", "nice": "0.00"}, "service": "linux_cpu"}']
+
+
+Server ==> Redis
+127.0.0.1:6379> get "HostConfig::192.168.189.130"
+"{\"linux_memory\": [\"get_memory_status\", 60], \"linux_cpu\": [\"get_cpu_status\", 90]}"
+
+127.0.0.1:6379> get "ServiceData::192.168.189.130::linux_cpu"
+"{\"time_stamp\": 1515652314.26, \"host\": \"192.168.189.130\", \"data\": {\"status\": 0, \"iowait\": \"0.00\", \"system\": \"2.00\", \"idle\": \"97.67\", \"user\": \"0.33\", \"steal\": \"0.00\", \"nice\": \"0.00\"}, \"service\": \"linux_cpu\"}"
+
+
+127.0.0.1:6379> get "ServiceData::192.168.189.130::linux_memory"
+"{\"time_stamp\": 1515652902.363, \"host\": \"192.168.189.130\", \"data\": {\"status\": 0, \"MemTotal\": \"1012548\", \"MemUsage\": 109804, \"Cached\": \"147948\", \"MemUsage_p\": \"10\", \"SwapUsage\": 0, \"SwapFree\": \"2031608\", \"SwapTotal\": \"2031608\", \"MemFree\": \"673944\", \"SwapUsage_p\": \"0\", \"Buffers\": \"80852\"}, \"service\": \"linux_memory\"}"
+
+
+
+host   iowait   system  idle  user steal nice service status
+
+
+
+create table linux_cpu(
+id int(4) not null primary key auto_increment,
+host char(20) not null,
+time char(20) not null,
+iowait char(20) not null,
+system char(20) not null,
+idle char(20) not null,
+user char(20) not null,
+steal char(20) not null,
+nice char(20) not null,
+status char(20) not null);
+
+
+create table linux_memory(
+id int(4) not null primary key auto_increment,
+host char(20) not null,
+time char(20) not null,
+MemTotal char(20) not null,
+MemUsage char(20) not null,
+MemFree char(20) not null,
+SwapTotal char(20) not null,
+SwapUsage char(20) not null,
+SwapFree char(20) not null,
+Cached char(20) not null,
+Buffers char(20) not null,
+status char(20) not null);
+
+
+http://47.52.221.132:8099/bnet/cache/officialserverlist.json

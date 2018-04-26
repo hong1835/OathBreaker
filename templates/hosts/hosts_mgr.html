@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+
+{% block page-content-title %}
+主机列表
+{% endblock %}
+
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">主机列表</li>
+</ol>
+{% endblock %}
+
+
+{% block page-content %}
+<div class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">事件列表</h3>
+                        <div class="col-md-3">
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+
+            <div class="list-group" id="host-group">
+                <a href="{% url 'hosts_mgr' %}" class="list-group-item active">未分组主机 [ {{ request.user.bind_hosts.select_related.count }} ]</a>
+
+                {% for group in request.user.host_groups.select_related %}
+                <a href="{% url 'hosts_mgr' %}?selected_gid={{ group.id }}" class="list-group-item">{{ group.name }} [ {{ group.bindhosttouser_set.select_related.count }} ]</a>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+</div>
+    <div class="col-md-9">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-bordered table-hover">
+                    <tr>
+                        <th>#</th>
+                        <th>HostName</th>
+                        <th>IP</th>
+                        <th>SystemType</th>
+                        <th>IDC</th>
+                        <th>Port</th>
+                        <th>Host User</th>
+                        <th>Status</th>
+                        <th>Login</th>
+                    </tr>
+
+                    {% for h in host_list %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ h.host.hostname }}</td>
+                        <td>{{ h.host.ip_addr }}</td>
+                        <td>{{ h.host.system_type }}</td>
+                        <td>{{ h.host.idc }}</td>
+                        <td>{{ h.host.port }}</td>
+                        <td>{{ h.host_user.username }}</td>
+                        <td>{{ h.host.enabled }}</td>
+                        <td>Login</td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+        </div>
+        <div class="panel-body" >
+
+
+        </div>
+</div>
+
+
+{% endblock %}
+

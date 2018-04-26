@@ -1,0 +1,135 @@
+
+<script type="text/javascript">
+        $(document).ready(function () {
+            $("#group-list a[data='group']").click(function(){
+                $(this).nextAll().toggleClass("hide")
+            })
+        })
+
+        function CheckAllToggle(ele) {
+
+            if(ele.checked){
+                $(ele).next().next().children().children("input").prop("checked",true)
+            }
+            else{
+                $(ele).next().next().children().children("input").prop("checked",false)
+            }
+        }
+
+        function SubmitTask(task_type){
+
+                FormVerification(task_type)
+
+        }
+
+        function FormVerification(task_type){
+            var err_list = []
+            var data_list = {}
+            var selected_host = VerifyHostSelection()
+            data_list["selected_hosts"] = selected_host
+            data_list["task_type"] = task_type
+            if(selected_host.length == 0){
+                err_list.push(["验证失败","未选择任何主机！"])
+            }
+
+            if (task_type == "multi_cmd"){
+
+                var cmd_text = $.trim($("textarea[name='cmd']").val())
+                data_list["cmd"] = cmd_text
+
+                if(cmd_text.length == 0){
+                    err_list.push(["验证失败","未输入要执行的命令！"])
+                }
+            }else if (task_type == "multi_file_transfer") {
+
+                //verify upload or download
+                var task_action = $("#task_type").val()
+                data_list["file_transfer_type"] = task_action
+                if (task_action == "file_send"){
+
+                    var remote_path_val = $.trim($("#remote_file_path").val())
+                    data_list["remote_path"] = remote_path_val
+
+                    if(remote_path_val.length == 0){
+                        err_list.push(["验证失败","未输入远程文件路径！"])
+                    }
+
+                    if (upload_files.length == 0){
+                        err_list.push(["验证失败","未上传任何文件至中转机！"])
+                    }
+                    data_list["upload_files"] = upload_files
+
+                }else if(task_action == "file_get"){
+                    //data_list["download_files"] = ""
+                    var remote_file_val = $.trim($("#remote_file_path2").val())
+                    remote_file_list =  remote_file_val.split(" ")
+                    //console.log(remote_file_list)
+                    data_list["download_files"] = remote_file_list
+
+                    if(remote_file_val.length == 0){
+                        err_list.push(["验证失败","未输入远程文件路径！"])
+                    }
+
+                    //console.log(data_list)
+                }
+            }else if (task_type == "operation_audit") {
+                console.log(data_list)
+            }
+
+            if (err_list.length > 0){
+                $("#err-msgs").html(null)
+                $.each(err_list,function (index,item) {
+                    var err_msg = "<p style='color:red'>" + index + "." + item[1] + "</p>"
+                    $("#err-msgs").append(err_msg)
+                })
+            }else{
+                $("#err-msgs").html(null)
+                //submit task
+                data_list["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+                $.post("{% url 'submit_task' %}",data_list,function(callback){
+                    console.log(callback)
+                    task_id_obj = JSON.parse(callback)
+                    RefreshGetTaskResult(task_id_obj.task_id)
+
+                })
+            }
+        }
+
+        function VerifyHostSelection() {
+            var selected_hosts = []
+            var all_hosts = $("input[data='bind-host']")
+            $.each(all_hosts,function(index,ele){
+                if(ele.checked){
+                    selected_hosts.push($(ele).val())
+                }
+            })
+            return selected_hosts
+        }
+
+        function RefreshGetTaskResult(task_id){
+            GetTaskResult(task_id)
+            GetTaskResultInterval = setInterval(function(){
+                GetTaskResult(task_id)
+            },3000)
+        }
+
+        function GetTaskResult(task_id){
+            $.getJSON("{% url 'get_task_result' %}",{task_id:task_id},function(callback){
+                console.log(callback)
+                PrintOnPage(callback)
+            })
+        }
+
+        function PrintOnPage(callback) {
+            $("#result-box").html(null)
+            $.each(callback,function(index,item){
+
+                var row_html = "<p>" + item.bind_host__host__hostname + "(" + item.bind_host__host__ip_addr + ") --->" + item.bind_host__host_user__username + "----" + item.date + "----" + item.result + "</p>" +
+                        "<pre>" + item.event_log + "</pre>";
+
+                $("#result-box").append(row_html)
+            })
+        }
+
+
+    </script>

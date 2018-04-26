@@ -1,0 +1,32 @@
+
+<div class="col-md-3">
+        <div class="panel panel-default panel-left">
+
+            <div class="panel-body">
+                <ul class="list-group" id="group-list">
+                    <li class="list-group-item">
+                        <span class="badge">{{ request.user.bind_hosts.select_related.count }}</span>
+                        未分组主机
+                    </li>
+
+                    {% for group in request.user.host_groups.select_related %}
+                    <li class="list-group-item">
+                        <input onclick="CheckAllToggle(this)" data="host-group" type="checkbox" value="{{ h.id }}">
+                        <a data="group" class="a-pointer">
+                            {{ group.name }}
+                            <span class="badge">{{ group.bindhosttouser_set.select_related.count }}</span>
+                        </a>
+
+                        <ul class="list-group hide">
+                            {% for h in group.bindhosttouser_set.select_related %}
+                                <li class="list-group-item list-tree"><span>-- </span><input data="bind-host" type="checkbox" value="{{ h.id }}">{{ h.host.hostname }}</li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+        </div>
+
+    </div>

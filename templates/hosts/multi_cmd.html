@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+
+{% block page-content-title %}
+批量命令
+{% endblock %}
+
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">批量命令</li>
+</ol>
+{% endblock %}
+
+
+{% block page-content %}
+<div class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">批量命令</h3>
+            {% include "hosts/host_list_component.html" %}
+
+    <div class="col-md-9">
+        <div class="panel panel-default panel-right">
+            <div class="panel-body">
+
+                {% include "hosts/task_exec_component.html" %}
+
+                <div id="err-msgs"></div>
+
+                <br>
+
+                <div id="result-box">
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+        </div>
+        <div class="panel-body" >
+
+
+        </div>
+</div>
+
+
+{% endblock %}
+
+{% block bottom-js %}
+
+    {% include "hosts/multi_task_js_component.html" %}
+
+{% endblock %}

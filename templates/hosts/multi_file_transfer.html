@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% block header-css %}
+    <link href="/static/plugins/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block page-content-title %}
+文件分发
+{% endblock %}
+
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">文件分发</li>
+</ol>
+{% endblock %}
+
+
+{% block page-content %}
+<div class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">文件分发</h3>
+                {% include "hosts/host_list_component.html" %}
+
+    <div class="col-md-9">
+        <div class="panel panel-default panel-right">
+            <div class="panel-body">
+
+                <select  id="task_type" class="selectpicker">
+                    <option value="file_send">分发文件到客户端</option>
+                    <option value="file_get">从客户端下载文件</option>
+                </select>
+
+                <input id="file_upload" name="filename" type="file" multiple class="file-loading">
+
+              <div class="form-group" id="#file-get-from-remote">
+                <label for="exampleInputName2">远程文件路径</label>
+                <input type="text" placeholder="必须输入绝对路径，不要包含文件名" class="form-control" name="remote_file_path" id="remote_file_path" >
+              </div>
+
+              <div class="form-group2 hide" id="#file-download-to-local">
+                <label for="exampleInputName3">远程文件路径</label>
+                <input type="text" placeholder="必须输入绝对路径，要包含文件名" class="form-control" name="remote_file_path2" id="remote_file_path2" >
+              </div>
+                <br>
+              <button type="button" class="btn btn-success pull-right" onclick="SubmitTask('multi_file_transfer')">执行任务</button>
+
+                <div id="err-msgs"></div>
+
+                <br>
+
+                <div id="result-box">
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+        </div>
+        <div class="panel-body" >
+
+
+        </div>
+</div>
+
+
+{% endblock %}
+
+{% block bottom-js %}
+    <script src="/static/plugins/bootstrap-fileinput/js/fileinput.js"></script>
+	<script src="/static/plugins/bootstrap-fileinput/js/plugins/canvas-to-blob.js"></script>
+	<script src="/static/plugins/bootstrap-fileinput/js/fileinput_locale_zh.js"></script>
+
+    {% include "hosts/multi_task_js_component.html" %}
+
+    <script type="text/javascript">
+ $(document).ready(function(){
+
+        upload_files = [];
+        download_files = [];
+
+
+        $("#file_upload").fileinput({
+            uploadUrl: "{% url 'file_upload' %}", // server upload action
+            uploadAsync: true,
+            language:'zh',
+            maxFileSize:2000,
+            maxFileCount: 5,
+
+        });
+        $('#file_upload').on('fileuploaded', function(event, data, previewId, index) {
+            var form = data.form, files = data.files, extra = data.extra,
+                response = data.response, reader = data.reader;
+
+                console.log(response);
+                upload_files.push(response.uploaded_file_path);
+        });
+
+
+
+        $("#task_type").on("change",function(){
+            if (this.value == 'file_send'){
+                $(".file-input").removeClass("hide");
+                //$("#file-download-to-local").addClass("hide")
+                $(".form-group").removeClass("hide")
+                $(".form-group2").addClass("hide")
+            }else{
+                $(".file-input").addClass("hide");
+                //$("#file-download-to-local").removeClass("hide")
+                $(".form-group").addClass("hide")
+                $(".form-group2").removeClass("hide")
+            }
+
+        });//end on change
+
+
+ });
+
+
+</script>
+
+{% endblock %}
+
