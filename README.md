@@ -36,11 +36,11 @@ OathBreakerÊÇ»ùÓÚESBÉè¼ÆË¼Â·ÑĞ·¢µÄÈ«ÒµÎñ¿ª·ÅÊ½ÔËÎ¬²Ù×÷Æ½Ì¨£¬ÔËÎ¬ÈËÔ±ÔÚweb½çÃæÖĞ¿
 
 ### Ò»Ğ©½ØÍ¼ 
 
-![Login](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/login.png)
+![Login](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/login.PNG)
 ![shell](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/script-shell.png)
 ![batch](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/script-batch.png)
 ![python](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/script-python.png)
-![powershell](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/script-powershell.png)
+![powershell](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/shell-powershell.png)
 
 
 ### To do
