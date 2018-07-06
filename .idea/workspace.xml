@@ -1,61 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac6a3f40-253b-4ca1-997d-4470bafcdb17" name="Default" comment="support for shell,batch,python and powershell with saltapi">
-      <change beforePath="" afterPath="$PROJECT_DIR$/hosts/backends/saltapi.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/hosts/backends/saltstack_handle.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/css/codemirror/3024-night.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/css/codemirror/codemirror.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/css/codemirror/erlang-dark.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/css/icheck/grey.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/css/icheck/grey.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/css/icheck/grey@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/CodeMirror.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/icheck.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/perl.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/powershell.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/python.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/shell.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/ujobs.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/until.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/vbscript.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/hosts/multi_scripts.html" />
+    <list default="true" id="ac6a3f40-253b-4ca1-997d-4470bafcdb17" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/architecture.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/login.PNG" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/script-batch.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/script-python.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/script-shell.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/shell-powershell.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/OathBreaker/settings.py" afterPath="$PROJECT_DIR$/OathBreaker/settings.py" />
-      <change beforePath="$PROJECT_DIR$/OathBreakerClient/bin/NedStark.py" afterPath="$PROJECT_DIR$/OathBreakerClient/bin/NedStark.py" />
-      <change beforePath="$PROJECT_DIR$/OathBreakerClient/conf/settings.py" afterPath="$PROJECT_DIR$/OathBreakerClient/conf/settings.py" />
-      <change beforePath="$PROJECT_DIR$/OathBreakerClient/core/HouseStark.py" afterPath="$PROJECT_DIR$/OathBreakerClient/core/HouseStark.py" />
-      <change beforePath="$PROJECT_DIR$/OathBreakerClient/core/api_token.py" afterPath="$PROJECT_DIR$/OathBreakerClient/core/api_token.py" />
-      <change beforePath="$PROJECT_DIR$/OathBreakerClient/core/info_collection.py" afterPath="$PROJECT_DIR$/OathBreakerClient/core/info_collection.py" />
-      <change beforePath="$PROJECT_DIR$/OathBreakerClient/plugins/linux/sysinfo.py" afterPath="$PROJECT_DIR$/OathBreakerClient/plugins/linux/sysinfo.py" />
-      <change beforePath="$PROJECT_DIR$/OathBreakerClient/plugins/plugin_api.py" afterPath="$PROJECT_DIR$/OathBreakerClient/plugins/plugin_api.py" />
-      <change beforePath="$PROJECT_DIR$/OathBreakerClient/plugins/windows/sysinfo.py" afterPath="$PROJECT_DIR$/OathBreakerClient/plugins/windows/sysinfo.py" />
-      <change beforePath="$PROJECT_DIR$/OathBreakerClient/var/.asset_id" afterPath="$PROJECT_DIR$/OathBreakerClient/var/.asset_id" />
-      <change beforePath="$PROJECT_DIR$/assets/admin.py" afterPath="$PROJECT_DIR$/assets/admin.py" />
-      <change beforePath="$PROJECT_DIR$/assets/asset_handle.py" afterPath="$PROJECT_DIR$/assets/asset_handle.py" />
-      <change beforePath="$PROJECT_DIR$/assets/core.py" afterPath="$PROJECT_DIR$/assets/core.py" />
-      <change beforePath="$PROJECT_DIR$/assets/migrations/0001_initial.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/migrations/0002_auto_20180411_1518.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/models.py" afterPath="$PROJECT_DIR$/assets/models.py" />
-      <change beforePath="$PROJECT_DIR$/assets/rest_urls.py" afterPath="$PROJECT_DIR$/assets/rest_urls.py" />
-      <change beforePath="$PROJECT_DIR$/assets/rest_views.py" afterPath="$PROJECT_DIR$/assets/rest_views.py" />
-      <change beforePath="$PROJECT_DIR$/assets/serializers.py" afterPath="$PROJECT_DIR$/assets/serializers.py" />
-      <change beforePath="$PROJECT_DIR$/assets/utils.py" afterPath="$PROJECT_DIR$/assets/utils.py" />
-      <change beforePath="$PROJECT_DIR$/hosts/admin.py" afterPath="$PROJECT_DIR$/hosts/admin.py" />
-      <change beforePath="$PROJECT_DIR$/hosts/backends/multi_task.py" afterPath="$PROJECT_DIR$/hosts/backends/multi_task.py" />
-      <change beforePath="$PROJECT_DIR$/hosts/backends/paramiko_handle.py" afterPath="$PROJECT_DIR$/hosts/backends/paramiko_handle.py" />
-      <change beforePath="$PROJECT_DIR$/hosts/migrations/0001_initial.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/hosts/models.py" afterPath="$PROJECT_DIR$/hosts/models.py" />
-      <change beforePath="$PROJECT_DIR$/hosts/task.py" afterPath="$PROJECT_DIR$/hosts/task.py" />
-      <change beforePath="$PROJECT_DIR$/hosts/templatetags/custom_tag.py" afterPath="$PROJECT_DIR$/hosts/templatetags/custom_tag.py" />
-      <change beforePath="$PROJECT_DIR$/hosts/urls.py" afterPath="$PROJECT_DIR$/hosts/urls.py" />
-      <change beforePath="$PROJECT_DIR$/hosts/utils.py" afterPath="$PROJECT_DIR$/hosts/utils.py" />
-      <change beforePath="$PROJECT_DIR$/hosts/views.py" afterPath="$PROJECT_DIR$/hosts/views.py" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change beforePath="$PROJECT_DIR$/templates/hosts/host_list_component.html" afterPath="$PROJECT_DIR$/templates/hosts/host_list_component.html" />
-      <change beforePath="$PROJECT_DIR$/templates/hosts/hosts_mgr.html" afterPath="$PROJECT_DIR$/templates/hosts/hosts_mgr.html" />
-      <change beforePath="$PROJECT_DIR$/templates/hosts/multi_file_transfer.html" afterPath="$PROJECT_DIR$/templates/hosts/multi_file_transfer.html" />
-      <change beforePath="$PROJECT_DIR$/templates/hosts/multi_task_js_component.html" afterPath="$PROJECT_DIR$/templates/hosts/multi_task_js_component.html" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -77,8 +31,8 @@
       <file leaf-file-name="multi_scripts.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/hosts/multi_scripts.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1117">
-              <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+            <state relative-caret-position="376">
+              <caret line="109" column="52" lean-forward="true" selection-start-line="109" selection-start-column="52" selection-end-line="109" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -349,6 +303,24 @@
             <path>
               <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
               <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
+              <item name="statics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
+              <item name="statics" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
+              <item name="statics" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="show" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -381,15 +353,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../glances" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\css\codemirror" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\img\show" />
       <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\js" />
       <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\css\icheck" />
       <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\css\codemirror" />
       <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\css" />
-      <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\templates\hosts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\css\codemirror" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -512,6 +484,14 @@
       <option name="presentableId" value="Default" />
       <updated>1523166621991</updated>
     </task>
+    <task id="LOCAL-00001" summary="support for shell,batch,python and powershell with saltapi">
+      <created>1530856947688</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1530856947688</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -571,22 +551,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts_upload/powershell/20180704141420.ps1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hosts/host_list_component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-137">
-          <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/hosts/hosts_mgr.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
@@ -762,7 +726,7 @@
         <state relative-caret-position="2584">
           <caret line="136" column="38" lean-forward="false" selection-start-line="136" selection-start-column="38" selection-end-line="136" selection-end-column="38" />
           <folding>
-            <element signature="e#21#50#0" expanded="true" />
+            <element signature="e#21#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -812,7 +776,7 @@
         <state relative-caret-position="3800">
           <caret line="200" column="41" lean-forward="false" selection-start-line="200" selection-start-column="41" selection-end-line="200" selection-end-column="41" />
           <folding>
-            <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#0#33#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -846,7 +810,7 @@
         <state relative-caret-position="2071">
           <caret line="109" column="38" lean-forward="false" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
           <folding>
-            <element signature="e#20#89#0" expanded="true" />
+            <element signature="e#20#89#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -981,10 +945,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/statics/img/av4.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/statics/img/error.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/hosts/multi_scripts.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1117">
-          <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+        <state relative-caret-position="376">
+          <caret line="109" column="52" lean-forward="true" selection-start-line="109" selection-start-column="52" selection-end-line="109" selection-end-column="52" />
           <folding />
         </state>
       </provider>
