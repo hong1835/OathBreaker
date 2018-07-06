@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	  <DIV>
+		<FORM method=post name=loginForm action=/pkmslogin.form>
+			<TABLE class=loginTable cellSpacing=5>
+			<TBODY>
+			<TR>
+			<TD style="BACKGROUND: url(/truimages/thin_h_gradient.jpg) rgb(142,198,63) repeat-y 0% 50%; FONT-WEIGHT: bold; COLOR: white; PADDING-LEFT: 1em; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial" colSpan=2>Please enter your User ID and Password to login:</TD></TR>
+			<TR>
+			<DIV style="WIDTH: 80%; COLOR: red; MARGIN: 0pt auto"><!--- BEGIN Cookie check block --><!---
+			DO NOT TRANSLATE anything inside the SCRIPT tag except the quoted 
+			string warningString. i.e. var warningString = "Translate this string";
+			-->
+			<SCRIPT language=JavaScript>
+			var warningString = "<B>WARNING:</B> To maintain your login session, make sure that your browser is configured to accept Cookies.";
+			document.cookie = 'acceptsCookies=yes';
+			if(document.cookie == ''){
+			document.write(warningString);
+			}
+			else{
+			document.cookie = 'acceptsCookies=yes; expires=Fri, 13-Apr-1970 00:00:00 GMT';
+			}
+			</SCRIPT>
+			<NOSCRIPT></NOSCRIPT><!--- END Cookie check block -->
+			<DIV id=tamError class=tamError>
+			<FIELDSET class=tamErrorFieldset><LEGEND class=tamErrorLegend>Errors</LEGEND>
+			<TABLE>
+			<TBODY>
+			<TR>
+			<TD>&nbsp; <IMG src="/truimages/error_round.png"> </TD>
+			<TD>
+			<DIV id=tamErrorMsg class=tamErrorMsg></DIV></TD></TR></TBODY></TABLE></FIELDSET> </DIV></DIV>
+			<TH width="60%">User ID</TH>
+			<TD width="40%"><INPUT style="WIDTH: 260px" name=username></TD></TR>
+			<TR>
+			<TH>Password</TH>
+			<TD><INPUT style="WIDTH: 260px" type=password value="" name=password></TD></TR>
+			<TR>
+			<TD style="VERTICAL-ALIGN: bottom; COLOR: rgb(142,198,63); TEXT-ALIGN: right; BACKGROUND-COLOR: transparent"></TD>
+			<TD style="TEXT-ALIGN: right; PADDING-TOP: 5px; BACKGROUND-COLOR: transparent"><INPUT class=csspButton style="WIDTH: 5em" type=submit value="Sign in" name=login> <INPUT onclick=window.close(); class=csspButton style="WIDTH: 5em" type=button value=Exit name=exit> </TD></TR></TBODY></TABLE><INPUT type=hidden value=pwd name=login-form-type> 
+		</FORM>
+	</DIV>
+ </body>
+</html>
