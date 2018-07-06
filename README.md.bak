@@ -9,48 +9,42 @@
 
 ----
 
-Jumpserver是全球首款完全开源的堡垒机，使用GNU GPL v2.0开源协议，是符合 4A 的专业运维审计系统。
+OathBreaker是基于ESB设计思路研发的全业务开放式运维操作平台，运维人员在web界面中可以定制几乎所有的日常操作，例如脚本批量执行，文件下发，文件拉取。
 
-Jumpserver使用Python / Django 进行开发，遵循 Web 2.0 规范，配备了业界领先的 Web Terminal 解决方案，交互界面美观、用户体验好。
+旨在为运维提供一个可以批量控制和操作分布在世界各地的大规模主机的通道。
 
-Jumpserver采纳分布式架构，支持多机房跨区域部署，中心节点提供 API，各机房部署登录节点，可横向扩展、无并发限制。
+用以提升运维团队整体操作执行效率与质量，解放运维人员双手。
 
-改变世界，从一点点开始。
+在OathBreaker平台上，运维人员可自由定制和编排操作任务，实现各类运维场景的一键式自动化作业。
 
 ----
 
-### 功能
+### 特性
   
- ![Jumpserver功能](https://jumpserver-release.oss-cn-hangzhou.aliyuncs.com/Jumpserver13.jpg "Jumpserver功能")
+1. 跨平台，支持一切unix like平台、windows平台
+2. 并发执行，一组操作用于1台机器或100台机器，耗时接近
+3. 可扩展性，支持无限级联、快速平行扩展
+4. 安全性，按照业务分配主机，运维人员只能看到、操作属于自身业务的机器，并记录所有的操作日志
+5. 稳定性，前端采用成熟的django框架、后端采用salt方案
+6. 易用性，无需运维人员学习新的技术,支持所有运维操作场景的操作,提供最大化的灵活度
+7. 通用性，基于ESB设计理念，前端与业务解耦，后端抽象为原子支持任意业务形态
 
-### 开始使用
+### 架构 
 
-快速开始文档  [Docker安装](http://docs.jumpserver.org/zh/latest/quickstart.html)
-
-一步一步安装文档 [详细部署](http://docs.jumpserver.org/zh/latest/step_by_step.html)
-
-也可以查看我们完整文档包括了使用和开发 [文档](http://docs.jumpserver.org)
-
-### Demo 和 截图 
-
-我们提供了DEMO和截图可以让你快速了解Jumpserver
-
-[DEMO](http://demo.jumpserver.org)
-[截图](http://docs.jumpserver.org/zh/docs/snapshot.html)
-
-### SDK 
-
-我们还编写了一些SDK，供你其它系统快速和Jumpserver APi交互，
-
-- [python](https://github.com/jumpserver/jumpserver-python-sdk) Jumpserver其它组件使用这个SDK完成交互
-- [java](https://github.com/KaiJunYan/jumpserver-java-sdk.git) 恺珺同学提供的Java版本的SDK
+![Architecture](https://github.com/hong1835/OathBreaker/tree/master/statics/img/show/architecture.PNG)
 
 
-### License & Copyright
-Copyright (c) 2014-2018 Beijing Duizhan Tech, Inc., All rights reserved.
+### 一些截图 
 
-Licensed under The GNU General Public License version 2 (GPLv2)  (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+![Login](https://github.com/hong1835/OathBreaker/tree/master/statics/img/show/login.PNG)
+![shell](https://github.com/hong1835/OathBreaker/tree/master/statics/img/show/script-shell.PNG)
+![batch](https://github.com/hong1835/OathBreaker/tree/master/statics/img/show/script-batch.PNG)
+![python](https://github.com/hong1835/OathBreaker/tree/master/statics/img/show/script-python.PNG)
+![powershell](https://github.com/hong1835/OathBreaker/tree/master/statics/img/show/script-powershell.PNG)
 
-https://www.gnu.org/licenses/gpl-2.0.html
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+### To do
+1. 文件上传、拉取
+2. 任务编排
+3. 页面优化
+
