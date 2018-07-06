@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(unique=True, max_length=64)),
                 ('sn', models.CharField(unique=True, max_length=128, verbose_name='\u8d44\u4ea7SN\u53f7')),
                 ('management_ip', models.GenericIPAddressField(null=True, verbose_name='\u7ba1\u7406IP', blank=True)),
-                ('trade_date', models.DateField(null=True, verbose_name='\u8d2d\u4e70\u65f6\u95f4', blank=True)),
+                ('trade_date', models.DateField(null=True, verbose_name='\u4e0a\u67b6\u65f6\u95f4', blank=True)),
                 ('expire_date', models.DateField(null=True, verbose_name='\u8fc7\u4fdd\u4fee\u671f', blank=True)),
                 ('price', models.FloatField(null=True, verbose_name='\u4ef7\u683c', blank=True)),
                 ('status', models.SmallIntegerField(default=0, choices=[(0, b'\xe5\x9c\xa8\xe7\xba\xbf'), (1, b'\xe5\xb7\xb2\xe4\xb8\x8b\xe7\xba\xbf'), (2, b'\xe6\x9c\xaa\xe7\x9f\xa5'), (3, b'\xe6\x95\x85\xe9\x9a\x9c'), (4, b'\xe5\xa4\x87\xe7\x94\xa8')])),
@@ -61,6 +61,18 @@ class Migration(migrations.Migration):
             options={
                 'verbose_name': '\u5408\u540c',
                 'verbose_name_plural': '\u5408\u540c',
+            },
+        ),
+        migrations.CreateModel(
+            name='CostCenter',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(unique=True, max_length=128, verbose_name='\u6210\u672c\u4e2d\u5fc3')),
+                ('memo', models.CharField(max_length=128, verbose_name='\u5907\u6ce8', blank=True)),
+            ],
+            options={
+                'verbose_name': '\u6210\u672c\u4e2d\u5fc3',
+                'verbose_name_plural': '\u6210\u672c\u4e2d\u5fc3',
             },
         ),
         migrations.CreateModel(
@@ -228,13 +240,20 @@ class Migration(migrations.Migration):
             name='Server',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('sub_asset_type', models.SmallIntegerField(default=0, verbose_name=b'\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\xb1\xbb\xe5\x9e\x8b', choices=[(0, b'PC\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8'), (1, b'\xe5\x88\x80\xe7\x89\x87\xe6\x9c\xba'), (2, b'\xe5\xb0\x8f\xe5\x9e\x8b\xe6\x9c\xba')])),
+                ('sub_asset_type', models.SmallIntegerField(default=0, verbose_name=b'\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8\xe7\xb1\xbb\xe5\x9e\x8b', choices=[(0, b'\xe4\xba\x91\xe4\xb8\xbb\xe6\x9c\xba'), (1, b'PC\xe6\x9c\x8d\xe5\x8a\xa1\xe5\x99\xa8'), (2, b'\xe5\x88\x80\xe7\x89\x87\xe6\x9c\xba'), (3, b'\xe5\xb0\x8f\xe5\x9e\x8b\xe6\x9c\xba')])),
                 ('created_by', models.CharField(default=b'auto', max_length=32, choices=[(b'auto', b'Auto'), (b'manual', b'Manual')])),
                 ('model', models.CharField(max_length=128, null=True, verbose_name='\u578b\u53f7', blank=True)),
                 ('raid_type', models.CharField(max_length=512, null=True, verbose_name='raid\u7c7b\u578b', blank=True)),
                 ('os_type', models.CharField(max_length=64, null=True, verbose_name='\u64cd\u4f5c\u7cfb\u7edf\u7c7b\u578b', blank=True)),
                 ('os_distribution', models.CharField(max_length=64, null=True, verbose_name='\u53d1\u884c\u7248\u672c', blank=True)),
                 ('os_release', models.CharField(max_length=64, null=True, verbose_name='\u64cd\u4f5c\u7cfb\u7edf\u7248\u672c', blank=True)),
+                ('hostname', models.CharField(max_length=64)),
+                ('ip_addr', models.GenericIPAddressField(unique=True, null=True, blank=True)),
+                ('port', models.IntegerField(default=22)),
+                ('system_type', models.CharField(default=b'linux', max_length=32, choices=[(b'linux', b'Linux'), (b'windows', b'Windows')])),
+                ('enabled', models.BooleanField(default=True)),
+                ('memo', models.TextField(null=True, blank=True)),
+                ('date', models.DateTimeField(auto_now_add=True)),
             ],
             options={
                 'verbose_name': '\u670d\u52a1\u5668',

@@ -1,5 +1,4 @@
 #_*_coding:utf-8_*_
-__author__ = 'Alex Li'
 
 from plugins import plugin_api
 import json,platform,sys

@@ -33,6 +33,10 @@
 	<link href="/static/css/pace.min.css" rel="stylesheet">
 	<script src="/static/js/pace.min.js"></script>
 
+        <link href="/static/css/codemirror/codemirror.css" rel="stylesheet">
+        <link href="/static/css/codemirror/3024-night.css" rel="stylesheet">
+        <link href="/static/css/codemirror/erlang-dark.css" rel="stylesheet">
+
 
     {% endblock %}
     {% block header-css %}
@@ -752,6 +756,7 @@
                                         <ul class="collapse">
 											<li><a href="{% url 'hosts_mgr' %}">主机列表</a></li>
 											<li class=""><a href="{% url 'multi_cmd' %}">批量命令</a></li>
+											<li class=""><a href="{% url 'multi_script' %}">执行脚本</a></li>
 											<li><a href="{% url 'multi_file_transfer' %}">文件分发</a></li>
 											<li><a href="{% url 'operation_audit' %}">行为审计</a></li>
 

@@ -131,6 +131,7 @@ class DiskInline(admin.TabularInline):
 
 class AssetAdmin(admin.ModelAdmin):
     list_display = ('id','asset_type','sn','name','manufactory','management_ip','idc','business_unit','admin','trade_date','status')
+    #list_display = ('id', 'asset_type', 'sn', 'manufactory', 'wan_ip','lan_ip', 'idc', 'business_unit', 'admin', 'trade_date','status')
     inlines = [ServerInline,CPUInline,RAMInline,DiskInline,NICInline]
     search_fields = ['sn',]
     list_filter = ['idc','manufactory','business_unit','asset_type']
@@ -140,6 +141,7 @@ class AssetAdmin(admin.ModelAdmin):
     list_filter = ('asset_type','status','manufactory','idc','business_unit','admin','trade_date')
     dynamic_fk = 'asset_type'
     dynamic_list_display = ('model','sub_asset_type','os_type','os_distribution')
+    #dynamic_list_display = ('model', 'sub_asset_type', 'system_type')
     dynamic_choice_fields = ('sub_asset_type',)
     m2m_fields = ('tags',)
 
@@ -179,6 +181,7 @@ admin.site.register(models.Server)
 admin.site.register(models.NetworkDevice)
 #admin.site.register(models.IDC)
 admin.site.register(models.BusinessUnit)
+admin.site.register(models.CostCenter)
 admin.site.register(models.Contract)
 admin.site.register(models.CPU)
 admin.site.register(models.Disk)

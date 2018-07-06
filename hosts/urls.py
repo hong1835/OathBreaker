@@ -10,5 +10,7 @@ urlpatterns = [
     url(r'^multi_file_transfer/$',views.multi_file_transfer,name="multi_file_transfer"),
     url(r'^file_upload/$',views.file_upload,name="file_upload"),
     url(r'^operation_audit/$',views.operation_audit,name="operation_audit"),
-    url(r'^get_operation_audit/$',views.get_operation_audit,name="get_operation_audit"),
+    #url(r'^get_operation_audit/$',views.get_operation_audit,name="get_operation_audit"),
+    url(r'^submit_ips/$',views.submit_ips,name="submit_ips"),
+    url(r'^multi_script/$',views.multi_script,name="multi_script")
 ]

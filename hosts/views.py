@@ -31,6 +31,10 @@ def multi_cmd(request):
     return render(request, "hosts/multi_cmd.html")
 
 @login_required
+def multi_script(request):
+    return render(request,"hosts/multi_scripts.html")
+
+@login_required
 def multi_file_transfer(request):
     return render(request,"hosts/multi_file_transfer.html")
 
@@ -100,3 +104,10 @@ def operation_audit(request):
 
     return render(request,'hosts/operation_audit.html',{'table_obj': table_obj,
                                                   'paginator': paginator})
+
+
+def submit_ips(request):
+    print "---ip list---",request.POST
+    task_obj = task.Task(request)
+    res = task_obj.handle()
+    return HttpResponse(json.dumps(res))

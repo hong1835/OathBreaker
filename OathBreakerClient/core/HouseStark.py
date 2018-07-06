@@ -1,5 +1,4 @@
 #_*_coding:utf-8_*_
-__author__ = 'Alex Li'
 
 import info_collection
 from conf import settings

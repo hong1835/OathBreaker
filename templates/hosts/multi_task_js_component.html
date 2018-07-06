@@ -6,6 +6,9 @@
             })
         })
 
+        var selected_hosts_from_ip = []
+        var selected_hosts_count = 0
+
         function CheckAllToggle(ele) {
 
             if(ele.checked){
@@ -25,7 +28,14 @@
         function FormVerification(task_type){
             var err_list = []
             var data_list = {}
-            var selected_host = VerifyHostSelection()
+
+            //var textare_iplist = $.trim($("textarea[name='ip_list']").val())
+            //if (textare_iplist){
+            //    var selected_host = selected_hosts_from_ip
+            //}else {
+            //    var selected_host = VerifyHostSelection()
+            //}
+            var selected_host = GetSelectedHost()
             data_list["selected_hosts"] = selected_host
             data_list["task_type"] = task_type
             if(selected_host.length == 0){
@@ -72,8 +82,17 @@
 
                     //console.log(data_list)
                 }
-            }else if (task_type == "operation_audit") {
-                console.log(data_list)
+            }else if (task_type == "multi_script") {
+                var script_once_type = $("input[name='script_once_type']:checked").val()
+                var script_once_parameter = $("#script_once_parameter").val()
+                var script_once_content = editor.getValue()
+
+                console.log("script type--->",script_once_type)
+                console.log("script param--->",script_once_parameter)
+                console.log("script content--->",script_once_content)
+                data_list["script_type"] = script_once_type
+                data_list["script_param"]= script_once_parameter
+                data_list["script_content"] = script_once_content
             }
 
             if (err_list.length > 0){
@@ -93,6 +112,16 @@
 
                 })
             }
+        }
+
+        function GetSelectedHost() {
+            var textare_iplist = $.trim($("textarea[name='ip_list']").val())
+            if (textare_iplist){
+                var selected_host = selected_hosts_from_ip
+            }else {
+                var selected_host = VerifyHostSelection()
+            }
+            return selected_host
         }
 
         function VerifyHostSelection() {
@@ -129,6 +158,55 @@
 
                 $("#result-box").append(row_html)
             })
+        }
+
+        function FilterHost() {
+            var cmd_text = $.trim($("textarea[name='ip_list']").val())
+            var ip_list = cmd_text.split("\n")
+            var data_list = {}
+            data_list["task_type"] = "check_iplist"
+            data_list["selected_ips"] = ip_list
+            data_list["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+
+            $.ajax({
+               type: "POST",
+               url: "{% url 'submit_ips' %}",
+               async: false,
+               data: data_list,
+               success: function(callback) {
+                   checked_ip_hostid = JSON.parse(callback)
+                   //var j = 0
+                   $.each(checked_ip_hostid,function(index,item){
+                        selected_hosts_from_ip.push((item[0]["id"]).toString())
+                        selected_hosts_count = selected_hosts_count +1
+                       // console.log("filter_host_value")
+                        var row_html = "<li class='list-group-item'>" + "<span class='badge' onclick='RemoveIP(this)' style='background-color: red'>Deleted</span>" + index + "<input style='display:none' id='manual-ip-get' type='text' value='" + item[0]["id"] + "'>" + "</li>"
+
+                        $("#checked_ip_host").append(row_html)
+                    })
+
+                   var select_host_array = $.map(checked_ip_hostid, function(value, index) {
+                        return [(value[0]["id"]).toString()];
+                    });
+
+                   ap_html = "总共" + ip_list.length + "台机器," + "<span id='count-available-host'>" + selected_hosts_count + "</span>" + "台可用"
+                   $("#available_present").toggle()
+                    $("#available_present").html(ap_html)
+
+               }
+            });
+
+        }
+
+        function RemoveIP(ele) {
+
+            var removed_host_id = $(ele).parent().children("input").val()
+            var index = selected_hosts_from_ip.indexOf(removed_host_id)
+            selected_hosts_from_ip.splice(index,1)
+            selected_hosts_count = selected_hosts_count - 1
+            $("#count-available-host").html(selected_hosts_count)
+            $(ele).parent().remove()
+
         }
 
 

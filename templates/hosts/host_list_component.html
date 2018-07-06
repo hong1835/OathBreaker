@@ -29,4 +29,15 @@
             </div>
         </div>
 
+        <textarea class="form-control" rows="3" name="ip_list" placeholder="请输入host..."></textarea>
+            <br>
+            <button type="button" class="btn btn-success pull-right" onclick="FilterHost()">筛选主机</button>
+            <br>
+        <hr>
+            <div class="alert alert-success" role="alert" id="available_present" hidden>总共[]台机器，[]台可用</div>
+        <hr>
+            <ul class="list-group" id="checked_ip_host">
+
+            </ul>
+
     </div>

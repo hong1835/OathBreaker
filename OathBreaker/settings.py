@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = ')5dno_)6stclwz=)v=s1p4&%036*-h9o-ta0w0jywgs)lf^#(q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'hosts',
     'assets',
     'rest_framework',
+    'django_filters'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -52,6 +53,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+}
 
 AUTH_USER_MODEL = 'hosts.UserProfile'
 
@@ -95,7 +100,7 @@ DATABASES = {
         'NAME': 'OathBreaker',
         'USER':'root',
         'PASSWORD':'123456',
-        'HOST':'',
+        'HOST':'1.1.1.1',
         'PORT':3306,
     }
 }
@@ -147,9 +152,24 @@ TOKEN_TIMEOUT = 120
 LOGIN_URL = '/login/'
 
 MultiTaskScript = "%s/hosts/backends/multi_task.py" % BASE_DIR
-MultiTaskRunType = 'by_paramiko'
+MultiTaskRunType = 'by_saltapi'
 
 
-FileUploadDir = "%s\\uploads" % BASE_DIR
+FileUploadDir = "%s/uploads" % BASE_DIR
+#FileUploadDir = "/mnt/OathBreaker/uploads"
 
-FileDownloadDir = "%s\\downloads" % BASE_DIR
+FileDownloadDir = "%s/downloads" % BASE_DIR
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
+ScriptUploadDir = "%s/scripts_upload" % BASE_DIR
+
+Salt_API = {
+    'url':'https://1.1.1.1:8000/',
+    'user':'saltapi',
+    'password':'saltapi'
+}
+
+Salt_Script_Path = '/etc/salt/states/scripts/'
+
+Salt_Script_Relative_Path = 'salt://scripts/'

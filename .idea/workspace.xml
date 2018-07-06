@@ -1,7 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac6a3f40-253b-4ca1-997d-4470bafcdb17" name="Default" comment="" />
+    <list default="true" id="ac6a3f40-253b-4ca1-997d-4470bafcdb17" name="Default" comment="support for shell,batch,python and powershell with saltapi">
+      <change beforePath="" afterPath="$PROJECT_DIR$/hosts/backends/saltapi.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/hosts/backends/saltstack_handle.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/css/codemirror/3024-night.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/css/codemirror/codemirror.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/css/codemirror/erlang-dark.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/css/icheck/grey.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/css/icheck/grey.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/css/icheck/grey@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/CodeMirror.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/icheck.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/perl.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/powershell.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/python.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/shell.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/ujobs.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/until.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/js/vbscript.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/hosts/multi_scripts.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/OathBreaker/settings.py" afterPath="$PROJECT_DIR$/OathBreaker/settings.py" />
+      <change beforePath="$PROJECT_DIR$/OathBreakerClient/bin/NedStark.py" afterPath="$PROJECT_DIR$/OathBreakerClient/bin/NedStark.py" />
+      <change beforePath="$PROJECT_DIR$/OathBreakerClient/conf/settings.py" afterPath="$PROJECT_DIR$/OathBreakerClient/conf/settings.py" />
+      <change beforePath="$PROJECT_DIR$/OathBreakerClient/core/HouseStark.py" afterPath="$PROJECT_DIR$/OathBreakerClient/core/HouseStark.py" />
+      <change beforePath="$PROJECT_DIR$/OathBreakerClient/core/api_token.py" afterPath="$PROJECT_DIR$/OathBreakerClient/core/api_token.py" />
+      <change beforePath="$PROJECT_DIR$/OathBreakerClient/core/info_collection.py" afterPath="$PROJECT_DIR$/OathBreakerClient/core/info_collection.py" />
+      <change beforePath="$PROJECT_DIR$/OathBreakerClient/plugins/linux/sysinfo.py" afterPath="$PROJECT_DIR$/OathBreakerClient/plugins/linux/sysinfo.py" />
+      <change beforePath="$PROJECT_DIR$/OathBreakerClient/plugins/plugin_api.py" afterPath="$PROJECT_DIR$/OathBreakerClient/plugins/plugin_api.py" />
+      <change beforePath="$PROJECT_DIR$/OathBreakerClient/plugins/windows/sysinfo.py" afterPath="$PROJECT_DIR$/OathBreakerClient/plugins/windows/sysinfo.py" />
+      <change beforePath="$PROJECT_DIR$/OathBreakerClient/var/.asset_id" afterPath="$PROJECT_DIR$/OathBreakerClient/var/.asset_id" />
+      <change beforePath="$PROJECT_DIR$/assets/admin.py" afterPath="$PROJECT_DIR$/assets/admin.py" />
+      <change beforePath="$PROJECT_DIR$/assets/asset_handle.py" afterPath="$PROJECT_DIR$/assets/asset_handle.py" />
+      <change beforePath="$PROJECT_DIR$/assets/core.py" afterPath="$PROJECT_DIR$/assets/core.py" />
+      <change beforePath="$PROJECT_DIR$/assets/migrations/0001_initial.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/migrations/0002_auto_20180411_1518.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/assets/models.py" afterPath="$PROJECT_DIR$/assets/models.py" />
+      <change beforePath="$PROJECT_DIR$/assets/rest_urls.py" afterPath="$PROJECT_DIR$/assets/rest_urls.py" />
+      <change beforePath="$PROJECT_DIR$/assets/rest_views.py" afterPath="$PROJECT_DIR$/assets/rest_views.py" />
+      <change beforePath="$PROJECT_DIR$/assets/serializers.py" afterPath="$PROJECT_DIR$/assets/serializers.py" />
+      <change beforePath="$PROJECT_DIR$/assets/utils.py" afterPath="$PROJECT_DIR$/assets/utils.py" />
+      <change beforePath="$PROJECT_DIR$/hosts/admin.py" afterPath="$PROJECT_DIR$/hosts/admin.py" />
+      <change beforePath="$PROJECT_DIR$/hosts/backends/multi_task.py" afterPath="$PROJECT_DIR$/hosts/backends/multi_task.py" />
+      <change beforePath="$PROJECT_DIR$/hosts/backends/paramiko_handle.py" afterPath="$PROJECT_DIR$/hosts/backends/paramiko_handle.py" />
+      <change beforePath="$PROJECT_DIR$/hosts/migrations/0001_initial.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/hosts/models.py" afterPath="$PROJECT_DIR$/hosts/models.py" />
+      <change beforePath="$PROJECT_DIR$/hosts/task.py" afterPath="$PROJECT_DIR$/hosts/task.py" />
+      <change beforePath="$PROJECT_DIR$/hosts/templatetags/custom_tag.py" afterPath="$PROJECT_DIR$/hosts/templatetags/custom_tag.py" />
+      <change beforePath="$PROJECT_DIR$/hosts/urls.py" afterPath="$PROJECT_DIR$/hosts/urls.py" />
+      <change beforePath="$PROJECT_DIR$/hosts/utils.py" afterPath="$PROJECT_DIR$/hosts/utils.py" />
+      <change beforePath="$PROJECT_DIR$/hosts/views.py" afterPath="$PROJECT_DIR$/hosts/views.py" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+      <change beforePath="$PROJECT_DIR$/templates/hosts/host_list_component.html" afterPath="$PROJECT_DIR$/templates/hosts/host_list_component.html" />
+      <change beforePath="$PROJECT_DIR$/templates/hosts/hosts_mgr.html" afterPath="$PROJECT_DIR$/templates/hosts/hosts_mgr.html" />
+      <change beforePath="$PROJECT_DIR$/templates/hosts/multi_file_transfer.html" afterPath="$PROJECT_DIR$/templates/hosts/multi_file_transfer.html" />
+      <change beforePath="$PROJECT_DIR$/templates/hosts/multi_task_js_component.html" afterPath="$PROJECT_DIR$/templates/hosts/multi_task_js_component.html" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,102 +65,40 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/OathBreaker$manage.coverage" NAME="manage Coverage Results" MODIFIED="1524039653942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/OathBreaker$saltapi.coverage" NAME="saltapi Coverage Results" MODIFIED="1530841783649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hosts/backends" />
+    <SUITE FILE_PATH="coverage/OathBreaker$utils.coverage" NAME="utils Coverage Results" MODIFIED="1530684746485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hosts" />
+    <SUITE FILE_PATH="coverage/OathBreaker$manage.coverage" NAME="manage Coverage Results" MODIFIED="1530261104270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hosts/models.py">
+      <file leaf-file-name="multi_scripts.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/hosts/multi_scripts.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2242">
-              <caret line="123" column="86" lean-forward="false" selection-start-line="123" selection-start-column="86" selection-end-line="123" selection-end-column="86" />
+            <state relative-caret-position="1117">
+              <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7277">
-              <caret line="386" column="0" lean-forward="false" selection-start-line="386" selection-start-column="0" selection-end-line="388" selection-end-column="21" />
-              <folding>
-                <element signature="e#14534#14550#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hosts/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-              <folding>
-                <element signature="e#20#52#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/OathBreaker/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-611">
-              <caret line="98" column="20" lean-forward="true" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="multi_task.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hosts/backends/multi_task.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="26" column="153" lean-forward="false" selection-start-line="26" selection-start-column="153" selection-end-line="26" selection-end-column="153" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="paramiko_handle.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hosts/backends/paramiko_handle.py">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="19">
-              <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="15" />
+              <caret line="1" column="2" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model_obj_list_components.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/assets/model_obj_list_components.html">
+      <file leaf-file-name="operation_audit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/hosts/operation_audit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1368">
-              <caret line="72" column="38" lean-forward="false" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="model_list_filter_component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/assets/model_list_filter_component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="40" lean-forward="false" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="multi_task_js_component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/hosts/multi_task_js_component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+            <state relative-caret-position="304">
+              <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -123,7 +116,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>logout</find>
       <find>body</find>
       <find>idc</find>
       <find>url</find>
@@ -146,7 +138,23 @@
       <find>event</find>
       <find>---------</find>
       <find>get_event_type_display</find>
+      <find>hosts_models</find>
+      <find>debug</find>
+      <find>Tags</find>
+      <find>res---task---</find>
+      <find>going to run</find>
+      <find>form-group</find>
+      <find>task_type</find>
+      <find>by_paramiko</find>
     </findStrings>
+    <dirStrings>
+      <dir>C:\Users\hongjian\PycharmProjects\OathBreaker\assets</dir>
+      <dir>C:\Users\hongjian\PycharmProjects\OathBreaker\hosts</dir>
+      <dir>C:\Users\hongjian\PycharmProjects\OathBreaker</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -156,38 +164,51 @@
         <option value="$PROJECT_DIR$/OathBreaker/views.py" />
         <option value="$PROJECT_DIR$/hosts/auth_admin.py" />
         <option value="$PROJECT_DIR$/hosts/myauth.py" />
-        <option value="$PROJECT_DIR$/templates/hosts/host_list_component.html" />
-        <option value="$PROJECT_DIR$/hosts/task.py" />
-        <option value="$PROJECT_DIR$/hosts/utils.py" />
         <option value="$PROJECT_DIR$/templates/hosts/multi_cmd.html" />
-        <option value="$PROJECT_DIR$/templates/hosts/hosts_mgr.html" />
         <option value="$PROJECT_DIR$/templates/hosts/multi_file_transfer.html" />
+        <option value="$PROJECT_DIR$/OathBreaker/urls.py" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/templates/assets/event_center.html" />
+        <option value="$PROJECT_DIR$/OathBreakerClient/var/.asset_id" />
+        <option value="$PROJECT_DIR$/templates/assets/model_obj_list_components.html" />
+        <option value="$PROJECT_DIR$/templates/hosts/operation_audit.html" />
+        <option value="$PROJECT_DIR$/templates/assets/model_list_filter_component.html" />
+        <option value="$PROJECT_DIR$/templates/hosts/host_list_component.html" />
+        <option value="$PROJECT_DIR$/hosts/admin.py" />
+        <option value="$PROJECT_DIR$/hosts/templatetags/custom_tag.py" />
+        <option value="$PROJECT_DIR$/assets/admin.py" />
+        <option value="$PROJECT_DIR$/templates/hosts/hosts_mgr.html" />
+        <option value="$PROJECT_DIR$/assets/urls.py" />
+        <option value="$PROJECT_DIR$/assets/views.py" />
+        <option value="$PROJECT_DIR$/hosts/backends/paramiko_handle.py" />
+        <option value="$PROJECT_DIR$/templates/hosts/run_scripts.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/hosts/urls.py" />
+        <option value="$PROJECT_DIR$/templates/hosts/multi_task_js_component.html" />
+        <option value="$PROJECT_DIR$/templates/hosts/multi_scripts.html" />
+        <option value="$PROJECT_DIR$/hosts/models.py" />
+        <option value="$PROJECT_DIR$/hosts/views.py" />
+        <option value="$PROJECT_DIR$/hosts/utils.py" />
+        <option value="$PROJECT_DIR$/hosts/backends/saltapi.py" />
+        <option value="$PROJECT_DIR$/hosts/backends/saltstack_handle.py" />
+        <option value="$PROJECT_DIR$/hosts/task.py" />
+        <option value="$PROJECT_DIR$/assets/asset_handle.py" />
+        <option value="$PROJECT_DIR$/assets/core.py" />
+        <option value="$PROJECT_DIR$/assets/models.py" />
+        <option value="$PROJECT_DIR$/assets/rest_urls.py" />
         <option value="$PROJECT_DIR$/assets/rest_views.py" />
         <option value="$PROJECT_DIR$/assets/serializers.py" />
         <option value="$PROJECT_DIR$/assets/utils.py" />
-        <option value="$PROJECT_DIR$/OathBreaker/urls.py" />
-        <option value="$PROJECT_DIR$/hosts/templatetags/custom_tag.py" />
-        <option value="$PROJECT_DIR$/assets/asset_handle.py" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/templates/assets/event_center.html" />
-        <option value="$PROJECT_DIR$/assets/core.py" />
-        <option value="$PROJECT_DIR$/OathBreakerClient/var/.asset_id" />
-        <option value="$PROJECT_DIR$/OathBreakerClient/conf/settings.py" />
-        <option value="$PROJECT_DIR$/assets/models.py" />
-        <option value="$PROJECT_DIR$/assets/views.py" />
-        <option value="$PROJECT_DIR$/templates/assets/model_obj_list_components.html" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/hosts/urls.py" />
-        <option value="$PROJECT_DIR$/templates/hosts/operation_audit.html" />
-        <option value="$PROJECT_DIR$/hosts/views.py" />
-        <option value="$PROJECT_DIR$/assets/admin.py" />
-        <option value="$PROJECT_DIR$/OathBreaker/settings.py" />
         <option value="$PROJECT_DIR$/hosts/backends/multi_task.py" />
-        <option value="$PROJECT_DIR$/hosts/backends/paramiko_handle.py" />
-        <option value="$PROJECT_DIR$/hosts/models.py" />
-        <option value="$PROJECT_DIR$/hosts/admin.py" />
-        <option value="$PROJECT_DIR$/templates/assets/model_list_filter_component.html" />
-        <option value="$PROJECT_DIR$/templates/hosts/multi_task_js_component.html" />
+        <option value="$PROJECT_DIR$/OathBreaker/settings.py" />
+        <option value="$PROJECT_DIR$/OathBreakerClient/bin/NedStark.py" />
+        <option value="$PROJECT_DIR$/OathBreakerClient/conf/settings.py" />
+        <option value="$PROJECT_DIR$/OathBreakerClient/core/api_token.py" />
+        <option value="$PROJECT_DIR$/OathBreakerClient/core/HouseStark.py" />
+        <option value="$PROJECT_DIR$/OathBreakerClient/core/info_collection.py" />
+        <option value="$PROJECT_DIR$/OathBreakerClient/plugins/linux/sysinfo.py" />
+        <option value="$PROJECT_DIR$/OathBreakerClient/plugins/windows/sysinfo.py" />
+        <option value="$PROJECT_DIR$/OathBreakerClient/plugins/plugin_api.py" />
       </list>
     </option>
   </component>
@@ -203,6 +224,7 @@
     <option name="width" value="1391" />
     <option name="height" value="795" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -218,8 +240,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -248,12 +268,6 @@
               <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
               <item name="hosts" type="462c0819:PsiDirectoryNode" />
               <item name="backends" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
-              <item name="hosts" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
@@ -293,12 +307,44 @@
               <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
               <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
               <item name="OathBreakerClient" type="462c0819:PsiDirectoryNode" />
+              <item name="plugins" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
+              <item name="OathBreakerClient" type="462c0819:PsiDirectoryNode" />
+              <item name="plugins" type="462c0819:PsiDirectoryNode" />
+              <item name="linux" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
+              <item name="OathBreakerClient" type="462c0819:PsiDirectoryNode" />
+              <item name="plugins" type="462c0819:PsiDirectoryNode" />
+              <item name="windows" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
+              <item name="OathBreakerClient" type="462c0819:PsiDirectoryNode" />
               <item name="var" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
               <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
-              <item name="statics" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts_upload" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts_upload" type="462c0819:PsiDirectoryNode" />
+              <item name="powershell" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts_upload" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
@@ -317,24 +363,33 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="hosts" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../glances" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\css\codemirror" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\js" />
+      <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\css\icheck" />
+      <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\css\codemirror" />
+      <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\css" />
       <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\templates\hosts" />
-      <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\OathBreakerClient" />
-      <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\OathBreakerClient\conf" />
-      <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\OathBreakerClient\bin" />
-      <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -349,7 +404,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.manage">
+  <component name="RunManager" selected="Python.saltapi">
     <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -365,6 +420,44 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
       <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="saltapi" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hosts/backends" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="OathBreaker" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hosts/backends/saltapi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hosts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="OathBreaker" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hosts/utils.py" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -391,13 +484,17 @@
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
     </configuration>
-    <list size="2">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Django server.OathBreaker" />
       <item index="1" class="java.lang.String" itemvalue="Python.manage" />
+      <item index="2" class="java.lang.String" itemvalue="Python.utils" />
+      <item index="3" class="java.lang.String" itemvalue="Python.saltapi" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.manage" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.saltapi" />
+        <item index="1" class="java.lang.String" itemvalue="Python.utils" />
+        <item index="2" class="java.lang.String" itemvalue="Python.manage" />
       </list>
     </recent_temporary>
   </component>
@@ -417,19 +514,28 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="4">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15671642" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3300866" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1663113" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -439,7 +545,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -449,17 +554,16 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="support for shell,batch,python and powershell with saltapi" />
+    <option name="LAST_COMMIT_MESSAGE" value="support for shell,batch,python and powershell with saltapi" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/assets/asset_handle.py</url>
-          <line>4</line>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/assets/rest_urls.py</url>
           <line>2</line>
-          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="2" />
@@ -467,339 +571,50 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/OathBreakerClient/plugins/linux/MegaCli">
+    <entry file="file://$PROJECT_DIR$/scripts_upload/powershell/20180704141420.ps1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OathBreakerClient/bin/NedStark.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OathBreakerClient/core/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OathBreakerClient/core/info_collection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OathBreakerClient/core/api_token.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OathBreaker/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="46" column="34" lean-forward="false" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OathBreakerClient/logs/run_log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OathBreakerClient/core/HouseStark.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1523">
-          <caret line="56" column="52" lean-forward="true" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/-762174762/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="4638" column="8" lean-forward="false" selection-start-line="4638" selection-start-column="8" selection-end-line="4638" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OathBreaker/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/hosts/host_list_component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="26" column="40" lean-forward="false" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-          <folding>
-            <element signature="e#564#605#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/Django-1.8.18-py2.7.egg/django/core/paginator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2454">
-          <caret line="66" column="24" lean-forward="false" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/asset_handle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1083">
-          <caret line="57" column="34" lean-forward="true" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
-          <folding>
-            <element signature="e#45#70#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/dashboard.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="45" column="58" lean-forward="true" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/assets/asset_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4902">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="313" column="64" lean-forward="false" selection-start-line="313" selection-start-column="64" selection-end-line="313" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OathBreakerClient/var/.asset_id">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OathBreakerClient/conf/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/templatetags/custom_tag.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="115" column="34" lean-forward="false" selection-start-line="115" selection-start-column="34" selection-end-line="115" selection-end-column="34" />
+        <state relative-caret-position="-137">
+          <caret line="11" column="64" lean-forward="false" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/assets/assets.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="29" column="44" lean-forward="false" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hosts/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="755" column="90" lean-forward="false" selection-start-line="755" selection-start-column="90" selection-end-line="755" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hosts/task_exec_component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hosts/multi_cmd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/hosts/hosts_mgr.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/assets/new_assets_approval.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/task.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="40" column="43" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/downloads/1/192.168.189.128/0411.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/downloads/1/192.168.189.130/0411.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/assets/event_center.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/Django-1.8.18-py2.7.egg/django/contrib/admin/options.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="556" column="4" lean-forward="false" selection-start-line="556" selection-start-column="4" selection-end-line="556" selection-end-column="4" />
+        <state relative-caret-position="475">
+          <caret line="62" column="28" lean-forward="false" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/hosts/multi_task_js_component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="45" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hosts/operation_audit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2736">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="19" />
-          <folding>
-            <element signature="e#20#69#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="23" />
+        <state relative-caret-position="172">
+          <caret line="75" column="54" lean-forward="true" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/tables.py">
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="95" column="16" lean-forward="false" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="150" column="42" lean-forward="false" selection-start-line="150" selection-start-column="42" selection-end-line="150" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-592">
-          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="72" />
+        <state relative-caret-position="19">
+          <caret line="1" column="2" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="9" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/myauth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="50" column="6" lean-forward="false" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2242">
-          <caret line="123" column="86" lean-forward="false" selection-start-line="123" selection-start-column="86" selection-end-line="123" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7277">
-          <caret line="386" column="0" lean-forward="false" selection-start-line="386" selection-start-column="0" selection-end-line="388" selection-end-column="21" />
-          <folding>
-            <element signature="e#14534#14550#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/assets/model_obj_list_components.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="72" column="38" lean-forward="false" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="51" />
+        <state relative-caret-position="-456">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -812,44 +627,364 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hosts/multi_task_js_component.html">
+    <entry file="file://$PROJECT_DIR$/assets/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+        <state relative-caret-position="-3234">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#19#51#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/asset_handle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/backends/paramiko_handle.py">
+    <entry file="file://$PROJECT_DIR$/assets/dashboard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="15" />
+        <state relative-caret-position="-1106">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11323">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1197">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/rest_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-251">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/rest_urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/rest_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/tables.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1657">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-593">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2717">
+          <caret line="151" column="17" lean-forward="true" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hosts/backends/multi_task.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="26" column="153" lean-forward="false" selection-start-line="26" selection-start-column="153" selection-end-line="26" selection-end-column="153" />
+        <state relative-caret-position="-1026">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/backends/paramiko_handle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="5" column="32" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/backends/saltapi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2584">
+          <caret line="136" column="38" lean-forward="false" selection-start-line="136" selection-start-column="38" selection-end-line="136" selection-end-column="38" />
+          <folding>
+            <element signature="e#21#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/backends/saltstack_handle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="46" column="27" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hosts/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/auth_admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2166">
+          <caret line="121" column="54" lean-forward="false" selection-start-line="121" selection-start-column="42" selection-end-line="121" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/myauth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3800">
+          <caret line="200" column="41" lean-forward="false" selection-start-line="200" selection-start-column="41" selection-end-line="200" selection-end-column="41" />
           <folding>
-            <element signature="e#20#52#0" expanded="true" />
+            <element signature="e#0#33#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="931">
+          <caret line="50" column="62" lean-forward="false" selection-start-line="50" selection-start-column="62" selection-end-line="50" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2071">
+          <caret line="109" column="38" lean-forward="false" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
+          <folding>
+            <element signature="e#20#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hosts/operation_audit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OathBreaker/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-611">
-          <caret line="98" column="20" lean-forward="true" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
+        <state relative-caret-position="1900">
+          <caret line="100" column="22" lean-forward="true" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OathBreaker/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OathBreaker/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OathBreaker/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OathBreakerClient/bin/NedStark.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OathBreakerClient/conf/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OathBreakerClient/core/api_token.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OathBreakerClient/core/HouseStark.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OathBreakerClient/core/info_collection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OathBreakerClient/logs/run_log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OathBreakerClient/plugins/linux/sysinfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OathBreakerClient/plugins/windows/sysinfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding>
+            <marker date="1530856711453" expanded="true" signature="1404:1438" ph="Select * fro... Win32_PhysicalMemory" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OathBreakerClient/plugins/plugin_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OathBreakerClient/var/.asset_id">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite_nginx.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-160">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hosts/multi_scripts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1117">
+          <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
           <folding />
         </state>
       </provider>

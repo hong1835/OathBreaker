@@ -1,6 +1,4 @@
 #_*_coding:utf-8_*_
-__author__ = 'Alex Li'
-
 
 from assets import models
 from hosts import models as hosts_models

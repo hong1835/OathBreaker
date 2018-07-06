@@ -1,5 +1,4 @@
 #_*_coding:utf-8_*_
-__author__ = 'jieli'
 from hosts import myauth
 from rest_framework import viewsets
 from assets.serializers import UserSerializer, AssetSerializer,ServerSerializer
@@ -8,6 +7,8 @@ from rest_framework import permissions
 from rest_framework.decorators import api_view,permission_classes
 from rest_framework.response import Response
 from assets import models
+from rest_framework import generics
+from django_filters.rest_framework import DjangoFilterBackend
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -15,6 +16,9 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     queryset = myauth.UserProfile.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
+    filter_backends = (DjangoFilterBackend,)
+    filter_fields = ('name', 'email')
+
 
 class AssetViewSet(viewsets.ModelViewSet):
     """
@@ -29,6 +33,21 @@ class ServerViewSet(viewsets.ModelViewSet):
     serializer_class = ServerSerializer
 
 
+class UpdateUser(generics.UpdateAPIView):
+    queryset = myauth.UserProfile.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def update(self, request, *args, **kwargs):
+        instance = self.get_object()
+        instance.name = request.data.get("name")
+        instance.save()
+
+        serializer = self.get_serializer(instance)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+
+        return Response(serializer.data)
 
 
 @api_view(['GET', 'POST'])

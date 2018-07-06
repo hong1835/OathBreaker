@@ -2,6 +2,7 @@
 from django.contrib import admin
 import auth_admin
 import models
+from assets import models as assets_models
 # Register your models here.
 
 class BaseAdmin(object):
@@ -35,7 +36,8 @@ class OperationAuditLogAdmin(admin.ModelAdmin,BaseAdmin):
     list_filter = ('task_type','hostname','host_ip','date','username','result')
 
 admin.site.register(models.UserProfile,auth_admin.UserProfileAdmin)
-admin.site.register(models.Host,HostAdmin)
+#admin.site.register(models.Host,HostAdmin)
+#admin.site.register(assets_models.Server,HostAdmin)
 admin.site.register(models.HostGroup)
 admin.site.register(models.IDC)
 admin.site.register(models.HostUser,HostUserAdmin)

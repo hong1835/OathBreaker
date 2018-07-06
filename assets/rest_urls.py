@@ -1,5 +1,4 @@
 #_*_coding:utf-8_*_
-__author__ = 'jieli'
 from django.conf.urls import url, include
 from rest_framework import routers
 from assets import rest_views as views
@@ -20,3 +19,4 @@ urlpatterns = [
     url(r'^dashboard_data/',asset_views.get_dashboard_data,name="get_dashboard_data"),
     url(r'^eventlogs/$', rest_test.eventlog_list),
 ]
+

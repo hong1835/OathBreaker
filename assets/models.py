@@ -1,9 +1,8 @@
 # _*_coding:utf-8_*_
-__author__ = 'jieli'
 
 #from hosts.myauth import UserProfile
 from django.db import models
-from hosts.models import IDC
+#from hosts.models import IDC
 #from OathBreaker.models import IDC
 import hosts
 
@@ -27,20 +26,23 @@ class Asset(models.Model):
     asset_type = models.CharField(choices=asset_type_choices, max_length=64, default='server')
     name = models.CharField(max_length=64, unique=True)
     sn = models.CharField(u'资产SN号', max_length=128, unique=True)
-    manufactory = models.ForeignKey('Manufactory', verbose_name=u'制造商', null=True, blank=True)
+    manufactory = models.ForeignKey('Manufactory', verbose_name=u'供应商', null=True, blank=True)
     # model = models.ForeignKey('ProductModel', verbose_name=u'型号')
     # model = models.CharField(u'型号',max_length=128,null=True, blank=True )
 
     management_ip = models.GenericIPAddressField(u'管理IP', blank=True, null=True)
+    #wan_ip = models.GenericIPAddressField('WAN',blank=True,null=True)
+    #lan_ip = models.GenericIPAddressField('LAN',blank=True,null=True)
 
     contract = models.ForeignKey('Contract', verbose_name=u'合同', null=True, blank=True)
-    trade_date = models.DateField(u'购买时间', null=True, blank=True)
+    trade_date = models.DateField(u'上架时间', null=True, blank=True)
     expire_date = models.DateField(u'过保修期', null=True, blank=True)
     price = models.FloatField(u'价格', null=True, blank=True)
-    business_unit = models.ForeignKey('BusinessUnit', verbose_name=u'所属业务线', null=True, blank=True)
+    business_unit = models.ForeignKey('BusinessUnit', verbose_name=u'所属业务', null=True, blank=True)
     tags = models.ManyToManyField('Tag', blank=True)
     admin = models.ForeignKey('hosts.UserProfile', verbose_name=u'资产管理员', null=True, blank=True)
     idc = models.ForeignKey("hosts.IDC", verbose_name=u'IDC机房', null=True, blank=True)
+    costcenter = models.ForeignKey('CostCenter', verbose_name=u'成本中心', null=True, blank=True)
 
     status_choices = ((0, '在线'),
                       (1, '已下线'),
@@ -62,15 +64,17 @@ class Asset(models.Model):
 
     def __str__(self):
         return '<id:%s name:%s>' % (self.id, self.name)
+        #return '<id:%s>' % (self.id)
 
 
 class Server(models.Model):
     """服务器设备"""
     asset = models.OneToOneField('Asset')
     sub_assset_type_choices = (
-        (0, 'PC服务器'),
-        (1, '刀片机'),
-        (2, '小型机'),
+        (0, '云主机'),
+        (1, 'PC服务器'),
+        (2, '刀片机'),
+        (3, '小型机'),
     )
     created_by_choices = (
         ('auto', 'Auto'),
@@ -79,7 +83,7 @@ class Server(models.Model):
     sub_asset_type = models.SmallIntegerField(choices=sub_assset_type_choices, verbose_name="服务器类型", default=0)
     created_by = models.CharField(choices=created_by_choices, max_length=32,
                                   default='auto')  # auto: auto created,   manual:created manually
-    hosted_on = models.ForeignKey('self', related_name='hosted_on_server', blank=True, null=True)  # for vitural server
+    #hosted_on = models.ForeignKey('self', related_name='hosted_on_server', blank=True, null=True)  # for vitural server
     # sn = models.CharField(u'SN号',max_length=128)
     # management_ip = models.CharField(u'管理IP',max_length=64,blank=True,null=True)
     # manufactory = models.ForeignKey(verbose_name=u'制造商',max_length=128,null=True, blank=True)
@@ -99,13 +103,37 @@ class Server(models.Model):
     os_distribution = models.CharField(u'发行版本', max_length=64, blank=True, null=True)
     os_release = models.CharField(u'操作系统版本', max_length=64, blank=True, null=True)
 
+    hostname = models.CharField(max_length=64)
+    ip_addr = models.GenericIPAddressField(unique=True,null=True, blank=True)
+    port = models.IntegerField(default=22)
+    #idc = models.ForeignKey("hosts.IDC", verbose_name=u'IDC机房', null=True, blank=True)
+    system_type_choice = (
+        ('linux', "Linux"),
+        ("windows", "Windows")
+    )
+    system_type = models.CharField(choices=system_type_choice, max_length=32, default='linux')
+    enabled = models.BooleanField(default=True)
+    memo = models.TextField(blank=True, null=True)
+    date = models.DateTimeField(auto_now_add=True)
+
+    #minionid = models.GenericIPAddressField(unique=True,null=True,blank=True)
+    #salt_version = models.CharField(u'SaltAgent版本',max_length=64,blank=True,null=True)
+    #salt_os = models.CharField(u'OS信息',max_length=64,blank=True,null=True)
+    #salt_ips = models.CharField(u'IP',max_length=128,blank=True,null=True)
+    #salt_status = models.CharField(u'Agent状态',max_length=64,blank=True,null=True)
+    #lastupdate_time = models.CharField(max_length=128,blank=True,null=True)
+    #master = models.CharField(u'master',max_length=64,blank=True,null=True)
+
+    def __unicode__(self):
+        return "%s(%s)" % (self.hostname,self.ip_addr)
+
     class Meta:
         verbose_name = '服务器'
         verbose_name_plural = "服务器"
         # together = ["sn", "asset"]
 
-    def __str__(self):
-        return '%s sn:%s' % (self.asset.name, self.asset.sn)
+    #def __str__(self):
+    #    return '%s sn:%s' % (self.asset.name, self.asset.sn)
 
 
 class SecurityDevice(models.Model):
@@ -331,6 +359,17 @@ class BusinessUnit(models.Model):
         verbose_name = '业务线'
         verbose_name_plural = "业务线"
 
+class CostCenter(models.Model):
+    """成本中心"""
+    name = models.CharField(u'成本中心', max_length=128, unique=True)
+    memo = models.CharField(u'备注', max_length=128, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = '成本中心'
+        verbose_name_plural = '成本中心'
 
 class Contract(models.Model):
     """合同"""

@@ -6,6 +6,10 @@ from  django.core.urlresolvers import reverse as url_reverse
 from django import template
 from django.utils.safestring import mark_safe
 import re
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 
 register = template.Library()
 

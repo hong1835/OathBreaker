@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+
+
+{% block page-content-title %}
+执行脚本
+{% endblock %}
+
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">执行脚本</li>
+</ol>
+{% endblock %}
+
+
+{% block page-content %}
+<div class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">执行脚本</h3>
+            {% include "hosts/host_list_component.html" %}
+
+    <div class="col-md-9">
+        <div class="panel panel-default panel-right">
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <label class="control-label">脚本类型:</label>
+                        <div class="controls">
+                            <input class="ck-code" type="radio" name="script_once_type" id="script_once_type1" checked="" value="shell"> shell
+                             <input class="ck-code" type="radio" name="script_once_type" id="script_once_type2" value="bat"> bat
+                             <input class="ck-code" type="radio" name="script_once_type" id="script_once_type3" value="python"> python
+                            <input class="ck-code" type="radio" name="script_once_type" id="script_once_type4" value="powershell"> powershell
+                        </div>
+                </div>
+
+                <div class="form-group">
+			<label class="control-label">&nbsp;</label>
+			<div class="controls">
+				<p><select name="select" id="select" style="width: 200px;">
+				    <option>default</option>
+				    <option>3024-night</option>
+				    <option selected="">erlang-dark</option>
+				</select></p>
+				<div class="alert alert-warning tishi">
+					注意：<br>
+                    1.脚本中如要将语句置后台执行，请写成sh abc.sh &gt;out.txt 2&gt;&amp;1 &amp;这种格式，不能写成sh abc.sh &amp;;<br>
+					2.对于windows,如结果存在中文输出将无法获取到结果, 如提示"salt未返回结果",请在执行中过滤中文
+				</div>
+                <textarea id="script_once_code">#!/bin/sh
+</textarea>
+                <textarea id="code2" class="hide">
+@echo off
+::set filename="tmp_run.vbs"
+::echo set ws=WScript.CreateObject("WScript.Shell")&gt; "%filename%"
+::echo ws.Run "调用后会一直运行的命令写在这里, 如开服脚本等",0 &gt;&gt;"%filename%"
+::call "%filename%"
+::del "%filename%"
+</textarea>
+                <textarea id="code3" class="hide">
+#!/usr/bin/env python
+# -*- coding: utf8 -*-
+</textarea>
+                <textarea id="code4" class="hide">
+#required at least powershell2.0
+</textarea>
+			</div>
+
+		</div>
+
+                <div class="form-group" id="parameter" style="display: block;">
+			<label class="control-label">入口参数：</label>
+			<div class="controls">
+				<input name="script_once_parameter" class="form-control" id="script_once_parameter" type="text" placeholder="该参数用于脚本的输入参数，以空格相隔，无则不填">
+			</div>
+		</div>
+
+                <div class="form-group">
+			<div class="controls">
+				<button class="btn btn-primary edit-scriptonce-save" id="script_file_btn_start" onclick="SubmitTask('multi_script');" type="button" autocomplete="off" data-loading-text="脚本执行中,请稍后...">
+					<i class="icon-ok icon-white"></i>
+					执行脚本
+				</button>
+			</div>
+	   </div>
+
+                <div id="err-msgs"></div>
+
+                <br>
+
+                <div id="result-box">
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+        </div>
+        <div class="panel-body" >
+
+
+        </div>
+</div>
+
+
+{% endblock %}
+
+{% block bottom-js %}
+    <script src="/static/js/CodeMirror.js"></script>
+    <script src="/static/js/shell.js"></script>
+    <script src="/static/js/vbscript.js"></script>
+    <script src="/static/js/python.js"></script>
+    <script src="/static/js/powershell.js"></script>
+    <script src="/static/js/icheck.min.js"></script>
+    {% include "hosts/multi_task_js_component.html" %}
+    <script type="text/javascript">
+        var editor = CodeMirror.fromTextArea($("#script_once_code")[0], { //script_once_code为你的textarea的ID号
+          lineNumbers: true,//是否显示行号
+          mode:"shell",　//默认脚本编码
+         lineWrapping:true, //是否强制换行
+        });
+
+        //选择界面风格JS
+        $('#select').change(function(){
+             var theme = $('#select').val();
+                 editor.setOption("theme", theme); //editor.setOption()为codeMirror提供的设置风格的方法
+         });
+        $('#select').trigger("change")
+
+        //选择脚本类型JS
+        var txt1=$("#script_once_code").val();
+        var txt2=$("#code2").val();
+        var txt3=$("#code3").val();
+        var txt4=$("#code4").val()
+        $(".ck-code").click(function(){
+               var txt=editor.getValue(); //editor.getValue()获取textarea中的值
+               var lang=$(this).prop("id");
+               if(lang=="script_once_type1") {
+                       editor.setOption("mode","shell");//editor.setOption()设置脚本类型
+                           editor.setValue(txt1);// editor.setValue()设置textarea中的值
+               }
+               else if(lang=="script_once_type2") {
+                       editor.setOption("mode","vbscript");
+                       editor.setValue(txt2);
+               }
+               else if(lang=="script_once_type3") {
+                   editor.setOption("mode","python");
+                   editor.setValue(txt3)
+               }
+               else {
+                       editor.setOption("mode","powershell");
+                       editor.setValue(txt4);
+               }
+
+        });
+
+        function execute_script2(){
+            var script_once_name = $('#script_once_code').val()
+            var script_once_type = $("input[name='script_once_type']:checked").val()
+            var script_once_parameter = $("#script_once_parameter").val()
+            var file_content = editor.getValue()
+            //console.log("script_once_name--->",script_once_name)
+
+            var err_list = []
+            selected_host = GetSelectedHost()
+            if(selected_host.length == 0){
+                err_list.push(["验证失败","未选择任何主机！"])
+            }
+        }
+    </script>
+
+{% endblock %}

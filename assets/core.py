@@ -1,5 +1,4 @@
 #_*_coding:utf-8_*_
-__author__ = 'jieli'
 
 import json
 from django.core.exceptions import ObjectDoesNotExist

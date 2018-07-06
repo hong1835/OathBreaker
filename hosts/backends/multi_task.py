@@ -1,7 +1,6 @@
-
 import os,sys
 
-BaseDir = "\\".join(os.path.dirname(os.path.abspath(__file__)).split("\\")[:-2])
+BaseDir = "/".join(os.path.dirname(os.path.abspath(__file__)).split("/")[:-2])
 sys.path.append(BaseDir)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE","OathBreaker.settings")
 
@@ -10,6 +9,9 @@ import django
 import multiprocessing
 from django.core.exceptions import ObjectDoesNotExist
 import paramiko_handle
+import saltstack_handle
+from saltapi import SaltAPI
+from OathBreaker import settings
 
 django.setup()
 
@@ -36,6 +38,26 @@ def by_paramiko(task_id):
 
 def by_ansible(task_id):
     pass
+
+def by_saltapi(task_id):
+    try:
+        task_obj = models.TaskLog.objects.get(id=task_id)
+        pool = multiprocessing.Pool(processes=5)
+        res = []
+        if task_obj.task_type == "multi_script":
+            for h in task_obj.hosts.select_related():
+		p = pool.apply_async(saltstack_handle.salt_run_script,args=(task_id,h,task_obj.script_type,task_obj.script_path,task_obj.script_param,task_obj.user.name))
+                res.append(p)
+        elif task_obj.task_type in ("file_send","file_get"):
+            for h in task_obj.hosts.select_related():
+                p = pool.apply_async(paramiko_handle.paramiko_sftp, args=(task_id, h, task_obj.cmd,task_obj.task_type,task_obj.user.id,task_obj.user.name))
+                res.append(p)
+
+        pool.close()
+        pool.join()
+
+    except ObjectDoesNotExist,e:
+        sys.exit(e)
 
 if __name__ == "__main__":
     required_args = ["-task_id","-run_type"]

@@ -9,6 +9,7 @@ from django.conf import settings
 class Migration(migrations.Migration):
 
     dependencies = [
+        ('assets', '0001_initial'),
         ('auth', '0006_require_contenttypes_0002'),
     ]
 
@@ -42,27 +43,11 @@ class Migration(migrations.Migration):
             name='BindHostToUser',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('host', models.ForeignKey(to='assets.Server')),
             ],
             options={
                 'verbose_name': '\u4e3b\u673a\u4e0e\u7528\u6237\u7ed1\u5b9a\u5173\u7cfb',
                 'verbose_name_plural': '\u4e3b\u673a\u4e0e\u7528\u6237\u7ed1\u5b9a\u5173\u7cfb',
-            },
-        ),
-        migrations.CreateModel(
-            name='Host',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('hostname', models.CharField(max_length=64)),
-                ('ip_addr', models.GenericIPAddressField(unique=True)),
-                ('port', models.IntegerField(default=22)),
-                ('system_type', models.CharField(default=b'linux', max_length=32, choices=[(b'linux', b'Linux'), (b'windows', b'Windows')])),
-                ('enabled', models.BooleanField(default=True)),
-                ('memo', models.TextField(null=True, blank=True)),
-                ('date', models.DateTimeField(auto_now_add=True)),
-            ],
-            options={
-                'verbose_name': '\u4e3b\u673a\u5217\u8868',
-                'verbose_name_plural': '\u4e3b\u673a\u5217\u8868',
             },
         ),
         migrations.CreateModel(
@@ -157,16 +142,6 @@ class Migration(migrations.Migration):
         migrations.AlterUniqueTogether(
             name='hostuser',
             unique_together=set([('auth_type', 'username', 'password')]),
-        ),
-        migrations.AddField(
-            model_name='host',
-            name='idc',
-            field=models.ForeignKey(to='hosts.IDC'),
-        ),
-        migrations.AddField(
-            model_name='bindhosttouser',
-            name='host',
-            field=models.ForeignKey(to='hosts.Host'),
         ),
         migrations.AddField(
             model_name='bindhosttouser',

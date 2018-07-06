@@ -30,7 +30,11 @@ def paramiko_ssh(task_id,host_obj,task_content,user_name):
             '''
         stdin,stdout,stderr = s.exec_command(task_content)
         result = stdout.read(),stderr.read()
-        cmd_result = filter(lambda x:len(x)>0,result)[0]
+        cmd_result_flag = filter(lambda x:len(x)>0,result)
+        if cmd_result_flag:
+            cmd_result = filter(lambda x:len(x)>0,result)[0]
+        else:
+            cmd_result = 'no result return'
         result = "success"
 
     except Exception,e:
@@ -78,8 +82,11 @@ def paramiko_sftp(task_id,host_obj,task_content,task_type,user_id,user_name):
         if task_type == "file_send":
             upload_files = task_dic["upload_files"]
             for file_path in upload_files:
-                file_abs_path = "%s\\%s\\%s" % (settings.FileUploadDir,user_id,file_path)
-                remote_filename = file_path.split("\\")[-1]
+                #print '---\033[32;1m first file_path %s \033[0m' % file_path
+                #file_path = file_path.split("\\")[0] + "/" + file_path.split("\\")[1]
+		#print '---\033[32;1m second file_path %s \033[0m' % file_path
+                file_abs_path = "%s/%s/%s" % (settings.FileUploadDir,user_id,file_path)
+                remote_filename = file_path.split("/")[-1]
                 print '---\033[32;1m sending [%s] to [%s]\033[0m' % (remote_filename, task_dic['remote_path'])
                 sftp.put(file_abs_path, "%s/%s" % (task_dic['remote_path'], remote_filename))
             cmd_result = "successfully send files %s to remote path [%s]" % (upload_files, task_dic['remote_path'])
@@ -90,10 +97,10 @@ def paramiko_sftp(task_id,host_obj,task_content,task_type,user_id,user_name):
             for download_file in download_files:
                 print "--->",download_file
                 filename = download_file.split("/")[-1]
-                file_abs_path = "%s\\%s\\%s\\%s" % (settings.FileDownloadDir,user_id,bind_host.host.ip_addr,filename)
+                file_abs_path = "%s/%s/%s/%s" % (settings.FileDownloadDir,user_id,bind_host.host.ip_addr,filename)
                 print "---\033[32;1m getting [%s] from [%s] to [%s]\033[0m" % (filename,download_file,file_abs_path)
-                download_dir = "%s\\%s" % (settings.FileDownloadDir, user_id)
-                download_dir2 = "%s\\%s" % (download_dir, bind_host.host.ip_addr)
+                download_dir = "%s/%s" % (settings.FileDownloadDir, user_id)
+                download_dir2 = "%s/%s" % (download_dir, bind_host.host.ip_addr)
                 if not os.path.isdir(download_dir):
                     os.mkdir(download_dir)
                 if not os.path.isdir(download_dir2):
