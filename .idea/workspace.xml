@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac6a3f40-253b-4ca1-997d-4470bafcdb17" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/static/rest_framework/js/jquery-1.11.3.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/download-file.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/upload-file.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/OathBreaker/settings.py" afterPath="$PROJECT_DIR$/OathBreaker/settings.py" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change beforePath="$PROJECT_DIR$/README.md.bak" afterPath="$PROJECT_DIR$/README.md.bak" />
-      <change beforePath="$PROJECT_DIR$/hosts/backends/multi_task.py" afterPath="$PROJECT_DIR$/hosts/backends/multi_task.py" />
-      <change beforePath="$PROJECT_DIR$/hosts/backends/saltstack_handle.py" afterPath="$PROJECT_DIR$/hosts/backends/saltstack_handle.py" />
-      <change beforePath="$PROJECT_DIR$/hosts/models.py" afterPath="$PROJECT_DIR$/hosts/models.py" />
-      <change beforePath="$PROJECT_DIR$/hosts/utils.py" afterPath="$PROJECT_DIR$/hosts/utils.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/assets/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="49" column="32" lean-forward="true" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+              <caret line="49" column="32" lean-forward="false" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -77,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/assets/core.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="479" column="73" lean-forward="true" selection-start-line="479" selection-start-column="73" selection-end-line="479" selection-end-column="73" />
+              <caret line="479" column="73" lean-forward="false" selection-start-line="479" selection-start-column="73" selection-end-line="479" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -87,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/hosts/backends/saltstack_handle.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="319">
-              <caret line="97" column="55" lean-forward="true" selection-start-line="94" selection-start-column="16" selection-end-line="97" selection-end-column="55" />
+              <caret line="97" column="55" lean-forward="false" selection-start-line="94" selection-start-column="16" selection-end-line="97" selection-end-column="55" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -99,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/assets/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="292" column="62" lean-forward="true" selection-start-line="292" selection-start-column="62" selection-end-line="292" selection-end-column="62" />
+              <caret line="292" column="62" lean-forward="false" selection-start-line="292" selection-start-column="62" selection-end-line="292" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -610,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1530868434432</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="support for file operation,download,upload">
+      <created>1531207152748</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1531207152748</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -655,7 +654,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="support for shell,batch,python and powershell with saltapi" />
-    <option name="LAST_COMMIT_MESSAGE" value="support for shell,batch,python and powershell with saltapi" />
+    <MESSAGE value="support for file operation,download,upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="support for file operation,download,upload" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1019,7 +1019,7 @@
     <entry file="file://$PROJECT_DIR$/hosts/backends/saltstack_handle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
-          <caret line="97" column="55" lean-forward="true" selection-start-line="94" selection-start-column="16" selection-end-line="97" selection-end-column="55" />
+          <caret line="97" column="55" lean-forward="false" selection-start-line="94" selection-start-column="16" selection-end-line="97" selection-end-column="55" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -1045,7 +1045,7 @@
     <entry file="file://$PROJECT_DIR$/assets/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="49" column="32" lean-forward="true" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+          <caret line="49" column="32" lean-forward="false" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1071,7 +1071,7 @@
     <entry file="file://$PROJECT_DIR$/assets/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="292" column="62" lean-forward="true" selection-start-line="292" selection-start-column="62" selection-end-line="292" selection-end-column="62" />
+          <caret line="292" column="62" lean-forward="false" selection-start-line="292" selection-start-column="62" selection-end-line="292" selection-end-column="62" />
           <folding />
         </state>
       </provider>
@@ -1079,7 +1079,7 @@
     <entry file="file://$PROJECT_DIR$/assets/core.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="479" column="73" lean-forward="true" selection-start-line="479" selection-start-column="73" selection-end-line="479" selection-end-column="73" />
+          <caret line="479" column="73" lean-forward="false" selection-start-line="479" selection-start-column="73" selection-end-line="479" selection-end-column="73" />
           <folding />
         </state>
       </provider>

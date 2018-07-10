@@ -35,14 +35,26 @@ OathBreakerÊÇ»ùÓÚESBÉè¼ÆË¼Â·ÑĞ·¢µÄÈ«ÒµÎñ¿ª·ÅÊ½ÔËÎ¬²Ù×÷Æ½Ì¨£¬ÔËÎ¬ÈËÔ±ÔÚweb½çÃæÖĞ¿
 
 
 ### Ò»Ğ©½ØÍ¼ 
-
+µÇÂ¼Ò³Ãæ
 ![Login](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/login.PNG)
+
+webÒ³ÃæÖ´ĞĞshell½Å±¾
 ![shell](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/script-shell.png)
+
+webÒ³ÃæÖ´ĞĞbatch½Å±¾
 ![batch](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/script-batch.png)
+
+webÒ³ÃæÖ´ĞĞpython½Å±¾
 ![python](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/script-python.png)
+
+webÒ³ÃæÖ´ĞĞpowershell½Å±¾
 ![powershell](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/shell-powershell.png)
-![upload](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/upload-file.png.png)
-![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/download-file.png.png)
+
+ÎÄ¼şÉÏ´«
+![upload](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/upload-file.png)
+
+ÎÄ¼şÏÂÔØ
+![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/download-file.png)
 
 
 ### To do

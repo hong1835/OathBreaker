@@ -41,10 +41,12 @@ OathBreakerÊÇ»ùÓÚESBÉè¼ÆË¼Â·ÑĞ·¢µÄÈ«ÒµÎñ¿ª·ÅÊ½ÔËÎ¬²Ù×÷Æ½Ì¨£¬ÔËÎ¬ÈËÔ±ÔÚweb½çÃæÖĞ¿
 ![batch](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/script-batch.png)
 ![python](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/script-python.png)
 ![powershell](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/shell-powershell.png)
+![upload](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/upload-file.png)
+![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/download-file.png)
 
 
 ### To do
-1. ÎÄ¼şÉÏ´«¡¢À­È¡
-2. ÈÎÎñ±àÅÅ
-3. Ò³ÃæÓÅ»¯
+1. ÈÎÎñ±àÅÅ
+2. Ò³ÃæÓÅ»¯
+3. ÓÃsaltstack grainsÀ´ÊÕ¼¯·şÎñÆ÷ĞÅÏ¢
 
