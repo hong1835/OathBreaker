@@ -50,7 +50,7 @@ def by_saltapi(task_id):
                 res.append(p)
         elif task_obj.task_type in ("file_send","file_get"):
             for h in task_obj.hosts.select_related():
-                p = pool.apply_async(paramiko_handle.paramiko_sftp, args=(task_id, h, task_obj.cmd,task_obj.task_type,task_obj.user.id,task_obj.user.name))
+                p = pool.apply_async(saltstack_handle.salt_transfer_file, args=(task_id, h, task_obj.cmd,task_obj.task_type,task_obj.user.id,task_obj.user.name))
                 res.append(p)
 
         pool.close()

@@ -15,7 +15,7 @@ def handle_upload_file(request,file_obj):
     upload_dir2 = "%s/%s" % (upload_dir,random_dir)
 
     if not os.path.isdir(settings.FileUploadDir):
-	os.mkdir(settings.FileUploadDir)
+	    os.mkdir(settings.FileUploadDir)
 
     if not os.path.isdir(upload_dir):
         os.mkdir(upload_dir)
@@ -28,6 +28,56 @@ def handle_upload_file(request,file_obj):
 
     return "%s/%s" % (random_dir,file_obj.name)
 
+
+def salt_handle_upload_file(request,file_obj):
+    datetime_dir = datetime.now().strftime("%Y-%m-%d")
+    upload_dir = "%s/%s" % (settings.FileUploadDir,datetime_dir)
+
+    master_ip = settings.Salt_API['url'].split('/')[-2].split(':')[0]
+    master_upload_path = "%s/%s" % (settings.Salt_File_Transfer_Upload_Abs_Path,datetime_dir)
+
+    if not os.path.isdir(settings.FileUploadDir):
+        os.mkdir(settings.FileUploadDir)
+
+    if not os.path.isdir(upload_dir):
+        os.mkdir(upload_dir)
+
+    if not os.path.isdir(settings.Salt_File_Transfer_Upload_Abs_Path):
+        os.mkdir(settings.Salt_File_Transfer_Upload_Abs_Path)
+
+    if not os.path.isdir(master_upload_path):
+        os.mkdir(master_upload_path)
+
+    with open("%s/%s" % (upload_dir,file_obj.name),"wb") as destination:
+        for chunk in file_obj.chunks():
+            destination.write(chunk)
+
+    upload_file_abs_path = "%s/%s" % (upload_dir,file_obj.name)
+    if os.path.isfile(upload_file_abs_path):
+        os.system("scp -P 55210 %s root@%s:%s" % (upload_file_abs_path,master_ip,master_upload_path))
+
+    return "%s/%s" % (datetime_dir,file_obj.name)
+
+
+def salt_handle_download_file(username,master_ip,master_file_path,minion_ip):
+    datetime_dir = datetime.now().strftime("%Y-%m-%d")
+    download_dir = settings.Salt_File_Transfer_Download
+    download_dir2 = "%s/%s" % (download_dir,username)
+    download_dir3 = "%s/%s" % (download_dir2,datetime_dir)
+    download_dir4 = "%s/%s" % (download_dir3,minion_ip)
+
+    if not os.path.isdir(download_dir):
+        os.mkdir(download_dir)
+    if not os.path.isdir(download_dir2):
+        os.mkdir(download_dir2)
+    if not os.path.isdir(download_dir3):
+        os.mkdir(download_dir3)
+    if not os.path.isdir(download_dir4):
+        os.mkdir(download_dir4)
+
+    result = os.system("scp -P 55210 root@%s:%s %s" % (master_ip,master_file_path,download_dir4))
+    if result == 0:
+        return True
 
 def save_script_content(script_type,script_content):
     time_prefix = datetime.now().strftime("%Y%m%d%H%M%S")

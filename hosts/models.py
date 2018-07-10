@@ -96,7 +96,7 @@ class TaskLog(models.Model):
     task_pid = models.IntegerField(default=0)
     note = models.CharField(max_length=100,blank=True,null=True)
     def __unicode__(self):
-        return "taskid:%s script:%s" %(self.id,self.script_path)
+        return "taskid:%s tasktype:%s" %(self.id,self.task_type)
     class Meta:
         verbose_name = u'批量任务'
         verbose_name_plural = u'批量任务'

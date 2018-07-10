@@ -173,3 +173,11 @@ Salt_API = {
 Salt_Script_Path = '/etc/salt/states/scripts/'
 
 Salt_Script_Relative_Path = 'salt://scripts/'
+
+Salt_File_Transfer_Upload_Abs_Path = '/etc/salt/states/uploads'
+
+Salt_File_Transfer_Upload = 'salt://uploads'
+
+Salt_File_Transfer_Download_Abs_Path = '/var/cache/salt/master/minions/'
+
+Salt_File_Transfer_Download = '/tmp/downloads'
