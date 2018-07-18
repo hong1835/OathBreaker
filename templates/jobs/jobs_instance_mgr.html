@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+{% block page-content-title %}
+作业管理
+{% endblock %}
+
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">作业实例管理</li>
+</ol>
+{% endblock %}
+
+
+{% block page-content %}
+<div class="panel">
+    <div class="panel-heading">
+        <div class="controls pull-right">
+			<button class="btn btn-primary" onclick="show_job_add();" type="button">
+        <i class="icon-plus icon-white"></i>
+        新建作业实例
+      </button>
+      <button disabled="" class="btn btn-primary select-power" id="job_btn_power" type="button" data-target="#job_select_power" data-toggle="modal" data-auth-type="template" data-msg="jobcontent">
+        <i class="icon-random icon-white"></i>
+        授权
+      </button>
+			<button class="btn btn-info" onclick="job_manage_filter_v2();" type="button">
+        <i class="icon-search icon-white"></i>
+        查询
+      </button>
+			<button class="btn btn-warning reset" type="button">
+        <i class="icon-repeat icon-white"></i>
+        重置
+      </button>
+		</div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+        <div class="col-md-9">
+            table
+        </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
+

@@ -1,5 +1,5 @@
 #_*_coding:utf-8_*_
-__author__ = 'jieli'
+
 import datetime
 from  django.core.urlresolvers import reverse as url_reverse
 

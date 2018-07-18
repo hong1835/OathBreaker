@@ -61,12 +61,12 @@ def get_task_result(request):
     print "res---task---",res
     return HttpResponse(json.dumps(res,default=utils.json_date_handle))
 
-@login_required
-def get_operation_audit(request):
-    task_obj = task.Task(request)
-    res = task_obj.get_operation_audit()
-    print "res---task---",res
-    return HttpResponse(json.dumps(res,default=utils.json_date_handle))
+# @login_required
+# def get_operation_audit(request):
+#     task_obj = task.Task(request)
+#     res = task_obj.get_operation_audit()
+#     print "res---task---",res
+#     return HttpResponse(json.dumps(res,default=utils.json_date_handle))
 
 
 # @login_required

@@ -18,6 +18,7 @@ from OathBreaker import views
 from assets import rest_urls,urls as asset_urls
 from hosts import views as hosts_views
 from hosts import urls as hosts_urls
+from jobs import urls as jobs_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -27,5 +28,6 @@ urlpatterns = [
     url(r'^hosts/',include(hosts_urls)),
     url(r'^api/', include(rest_urls)),
     url(r'^asset/', include(asset_urls)),
+    url(r'^jobs/',include(jobs_urls))
     #url(r'^assets/$',views.assets_index,name="assets"),
 ]

@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+
+
+{% block page-content-title %}
+作业管理
+{% endblock %}
+
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">作业脚本管理</li>
+</ol>
+{% endblock %}
+
+
+{% block page-content %}
+<div class="panel">
+    <div class="panel-heading">
+        <div class="controls pull-right">
+			<button class="btn btn-primary" onclick="location.href='{% url 'script_add' %}'" type="button">
+        <i class="icon-plus icon-white"></i>
+        新建脚本实例
+      </button>
+      <button disabled="" class="btn btn-primary select-power" id="job_btn_power" type="button" data-target="#job_select_power" data-toggle="modal" data-auth-type="template" data-msg="jobcontent">
+        <i class="icon-random icon-white"></i>
+        授权
+      </button>
+			<button class="btn btn-info" onclick="job_manage_filter_v2();" type="button">
+        <i class="icon-search icon-white"></i>
+        查询
+      </button>
+			<button class="btn btn-warning reset" type="button">
+        <i class="icon-repeat icon-white"></i>
+        重置
+      </button>
+		</div>
+    </div>
+    <br>
+    <hr>
+    <div class="panel panel-default">
+        <div class="panel-body">
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table table-bordered table-hover table-striped">
+                        <tr>
+                            <th>#</th>
+                            <th>HostName</th>
+                            <th>scriptname</th>
+                            <th>descrption</th>
+                            <th>script_type</th>
+                            <th>abs_path</th>
+                            <th>create_date</th>
+                            <th>is_delete</th>
+                        </tr>
+
+                        {% for s in script_list %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ s.script.scriptname }}</td>
+                            <td>{{ s.script.descrption }}</td>
+                            <td>{{ s.script.script_type }}</td>
+                            <td>{{ s.script.abs_path }}</td>
+                            <td>{{ s.script.create_date }}</td>
+                            <td>{{ s.script.is_delete }}</td>
+                            <td>Login</td>
+                        </tr>
+                    {% endfor %}
+
+                    </table>
+
+                    {% if script_list.has_other_pages %}
+                      <ul class="pagination">
+                        {% if script_list.has_previous %}
+                          <li><a href="?page={{ script_list.previous_page_number }}">&laquo;</a></li>
+                        {% else %}
+                          <li class="disabled"><span>&laquo;</span></li>
+                        {% endif %}
+                        {% for i in script_list.paginator.page_range %}
+                          {% if script_list.number == i %}
+                            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                          {% else %}
+                            <li><a href="?page={{ i }}">{{ i }}</a></li>
+                          {% endif %}
+                        {% endfor %}
+                        {% if script_list.has_next %}
+                          <li><a href="?page={{ script_list.next_page_number }}">&raquo;</a></li>
+                        {% else %}
+                          <li class="disabled"><span>&raquo;</span></li>
+                        {% endif %}
+                      </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+{% block bottom-js %}
+
+
+
+    <script type="text/javascript">
+
+        function show_script_add() {
+                $.ajax({
+                    type: 'GET',
+                    url: '/script/script_add/',
+                    dataType: 'json',
+                    success: function (data) {
+                        var tabArr = 'script_add_info_' + data.check_id;
+                        var valueArr = '新建作业脚本';
+                        var dataArr = data.html;
+
+                        tab_href2(tabArr, valueArr, dataArr);
+                    },
+                    error: function () {
+                        jError('出错了');
+                    }
+                });
+        }
+
+        function tab_href2(tabArr,valueArr,dataArr){
+
+                if ($('#li_' + tabArr).length && $('#li_' + tabArr).length > 0) {
+                    $('#li_' + tabArr).find("label").html(valueArr);
+                    $('#myTab a[aria-controls="' + tabArr + '"]').tab('show');
+                } else {
+                    $('#myTab').prepend('<li id="li_' + tabArr + '" role="presentation" style="  position: relative;" ><i onclick="close_tab(this)" class="icon-remove mytab-close"></i><a href="#' + tabArr + '" aria-controls="' + tabArr + '" role="tab" data-toggle="tab" style="padding-right: 24px;"><label class="tab-ellipsis">' + valueArr + '</label></a></li>');
+                    $('#tabs>.tab-content').prepend('<div role="tabpanel" class="tab-pane show-already" id="' + tabArr + '"></div>');
+                    $('#' + tabArr).html(dataArr);
+                    $('#myTab a:first').tab('show');
+                }
+
+                show_tab_arrow();
+                $('#' + tabArr).removeClass("show-already");
+        }
+
+        function show_tab_arrow(){
+
+                var tab_length = $("#myTab li").length;
+                var tab_width = 0;
+                var ul_width = $("#myTab").width();
+
+                for (var j = 0; j < tab_length; j++) {
+                    tab_width += $("#myTab li").eq(j).width();
+                }
+                if (tab_width > ul_width) {
+                    $(".tab-arrow").removeClass("hide");
+                } else {
+                    $(".tab-arrow").addClass("hide");
+                    $("#myTab").css("height", "47px");
+                    $(".tab-arrow").find("i").removeClass("icon-arrow-up").addClass("icon-arrow-down");
+                }
+        }
+
+    </script>
+
+{% endblock %}

@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'hosts',
     'assets',
+    'jobs',
     'rest_framework',
     'django_filters'
 )
@@ -100,7 +101,7 @@ DATABASES = {
         'NAME': 'OathBreaker',
         'USER':'root',
         'PASSWORD':'123456',
-        'HOST':'1.1.1.1',
+        'HOST':'',
         'PORT':3306,
     }
 }
@@ -180,4 +181,4 @@ Salt_File_Transfer_Upload = 'salt://uploads'
 
 Salt_File_Transfer_Download_Abs_Path = '/var/cache/salt/master/minions/'
 
-Salt_File_Transfer_Download = '/tmp/downloads'
+Salt_File_Transfer_Download = '/mnt/OathBreaker/downloads'
