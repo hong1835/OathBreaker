@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+
+{% block page-content-title %}
+作业管理
+{% endblock %}
+
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">作业脚本管理</li>
+</ol>
+{% endblock %}
+
+
+{% block page-content %}
+
+<form class="form-horizontal" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <div class="panel-heading">
+            <h3 class="panel-title">编辑脚本</h3>
+
+    <div class="col-md-9">
+        <div class="panel panel-default panel-right">
+            <div class="panel-body">
+
+                <div class="form-group">
+                            <label class="col-sm-2 control-label">脚本名称：</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="script_name" name="script_name" value="{{ script.scriptname }}">
+                            </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">功能描述：</label>
+                    <div class="col-sm-10">
+                        <textarea id="script_description" name="script_description" rows="4" class="form-control" placeholder="请输入...">{{ script.description }}</textarea>
+                    </div>
+		        </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">脚本类型:</label>
+                        <div class="col-sm-10">
+                            <input class="ck-code" type="radio" name="script_type" id="script_type1" value="shell" {% ifequal script.script_type 'shell' %} checked {% endifequal %}> shell
+                             <input class="ck-code" type="radio" name="script_type" id="script_type2" value="batch" {% ifequal script.script_type 'batch' %} checked {% endifequal %}> bat
+                             <input class="ck-code" type="radio" name="script_type" id="script_type3" value="python" {% ifequal script.script_type 'python' %} checked {% endifequal %}> python
+                            <input class="ck-code" type="radio" name="script_type" id="script_type4" value="powershell" {% ifequal script.script_type 'powershell' %} checked {% endifequal %}> powershell
+                        </div>
+                </div>
+
+                <div class="form-group">
+			<label class="col-sm-2 control-label-label">&nbsp;</label>
+			<div class="col-sm-10">
+				<p><select name="select" id="select" style="width: 200px;">
+				    <option>default</option>
+				    <option>3024-night</option>
+				    <option selected="">erlang-dark</option>
+				</select></p>
+                <textarea id="script_shell" name="script_content_shell">{{ script_content }}</textarea>
+			</div>
+
+		</div>
+
+                <div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button class="btn btn-primary pull-right" style="width:120px;" type="submit">
+					<i class="icon-ok icon-white"></i>
+					保存
+				</button>
+			</div>
+	   </div>
+
+                <div class="form-group">
+                    <p style="color: green">{{ script_success }}</p>
+                    <p style="color: red">{{ script_fail }}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        </div>
+        <div class="panel-body" >
+
+        </div>
+
+
+</form>
+{% endblock %}
+
+{% block bottom-js %}
+    <script src="/static/js/CodeMirror.js"></script>
+    <script src="/static/js/shell.js"></script>
+    <script src="/static/js/vbscript.js"></script>
+    <script src="/static/js/python.js"></script>
+    <script src="/static/js/powershell.js"></script>
+    <script src="/static/js/icheck.min.js"></script>
+
+    <script type="text/javascript">
+        $(':radio:not(:checked)').attr('disabled', true);
+        var editor = CodeMirror.fromTextArea($("#script_shell")[0], { //script_once_code为你的textarea的ID号
+          lineNumbers: true,//是否显示行号
+          mode:"shell",　//默认脚本编码
+         lineWrapping:true, //是否强制换行
+        });
+
+        //选择界面风格JS
+        $('#select').change(function(){
+             var theme = $('#select').val();
+                 editor.setOption("theme", theme); //editor.setOption()为codeMirror提供的设置风格的方法
+         });
+        $('#select').trigger("change")
+
+        //选择脚本类型JS
+        var txt1=$("#script_shell").val();
+        var txt2=$("#script_batch").val();
+        var txt3=$("#script_python").val();
+        var txt4=$("#script_powershell").val()
+        $(".ck-code").click(function(){
+               var txt=editor.getValue(); //editor.getValue()获取textarea中的值
+               var lang=$(this).prop("id");
+               if(lang=="script_type1") {
+                       editor.setOption("mode","shell");//editor.setOption()设置脚本类型
+                           editor.setValue(txt1);// editor.setValue()设置textarea中的值
+               }
+               else if(lang=="script_type2") {
+                       editor.setOption("mode","vbscript");
+                       editor.setValue(txt2);
+               }
+               else if(lang=="script_type3") {
+                   editor.setOption("mode","python");
+                   editor.setValue(txt3)
+               }
+               else {
+                       editor.setOption("mode","powershell");
+                       editor.setValue(txt4);
+               }
+
+        });
+
+        function SaveScript(){
+            var script_name = $("input[name='script_name']").val()
+            var script_description = $.trim($("textarea[name='script_description']").val())
+            var script_type = $("input[name='script_type']:checked").val()
+            var script_content = editor.getValue()
+            //console.log("script_once_name--->",script_once_name)
+
+            var data_list = {}
+            data_list["script_name"] = script_name
+            data_list["script_description"] = script_description
+            data_list["script_type"] = script_type
+            data_list["script_content"] = script_content
+            data_list["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+            //$.post("{% url 'script_add' %}",data_list,function(callback){
+            //    console.log(callback)
+            //})
+
+
+        }
+    </script>
+
+{% endblock %}

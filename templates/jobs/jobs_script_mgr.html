@@ -16,7 +16,7 @@
 
 {% block page-content %}
 <div class="panel">
-    <div class="panel-heading">
+    <div class="panel-body panel-title" style="background-color: #e8ebf0">
         <div class="controls pull-right">
 			<button class="btn btn-primary" onclick="location.href='{% url 'script_add' %}'" type="button">
         <i class="icon-plus icon-white"></i>
@@ -36,35 +36,39 @@
       </button>
 		</div>
     </div>
+</div>
     <br>
     <hr>
     <div class="panel panel-default">
         <div class="panel-body">
-        <div class="col-md-9">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <table class="table table-bordered table-hover table-striped">
                         <tr>
                             <th>#</th>
-                            <th>HostName</th>
-                            <th>scriptname</th>
-                            <th>descrption</th>
-                            <th>script_type</th>
-                            <th>abs_path</th>
-                            <th>create_date</th>
-                            <th>is_delete</th>
+                            <th>脚本名称</th>
+                            <th>脚本描述</th>
+                            <th>脚本类型</th>
+                            <th>创建人</th>
+                            <th>创建日期</th>
+                            <th>最后修改人</th>
+                            <th>修改日期</th>
+                            <th>操作</th>
                         </tr>
 
                         {% for s in script_list %}
                         <tr>
                             <td>{{ forloop.counter }}</td>
-                            <td>{{ s.script.scriptname }}</td>
-                            <td>{{ s.script.descrption }}</td>
-                            <td>{{ s.script.script_type }}</td>
-                            <td>{{ s.script.abs_path }}</td>
-                            <td>{{ s.script.create_date }}</td>
-                            <td>{{ s.script.is_delete }}</td>
-                            <td>Login</td>
+                            <td id="script-name"><a style="color: blue" href="{% url 'script_edit' s.id %}">{{ s.scriptname }}</a></td>
+                            <td>{{ s.description }}</td>
+                            <td>{{ s.script_type }}</td>
+                            <td>{{ s.create_user }}</td>
+                            <td>{{ s.create_date }}</td>
+                            <td>{{ s.update_user }}</td>
+                            <td>{{ s.update_date }}</td>
+                            <td id="delete-script"><a style="color: blue" onclick="DeleteScript('{{ s.scriptname }}')">删除</a></td>
                         </tr>
                     {% endfor %}
 
@@ -94,70 +98,39 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-1"></div>
         </div>
     </div>
 
-</div>
+
 
 
 {% endblock %}
 
 {% block bottom-js %}
 
-
-
     <script type="text/javascript">
 
-        function show_script_add() {
-                $.ajax({
-                    type: 'GET',
-                    url: '/script/script_add/',
-                    dataType: 'json',
-                    success: function (data) {
-                        var tabArr = 'script_add_info_' + data.check_id;
-                        var valueArr = '新建作业脚本';
-                        var dataArr = data.html;
+        function DeleteScript(scriptname) {
+            if (confirm("是否真的要删除指定的内容？") == true) {
+                var datalist = {}
+                datalist["scriptname"] = scriptname
+                datalist["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+                $.post("{% url 'script_delete' %}",datalist,function(callback){
+                    console.log(callback)
+                    location.reload();
+                })
 
-                        tab_href2(tabArr, valueArr, dataArr);
-                    },
-                    error: function () {
-                        jError('出错了');
-                    }
-                });
+            }
         }
 
-        function tab_href2(tabArr,valueArr,dataArr){
-
-                if ($('#li_' + tabArr).length && $('#li_' + tabArr).length > 0) {
-                    $('#li_' + tabArr).find("label").html(valueArr);
-                    $('#myTab a[aria-controls="' + tabArr + '"]').tab('show');
-                } else {
-                    $('#myTab').prepend('<li id="li_' + tabArr + '" role="presentation" style="  position: relative;" ><i onclick="close_tab(this)" class="icon-remove mytab-close"></i><a href="#' + tabArr + '" aria-controls="' + tabArr + '" role="tab" data-toggle="tab" style="padding-right: 24px;"><label class="tab-ellipsis">' + valueArr + '</label></a></li>');
-                    $('#tabs>.tab-content').prepend('<div role="tabpanel" class="tab-pane show-already" id="' + tabArr + '"></div>');
-                    $('#' + tabArr).html(dataArr);
-                    $('#myTab a:first').tab('show');
-                }
-
-                show_tab_arrow();
-                $('#' + tabArr).removeClass("show-already");
-        }
-
-        function show_tab_arrow(){
-
-                var tab_length = $("#myTab li").length;
-                var tab_width = 0;
-                var ul_width = $("#myTab").width();
-
-                for (var j = 0; j < tab_length; j++) {
-                    tab_width += $("#myTab li").eq(j).width();
-                }
-                if (tab_width > ul_width) {
-                    $(".tab-arrow").removeClass("hide");
-                } else {
-                    $(".tab-arrow").addClass("hide");
-                    $("#myTab").css("height", "47px");
-                    $(".tab-arrow").find("i").removeClass("icon-arrow-up").addClass("icon-arrow-down");
-                }
+        function EditScript(scriptname) {
+            var datalist = {}
+            datalist["scriptname"] = scriptname
+            datalist["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+            $.post("",datalist,function(callback){
+                console.log(callback)
+            })
         }
 
     </script>

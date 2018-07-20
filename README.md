@@ -11,7 +11,7 @@
 
 OathBreaker是基于ESB设计思路研发的全业务开放式运维操作平台，运维人员在web界面中可以定制几乎所有的日常操作，例如脚本批量执行，文件下发，文件拉取。
 
-旨在为运维提供一个可以批量控制和操作分布在世界各地的大规模主机的通道。
+旨在为运维提供一个可以集中管理、批量控制和操作分布在世界各地的大规模主机的通道。
 
 用以提升运维团队整体操作执行效率与质量，解放运维人员双手。
 
@@ -56,6 +56,20 @@ web页面执行powershell脚本
 文件下载
 ![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/download-file.png)
 
+添加脚本
+![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/script-add.png)
+
+编辑脚本
+![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/script-edit.png)
+
+脚本管理
+![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/script-manage.png)
+
+### Required
+Django 1.8.18
+django_filters 1.1.0
+django_restframework 3.3.3
+markdown 2.6.11
 
 ### To do
 1. 任务编排

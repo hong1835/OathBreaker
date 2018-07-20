@@ -7,6 +7,7 @@ sys.path.append("/mnt/OathBreaker")
 from OathBreaker import settings
 #from jobs import models
 import django
+from datetime import datetime
 from jobs.models import *
 django.setup()
 
@@ -89,6 +90,17 @@ def save_content2file(file_path,file_content):
     f.close()
 
 
+def get_script_content(script_type,script_name):
+    script_path = "%s/%s/%s" % (settings.ScriptUploadDir, script_type,script_name)
+    if os.path.isfile(script_path):
+        with open(script_path,'r') as myfile:
+            script_content = myfile.read()
+        return script_content
+    else:
+        return "script does not exit"
+
+def get_script_store_path(script_name):
+    pass
 
 class ScriptGen(object):
     def __init__(self,request,abs_path,rel_path):
@@ -107,29 +119,14 @@ class ScriptGen(object):
         }
         return script_data
 
-    def create(self):
-        self.data = self.parse_data()
-        script_obj = Script(**self.data)
-        script_obj.save()
-        return script_obj
-
-
-class test_ScriptGen(object):
-    def __init__(self,name,description,type,abs_path,rel_path):
-        self.name = name
-        self.description = description
-        self.type = type
-        self.abs_path = abs_path
-        self.rel_path = rel_path
-
-
-    def parse_data(self):
-        script_data ={
-            "scriptname":self.name,
-            "description":self.description,
-            "script_type":self.type,
-            "abs_path":self.abs_path,
-            "rel_path":self.rel_path,
+    def parse_data2(self):
+        script_data = {
+            "scriptname": self.request.POST.get("script_name"),
+            "description": self.request.POST.get("script_description"),
+            "script_type": self.request.POST.get("script_type"),
+            "abs_path": self.abs_path,
+            "rel_path": self.rel_path,
+            "update_user_id": self.request.user.id,
         }
         return script_data
 
@@ -139,6 +136,15 @@ class test_ScriptGen(object):
         script_obj.save()
         return script_obj
 
-if __name__ == "__main__":
-    script_generator = test_ScriptGen("test1.py","for test","python","/tmp/test_1.py","salt://script/test_1.py")
-    script_generator.create()
+    def update(self,script_id):
+        self.data = self.parse_data2()
+        script_obj = Script.objects.get(id=script_id)
+        script_obj.scriptname = self.data["scriptname"]
+        script_obj.description = self.data["description"]
+        script_obj.abs_path = self.data["abs_path"]
+        script_obj.rel_path = self.data["rel_path"]
+        script_obj.update_user_id = self.data["update_user_id"]
+        script_obj.update_date = datetime.now()
+        script_obj.save()
+        return script_obj
+

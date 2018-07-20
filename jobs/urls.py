@@ -6,5 +6,7 @@ urlpatterns = [
     url(r'^jobs_script_mgr/$',views.jobs_script_mgr,name="jobs_script_mgr"),
     url(r'^jobs_schedule_mgr/$',views.jobs_schedule_mgr,name="jobs_schedule_mgr"),
     url(r'^script_add/$',views.script_add,name="script_add"),
+    url(r'^script_delete/$',views.script_delete,name="script_delete"),
+    url(r'^script_edit/(\d+)/$',views.script_edit,name="script_edit")
 ]
 
