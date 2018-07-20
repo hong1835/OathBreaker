@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac6a3f40-253b-4ca1-997d-4470bafcdb17" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/script-add.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/script-edit.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/script-manage.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/jobs/script_edit.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/OathBreaker/settings.py" afterPath="$PROJECT_DIR$/OathBreaker/settings.py" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/README.md.bak" afterPath="$PROJECT_DIR$/README.md.bak" />
-      <change beforePath="$PROJECT_DIR$/assets/migrations/0001_initial.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/migrations/0002_auto_20180607_1143.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/migrations/0002_auto_20180608_1321.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/migrations/0003_auto_20180628_1703.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/migrations/0003_remove_server_idc.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/assets/migrations/0004_auto_20180704_1428.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/hosts/migrations/0001_initial.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/hosts/migrations/0002_auto_20180703_1341.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/hosts/migrations/0002_auto_20180704_1616.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/jobs/urls.py" afterPath="$PROJECT_DIR$/jobs/urls.py" />
-      <change beforePath="$PROJECT_DIR$/jobs/utils.py" afterPath="$PROJECT_DIR$/jobs/utils.py" />
-      <change beforePath="$PROJECT_DIR$/jobs/views.py" afterPath="$PROJECT_DIR$/jobs/views.py" />
-      <change beforePath="$PROJECT_DIR$/templates/jobs/jobs_script_mgr.html" afterPath="$PROJECT_DIR$/templates/jobs/jobs_script_mgr.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,7 +24,7 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OathBreaker/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1328">
+            <state relative-caret-position="1442">
               <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
               <folding />
             </state>
@@ -65,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/jobs/utils.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="433">
-              <caret line="149" column="0" lean-forward="true" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+              <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -75,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/templates/hosts/multi_task_js_component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="437">
-              <caret line="143" column="0" lean-forward="true" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+              <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -133,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/jobs/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="437">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -593,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1531900140183</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="create/edit/manage scripts">
+      <created>1532078091679</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1532078091679</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -641,7 +628,8 @@
     <MESSAGE value="support for file operation,download,upload" />
     <MESSAGE value="update readme" />
     <MESSAGE value="add Jobs" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Jobs" />
+    <MESSAGE value="create/edit/manage scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="create/edit/manage scripts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -987,7 +975,7 @@
     <entry file="file://$PROJECT_DIR$/templates/hosts/multi_task_js_component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
-          <caret line="143" column="0" lean-forward="true" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1003,7 +991,7 @@
     <entry file="file://$PROJECT_DIR$/jobs/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
-          <caret line="149" column="0" lean-forward="true" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
+          <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1019,7 +1007,7 @@
     <entry file="file://$PROJECT_DIR$/jobs/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1074,7 +1062,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OathBreaker/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1328">
+        <state relative-caret-position="1442">
           <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
           <folding />
         </state>
