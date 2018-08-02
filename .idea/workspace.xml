@@ -2,34 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac6a3f40-253b-4ca1-997d-4470bafcdb17" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/script-mgr.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/DatePicker/WdatePicker.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/DatePicker/calendar.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/DatePicker/lang/en.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/DatePicker/lang/zh-cn.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/DatePicker/lang/zh-tw.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/DatePicker/skin/WdatePicker.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/DatePicker/skin/datePicker.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/DatePicker/skin/default/datepicker.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/DatePicker/skin/default/img.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/DatePicker/skin/whyGreen/bg.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/DatePicker/skin/whyGreen/datepicker.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/DatePicker/skin/whyGreen/img.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/jNotify/error.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/jNotify/info.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/jNotify/jNotify.jquery.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/jNotify/jNotify.jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/jNotify/main.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/plugins/jNotify/success.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/README.md.bak" afterPath="$PROJECT_DIR$/README.md.bak" />
-      <change beforePath="$PROJECT_DIR$/hosts/templatetags/custom_tag.py" afterPath="$PROJECT_DIR$/hosts/templatetags/custom_tag.py" />
-      <change beforePath="$PROJECT_DIR$/jobs/models.py" afterPath="$PROJECT_DIR$/jobs/models.py" />
-      <change beforePath="$PROJECT_DIR$/jobs/urls.py" afterPath="$PROJECT_DIR$/jobs/urls.py" />
-      <change beforePath="$PROJECT_DIR$/jobs/views.py" afterPath="$PROJECT_DIR$/jobs/views.py" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change beforePath="$PROJECT_DIR$/templates/jobs/jobs_script_mgr.html" afterPath="$PROJECT_DIR$/templates/jobs/jobs_script_mgr.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,8 +24,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jobs/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="215" column="8" lean-forward="true" selection-start-line="215" selection-start-column="8" selection-end-line="215" selection-end-column="8" />
+            <state relative-caret-position="281">
+              <caret line="215" column="8" lean-forward="false" selection-start-line="215" selection-start-column="8" selection-end-line="215" selection-end-column="8" />
               <folding>
                 <element signature="e#0#69#0" expanded="true" />
               </folding>
@@ -98,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/templates/jobs/script_edit.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1334">
-              <caret line="61" column="14" lean-forward="true" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+              <caret line="61" column="14" lean-forward="false" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -128,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/templates/hosts/multi_task_js_component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-665">
-              <caret line="124" column="9" lean-forward="true" selection-start-line="124" selection-start-column="9" selection-end-line="124" selection-end-column="9" />
+              <caret line="124" column="9" lean-forward="false" selection-start-line="124" selection-start-column="9" selection-end-line="124" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -138,7 +111,7 @@
         <entry file="file://$PROJECT_DIR$/jobs/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="437">
-              <caret line="23" column="78" lean-forward="true" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
+              <caret line="23" column="78" lean-forward="false" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -655,7 +628,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532078808149</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="add authorization,search future for scripts">
+      <created>1533178267717</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1533178267717</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -704,7 +684,8 @@
     <MESSAGE value="update readme" />
     <MESSAGE value="add Jobs" />
     <MESSAGE value="create/edit/manage scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="create/edit/manage scripts" />
+    <MESSAGE value="add authorization,search future for scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="add authorization,search future for scripts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1050,7 +1031,7 @@
     <entry file="file://$PROJECT_DIR$/templates/hosts/multi_task_js_component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-665">
-          <caret line="124" column="9" lean-forward="true" selection-start-line="124" selection-start-column="9" selection-end-line="124" selection-end-column="9" />
+          <caret line="124" column="9" lean-forward="false" selection-start-line="124" selection-start-column="9" selection-end-line="124" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1074,7 +1055,7 @@
     <entry file="file://$PROJECT_DIR$/jobs/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
-          <caret line="23" column="78" lean-forward="true" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
+          <caret line="23" column="78" lean-forward="false" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
           <folding />
         </state>
       </provider>
@@ -1082,7 +1063,7 @@
     <entry file="file://$PROJECT_DIR$/templates/jobs/script_edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1334">
-          <caret line="61" column="14" lean-forward="true" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+          <caret line="61" column="14" lean-forward="false" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1140,8 +1121,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jobs/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="215" column="8" lean-forward="true" selection-start-line="215" selection-start-column="8" selection-end-line="215" selection-end-column="8" />
+        <state relative-caret-position="281">
+          <caret line="215" column="8" lean-forward="false" selection-start-line="215" selection-start-column="8" selection-end-line="215" selection-end-column="8" />
           <folding>
             <element signature="e#0#69#0" expanded="true" />
           </folding>
