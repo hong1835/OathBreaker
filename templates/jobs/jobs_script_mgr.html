@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 
-
 {% block page-content-title %}
 作业管理
 {% endblock %}
@@ -19,25 +18,35 @@
     <div class="panel-body panel-title" style="background-color: #e8ebf0">
         <div class="controls pull-right">
 			<button class="btn btn-primary" onclick="location.href='{% url 'script_add' %}'" type="button">
-        <i class="icon-plus icon-white"></i>
+        <i class="glyphicon glyphicon-plus"></i>
         新建脚本实例
       </button>
-      <button disabled="" class="btn btn-primary select-power" id="job_btn_power" type="button" data-target="#job_select_power" data-toggle="modal" data-auth-type="template" data-msg="jobcontent">
-        <i class="icon-random icon-white"></i>
+      <button disabled="" class="btn btn-primary select-power" id="script_btn_power" type="button" data-target="#script_select_power" data-toggle="modal" data-auth-type="script" data-msg="scriptcontent">
+        <i class="glyphicon glyphicon-random"></i>
         授权
-      </button>
-			<button class="btn btn-info" onclick="job_manage_filter_v2();" type="button">
-        <i class="icon-search icon-white"></i>
-        查询
-      </button>
-			<button class="btn btn-warning reset" type="button">
-        <i class="icon-repeat icon-white"></i>
-        重置
       </button>
 		</div>
     </div>
 </div>
-    <br>
+
+    <form class="form-horizontal" method="post" action="{% url 'search_script' %}" enctype="multipart/form-data">{% csrf_token %}
+        <fieldset>
+    		<legend style="font-size:12px"><span class="glyphicon glyphicon-search"></span>查询条件</legend>
+    		<div class="form-group" id="search-box">
+    			<label>脚本名称：</label>
+    			<input type="text" style="width:150px;" id='script_manage_name' name="script_manage_name">
+    			<label>创建人：</label>
+      			<input type="text" style="width:150px;" id='script_manage_create_user' name="script_manage_create_user">
+      			<label>创建时间：</label>
+    			<input id="script_manage_created_from" name="script_manage_created_from" type="text" style="width:150px;" onkeydown="return false;" onClick="WdatePicker()" placeholder="开始时间">
+    			<input id="script_manage_created_to" name="script_manage_created_to" type="text" style="width:150px;" onkeydown="return false;" onClick="WdatePicker()" placeholder="结束时间">
+                <button class="btn btn-info" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                    查询
+                </button>
+    		</div>
+		</fieldset>
+    </form>
     <hr>
     <div class="panel panel-default">
         <div class="panel-body">
@@ -47,7 +56,7 @@
                 <div class="panel-body">
                     <table class="table table-bordered table-hover table-striped">
                         <tr>
-                            <th>#</th>
+                            <th><input type="checkbox" class="script_checked_all"></th>
                             <th>脚本名称</th>
                             <th>脚本描述</th>
                             <th>脚本类型</th>
@@ -55,12 +64,13 @@
                             <th>创建日期</th>
                             <th>最后修改人</th>
                             <th>修改日期</th>
+                            <th>已授权用户</th>
                             <th>操作</th>
                         </tr>
 
                         {% for s in script_list %}
                         <tr>
-                            <td>{{ forloop.counter }}</td>
+                            <td><input data="script_checked_single" type="checkbox" class="script_checked_single"></td>
                             <td id="script-name"><a style="color: blue" href="{% url 'script_edit' s.id %}">{{ s.scriptname }}</a></td>
                             <td>{{ s.description }}</td>
                             <td>{{ s.script_type }}</td>
@@ -68,7 +78,8 @@
                             <td>{{ s.create_date }}</td>
                             <td>{{ s.update_user }}</td>
                             <td>{{ s.update_date }}</td>
-                            <td id="delete-script"><a style="color: blue" onclick="DeleteScript('{{ s.scriptname }}')">删除</a></td>
+                            <td>{{ s.shared_with.all|join:", " }}</td>
+                            <td id="delete-script"><a style="color: blue" onclick="DeleteScript('{{ s.scriptname }}')"  class="glyphicon glyphicon-trash"></a></td>
                         </tr>
                     {% endfor %}
 
@@ -102,7 +113,37 @@
         </div>
     </div>
 
+<!-- Modal -->
+<div class="modal fade" id="script_select_power" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">授权/取消授权</h4>
+      </div>
+      <div class="modal-body">
+            <div id="authorized-box">
+                <ul class="list-group" id="script-list">
 
+                </ul>
+            </div>
+
+
+                  <div class="tab-content">
+          <div class="tab-pane active" id="script_power_list">
+            <div class="ujobs-power-tree">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="ModifyAuthorized('script')">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 {% endblock %}
@@ -118,7 +159,7 @@
                 datalist["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
                 $.post("{% url 'script_delete' %}",datalist,function(callback){
                     console.log(callback)
-                    location.reload();
+                    jNotify(callback)
                 })
 
             }
@@ -132,6 +173,189 @@
                 console.log(callback)
             })
         }
+
+        function check_all(checked_all, checked_it, power_btn) {
+            $(document).on("click", checked_all, function () {
+                if($(this).prop("checked")) {
+                    $(checked_it).prop("checked", true).parents("tr").addClass('checknow');
+                }else {
+                    $(checked_it).prop("checked", false).parents("tr").removeClass('checknow');
+                }
+
+                var checked_box = $(checked_it).filter(":checked");
+
+                if(power_btn){
+                    check_power(checked_box,power_btn);
+                }
+            });
+
+            $(document).on("click", checked_it, function () {
+                if($(this).prop("checked") === true) {
+                    $(this).parents("tr").addClass('checknow');
+                }
+                if ($(this).prop("checked") === false) {
+                    $(checked_all).prop("checked", false);
+                    $(this).parents("tr").removeClass('checknow');
+                }
+                if ($(checked_it).filter(":checked").length >= $(checked_it).length) {
+                    $(checked_all).prop("checked", true);
+                }
+
+                var checked_box = $(checked_it).filter(":checked");
+
+                if(power_btn){
+                    check_power(checked_box,power_btn);
+                }
+            });
+        }
+
+        function check_power(checked_box,poewr_btn){
+            if(checked_box.length != 0) {
+                poewr_btn.prop("disabled",false);
+            }
+            else {
+                poewr_btn.prop("disabled",true);
+            }
+        }
+
+
+        var script_home_checked_all = ".script_checked_all"
+        var script_home_checked_single = ".script_checked_single"
+
+        check_all(script_home_checked_all,script_home_checked_single,$("#script_btn_power"))
+
+
+        function ModifyAuthorized(item_type) {
+            if (item_type == "script"){
+                //var info_string = $("#script-list li span").text()
+                //var info_list = info_string.split(/\s+/)
+                //console.log(info_list[0])
+                //console.log(info_list[1])
+                //console.log(info_string)
+                var result_dict = {}
+                result_dict["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+                var data_list = []
+                $('#script-list li').each(function(i)
+                {
+                   //$(this).attr('rel'); // This is your rel value
+                   // console.log($(this).attr('rel'))
+
+                    var scriptname = $(this).attr('rel')
+                    var selected_hosts = []
+                    var selected_users = []
+                    var data_dict = {}
+                    var all_hosts = $("input[data="+scriptname+"]")
+                    $.each(all_hosts,function(index,ele){
+                        if(ele.checked){
+                            //selected_hosts.push($(ele).val())
+                            selected_hosts.push(1)
+                            selected_users.push($(ele).val())
+                        }
+                        else{
+                            selected_hosts.push(0)
+                            selected_users.push($(ele).val())
+                        }
+                    })
+                    data_dict["scriptname"] = scriptname
+                    data_dict["userinfo"] = selected_users
+                    data_dict["authorizedinfo"] = selected_hosts
+                    //data_dict["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+                    console.log(selected_hosts)
+                    console.log(selected_users)
+                    data_list.push(data_dict)
+                });
+
+                //data_list = JSON.stringify(data_list)
+                //data_list = JSON.parse(data_list)
+                //data_list["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+                console.log(data_list)
+                result_dict["result"] = JSON.stringify(data_list)
+
+                $.post("{% url 'modify_authorized' %}",result_dict,function(callback){
+                    console.log(callback)
+                    //alert(callback)
+                    jNotify(callback)
+                    location.reload();
+                })
+            }
+        }
+
+        function time_compare(from,to){
+            var start_time = from.split('-');
+            var end_time = to.split('-');
+            var start = new Date(start_time[0], start_time[1] - 1, start_time[2]);
+            var end = new Date(end_time[0], end_time[1] - 1, end_time[2]);
+
+            if (start > end) {
+                jNotify("开始时间不能大于结束时间！","aaa");
+                return false;
+            }
+            return true;
+        }
+
+        function SearchScript() {
+            var name = $("#script_manage_name").val()
+            var create_user = $("#script_manage_create_user").val()
+            var create_from = $("#script_manage_created_from").val()
+            var create_to = $("#script_manage_created_to").val()
+
+            if (create_from && create_to){
+                time_compare(create_from,create_to)
+            }
+            var data_list = {}
+            data_list["search_name"] = name
+            data_list["search_user"] = create_user
+            data_list["search_from"] = create_from
+            data_list["search_to"] = create_to
+            data_list["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+            $.post("{% url 'search_script' %}",data_list,function(){
+                //console.log(callback)
+            })
+        }
+
+
+    $('#script_select_power').on('show.bs.modal', function () {
+      //console.log($(".checknow td").next().text())
+        //console.log($(".checknow td").next().children("a").first().text())
+
+        var selected_scripts = []
+        var all_hosts = $("input[data='script_checked_single']")
+        $.each(all_hosts,function(index,ele){
+            if(ele.checked){
+                //console.log(index)
+                //console.log($(ele).parent().next().children("a").first().text())
+                selected_scripts.push($(ele).parent().next().children("a").first().text())
+            }
+        })
+        console.log(selected_scripts)
+
+        var data_list = {}
+        data_list["selected_scripts"] = selected_scripts
+        data_list["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+        $.post("{% url 'script_authorized' %}",data_list,function(callback){
+            console.log(callback)
+            $("#script-list").html(null)
+            $.each(JSON.parse(callback),function(index,item){
+
+                var pre_html = "<pre>" + item.scriptname + "&nbsp;" + "&nbsp;" + "&nbsp;"
+                var row_html = ""
+
+                for(var i=0;i<item.userinfo.length;i++){
+                    if (item.authorizedinfo[i]){
+                        var row_html = row_html + "<input type='checkbox' checked " + "value=" + item.userinfo[i] + " data=" + item.scriptname + ">" + item.userinfo[i]  + "&nbsp;" + "&nbsp;" + "&nbsp;";
+                    }
+                    else {
+                        var row_html = row_html + "<input type='checkbox' " + "value=" + item.userinfo[i] +" data=" +  item.scriptname + ">" + item.userinfo[i]  + "&nbsp;" + "&nbsp;" + "&nbsp;";
+                    }
+                //var row_html = row_html + "<input type='checkbox'>" + item.userinfo[i]  + item.authorizedinfo[i] + "&nbsp;" + "&nbsp;" + "&nbsp;";
+
+                }
+                var final_html = "<li" + " rel=" + item.scriptname + ">" + "<span>" + item.scriptname + "</span>" + "&nbsp;" + "&nbsp;" + "&nbsp;" + row_html + "</li>"
+            $("#script-list").append(final_html)
+            })
+        })
+    })
+
 
     </script>
 

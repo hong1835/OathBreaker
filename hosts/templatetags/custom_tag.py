@@ -158,3 +158,12 @@ def display_orderby_arrow(table_obj,loop_counter):
 @register.filter
 def to_string(value):
     return '%s' %value
+
+@register.filter
+def joinby(value, arg):
+    return arg.join(value)
+
+
+@register.filter
+def joincomma(value):
+    return ",".join(value)

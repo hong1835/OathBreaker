@@ -63,16 +63,20 @@ web页面执行powershell脚本
 ![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/script-edit.png)
 
 脚本管理
-![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/script-manage.png)
+![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/script-mgr.png)
 
 ### Required
-Django 1.8.18
-django_filters 1.1.0
-django_restframework 3.3.3
-markdown 2.6.11
+1. Django 1.8.18
+2. django_filters 1.1.0
+3. django_restframework 3.3.3
+4. markdown 2.6.11
+
+
+### Update
+2018/08/02 增加了脚本的授权功能，可以共享脚本给其他用户使用、编辑，支持搜索脚本
+
 
 ### To do
 1. 任务编排
 2. 页面优化
 3. 用saltstack grains来收集服务器信息
-

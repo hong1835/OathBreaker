@@ -21,11 +21,10 @@ class Script(models.Model):
     update_user = models.ForeignKey('hosts.UserProfile', related_name=u'script_update_user',verbose_name=u'更新用户', null=True, blank=True)
     update_date = models.DateTimeField(blank=True,null=True)
     is_delete = models.BooleanField(default=False)
+    shared_with = models.ManyToManyField('hosts.UserProfile',related_name=u'scipt_shared_user',verbose_name=u'授权用户',blank=True)
 
     def __unicode__(self):
         return self.scriptname
     class Meta:
         verbose_name = u'脚本名称'
         verbose_name_plural = u"脚本名称"
-
-
