@@ -1,0 +1,302 @@
+{% extends 'base.html' %}
+
+
+{% block page-content-title %}
+作业管理
+{% endblock %}
+
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">作业实例管理</li>
+</ol>
+{% endblock %}
+
+
+{% block page-content %}
+<div class="row-fluid edit-md-wrap">
+<form class="form-horizontal" action="{% url 'template_add' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <div class="panel-heading">
+            <h3 class="panel-title">新建实例</h3>
+
+    <div class="col-md-9">
+        <div class="panel panel-default panel-right">
+            <div class="panel-body">
+
+                <div class="form-group">
+                            <label class="col-sm-2 control-label">实例名称：</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="template_name" name="template_name" required="required">
+                            </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">作业实例类型：</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="template_type">
+                            {% for id,value in template_types_choice %}
+                          <option>{{ value }}</option>
+                          {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">所属业务：</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="business_unit">
+                            {% for k,v in business_unit %}
+                          <option>{{ k }}</option>
+                          {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">备注：</label>
+                    <div class="col-sm-10">
+                        <textarea id="template_comments" name="template_comments" rows="4" class="form-control" placeholder="请输入..."></textarea>
+                    </div>
+		        </div>
+
+                <div class="form-group" style="margin-left: 195px;">
+                    <span>提示：支持上下拖动排序</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10">
+                        <table class="table table-hover table-striped table-bordered edit_md_table table-link" id="edit_md_table">
+                             <thead>
+                                <tr name="template_step">
+                                    <th class="text-center"><input value="0" class="jobview-checked-all-{{ template.id }}" type="checkbox"></th>
+                                    <th class="run_step">执行步骤</th>
+                                    <th width=200px clas="step_name">步骤名</th>
+                                    <th>步骤类型</th>
+                                    <th width=200px>操作</th>
+                                </tr>
+                             </thead>
+                             <tbody template_id="{{ template.id }}">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10">
+                        <div class="btn-group">
+                            <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" onclick="">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                增加步骤
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="add_step_choose dropdown-menu">
+                                <li value="1"><a>执行脚本</a></li>
+                                <li value="2"><a>分发文件</a></li>
+                                <li value="3"><a>拉取文件</a></li>
+                                <li value="4"><a>文本步骤</a></li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-info" type="submit">
+                            <i class="glyphicon glyphicon-floppy-save"></i>
+                            保存作业
+                        </button>
+                        <button class="btn btn-success" data-toggle="modal" data-target="#confirmGlobalSettings_{{ template.id }}">
+                            <i class="glyphicon glyphicon-play"></i>
+                            立即启动
+                        </button>
+                        <button class="btn btn-success" data-toggle="modal" data-target="#set_timing_{{ template.id }}" onclick="show_schedule_new_v2({{ template.id }})">
+                            <i class="glyphicon glyphicon-time"></i>
+                            定时启动
+                        </button>
+                        <button class="full-set btn btn-success" data-msg="edit-md-wrap">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            全程设定
+                        </button>
+                        <button class="btn btn-warning" onclick="clear_settings({{ template.id }});">
+                            <i class="glyphicon glyphicon-repeat"></i>
+                            清空配置
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p style="color: green">{{ template_success }}</p>
+                    <p style="color: red">{{ template_fail }}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        </div>
+        <div class="panel-body" >
+
+        </div>
+</form>
+</div>
+{% endblock %}
+
+{% block bottom-js %}
+
+    <script type="text/javascript">
+
+        function SaveScript(){
+            var script_name = $("input[name='script_name']").val()
+            var script_description = $.trim($("textarea[name='script_description']").val())
+            var script_type = $("input[name='script_type']:checked").val()
+            var script_content = editor.getValue()
+            //console.log("script_once_name--->",script_once_name)
+
+            var data_list = {}
+            data_list["script_name"] = script_name
+            data_list["script_description"] = script_description
+            data_list["script_type"] = script_type
+            data_list["script_content"] = script_content
+            data_list["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+            //$.post("{% url 'script_add' %}",data_list,function(callback){
+            //    console.log(callback)
+            //})
+
+
+        }
+
+            // 增加步骤
+    $(document).off("click", ".add_step_choose li a").on("click", ".add_step_choose li a", function () {
+        var $this = $(this);
+        var $parents = $this.parents(".edit-md-wrap");
+        var $tbody = $parents.find(".edit_md_table tbody");
+
+        $parents.find(".edit_md_table .dataTables_empty").parent().remove();
+
+        var add_type = $this.text();
+        console.log("add_type",add_type)
+        var index = $tbody.find('tr').length;
+        console.log("index",index)
+        var add_type_value = $this.parent('li').attr("value");
+        console.log("add_type_value",add_type_value)
+        var template_id = $tbody.attr("template_id");
+        var step_id = ''
+        if (add_type_value = 1){
+            var refer_url = ""
+            $tbody.append("<tr class='checknow' step_id=" + step_id + "><td><input value='" + step_id + "' class='jobview-checked-it-" + template_id + "' type='checkbox' checked></td><td></td><td><a href= " + refer_url + " >" + add_type + " </a>" + "</td>"+"<td>" + add_type + "</td><td><div class='btn-group'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>增加步骤</a><ul class='dropdown-menu add-step-list'><li value='1'><a>执行脚本</a></li><li value='2'><a>分发文件</a></li><li value='3'><a>拉取文件</a></li><li value='4'><a>文本步骤</a></li></ul></div>&nbsp;&nbsp;<a href='javascript:void(0)' class='remove-step' step_id=" + step_id + ">删除</a></td></tr>");
+        }
+        else if (add_type_value = 4) {
+            var refer_url = ""
+            $tbody.append("<tr class='checknow' step_id=" + step_id + "><td><input value='" + step_id + "' class='jobview-checked-it-" + template_id + "' type='checkbox' checked></td><td></td><td><a href= " + refer_url +" >" + add_type + " </a>" + "</td>"+"<td>" + add_type + "</td><td><div class='btn-group'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>增加步骤</a><ul class='dropdown-menu add-step-list'><li value='1'><a>执行脚本</a></li><li value='2'><a>分发文件</a></li><li value='3'><a>拉取文件</a></li><li value='4'><a>文本步骤</a></li></ul></div>&nbsp;&nbsp;<a href='javascript:void(0)' class='remove-step' step_id=" + step_id + ">删除</a></td></tr>");
+        }
+        //$tbody.append("<tr class='checknow' step_id=" + step_id + "><td><input value='" + step_id + "' class='jobview-checked-it-" + template_id + "' type='checkbox' checked></td><td></td><td><a href='javascript:void(0)' onclick='template_step_edit_v2(" + step_id + ");'>" + add_type + "</a></td><td>" + add_type + "</td><td><div class='btn-group'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>增加步骤</a><ul class='dropdown-menu add-step-list'><li value='1'><a>执行脚本</a></li><li value='2'><a>分发文件</a></li><li value='3'><a>拉取文件</a></li><li value='4'><a>文本步骤</a></li></ul></div>&nbsp;&nbsp;<a href='javascript:void(0)' class='remove-step' step_id=" + step_id + ">删除</a></td></tr>");
+        sort_step($this);
+                    if ($tbody.find(":checked").length == $tbody.find('tr').length) {
+                        $parents.find("table thead :checkbox").prop("checked", true);
+                    }
+                 else {
+                    jError('操作失败！');
+                }
+    });
+
+    //add 2
+        $(document).off("click", ".add-step-list li a").on("click", ".add-step-list li a", function () {
+
+        var $this = $(this);
+        var $parents = $this.parents(".edit-md-wrap");
+        var $tbody = $parents.find(".edit_md_table tbody");
+
+        $parents.find(".edit_md_table .dataTables_empty").parent().remove();
+
+        var add_type = $this.text();
+        var index = $this.parents('tr').prevAll().length + 1;
+        var add_type_value = $this.parent('li').attr("value");
+        var template_id = $tbody.attr("template_id");
+
+                    var step_id = 1;
+
+                    // 简化版
+                    $this.parents('tr').after("<tr class='checknow' step_id=" + step_id + "><td><input value='" + step_id + "' class='jobview-checked-it-" + template_id + "' type='checkbox' checked></td><td></td><td><a href='javascript:void(0)' onclick='template_step_edit_v2(" + step_id + ");'>" + add_type + "</a></td><td>" + add_type + "</td><td><div class='btn-group'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>增加步骤</a><ul class='dropdown-menu add-step-list'><li value='1'><a>执行脚本</a></li><li value='2'><a>分发文件</a></li><li value='3'><a>拉取文件</a></li><li value='4'><a>文本步骤</a></li></ul></div>&nbsp;&nbsp;<a href='javascript:void(0)' class='remove-step' step_id=" + step_id + ">删除</a></td></tr>");
+                    sort_step($this);
+
+    });
+
+
+        // 删除步骤
+    $(document).off("click", ".remove-step").on("click", ".remove-step", function () {
+        var $this = $(this);
+
+        if (confirm("是否真的要删除该步骤？") == true) {
+            var template_step_id = $this.attr("step_id");
+
+                        //简化版
+                        var $parents = $this.parents(".edit-md-wrap");
+
+                        $this.parents("tr").remove();
+                        $parents.find(".edit_md_table tbody tr").each(function() {
+                            var $index = $(this).index() + 1;
+                            $(this).find('td').eq(1).html("第" + $index + "步");
+                        });
+
+        }
+    });
+
+    function sort_step(e) {
+    var $parents = e.parents(".edit-md-wrap");
+
+    $parents.find(".edit_md_table tbody tr").each(function () {
+        var $index = $(this).index() + 1;
+
+        // 简化版
+        $(this).find('td').eq(1).html("第" + $index + "步");
+    });
+}
+
+    function sort_step2(e, template_id, step_id_list) {
+        sort_step(e);
+
+        $.ajax({
+            type: 'POST',
+            url: '/md_manage/sort/' + template_id + '/',
+            data: {
+                'step_id_list': step_id_list
+            },
+            dataType: 'json',
+            success: function (data) {
+                if (data.status == 200) {
+                    jSuccess('操作成功');
+                } else {
+                    jError('操作失败');
+                }
+            },
+            error: function () {
+                jError('操作失败');
+            }
+        });
+    }
+
+    function SaveTemplate(){
+        console.log("going to save")
+    }
+
+    $('#edit_md_table tr').each(function() {
+        var customerId = $(this).find(".run_step").html();
+      //  console.log(customerId)
+     });
+
+    function SaveStep(){
+                var ary = [];
+
+                $('#edit_md_table tr').each(function (a, b) {
+                var name = $('.run_step', b).text();
+                var value = $('.step_name', b).text();
+                ary.push({ Name: name, Value: value });
+console.log(JSON.stringify(ary));
+            });
+
+    }
+
+
+
+    </script>
+
+{% endblock %}

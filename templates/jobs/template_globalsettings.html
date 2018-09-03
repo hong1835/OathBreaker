@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% load custom_tag %}
+{% block page-content-title %}
+作业管理
+{% endblock %}
+
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">全局设定</li>
+</ol>
+{% endblock %}
+
+
+{% block page-content %}
+
+<div class="panel-default">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-9">
+        <div class="row-fluid edit-text-wrap">
+	<form id="edit_template_step_form" class="form-horizontal" action="{% url 'template_globalsettings' template_id %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+		<div class="form-group">
+            <label class="col-sm-1 control-label">执行模式：</label>
+            <div class="col-sm-8">
+                <label class="radio">
+                    <input type="radio" name="mode" value="slient" {% if templateobj.execute_mode == 'slient' %}checked="checked"{% endif %}> 无人模式 （作业启动后，按步骤顺序执行，出现错误才会停止）
+                </label>
+                <label class="radio">
+                    <input type="radio" name="mode" value="single" {% if templateobj.execute_mode == 'single' %}checked="checked"{% endif %}> 单步模式 （作业启动后，每个步骤均需由作业启动人点击“执行”按钮方会执行）
+                </label>
+                <label class="radio">
+                    <input type="radio" name="mode" value="mix" {% if templateobj.execute_mode == 'mix' %}checked="checked"{% endif %}> 混合模式 （作业启动后，遇到文本步骤或出现错误才会停止）
+                </label>
+            </div>
+		</div>
+		<div class="form-group">
+			                    <label class="col-sm-1 control-label">目标机器：</label>
+                    <div class="col-sm-4">
+                        <textarea id="ip_list" name="ip_list" rows="4" class="form-control" value="{{ templateobj.target }}">{{ target_machine|joincomma }}</textarea>
+                    <div class="col-md-5">
+                    <hr>
+                <div class="alert alert-success" role="alert" id="available_present" hidden>总共[]台机器，[]台可用</div>
+            <hr>
+                <ul class="list-group" id="checked_ip_host">
+
+                </ul>
+                    </div>
+
+
+                    </div>
+
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-default add-btn-status ip-add-btn" data-msg="script" data-loading-text="ip检测中,请稍后..." autocomplete="off" onclick="FilterHost()">
+                    <i class="icon-plus"></i>
+                    IP添加
+                </button>
+                        <button type="button" class="select-servers btn btn-default" id="btn_target_machine" data-msg="edit-script-wrap" data-toggle="modal" data-target="#selectServer" data-loading-text="ip验证中,请稍后..." autocomplete="off">
+                        <i class="icon-th-list"></i>
+                        选择目标机器
+                    </button>
+                    </div>
+		</div>
+		<br>
+		<div class="form-group">
+			<div class="controls col-sm-offset-4 col-sm-10">
+				<button class="btn btn-primary" style="right: 300px" data-type="text" type="submit">
+					<i class="icon-ok icon-white"></i>
+					保存全局设置
+				</button>
+				<button class="btn btn-success" style="right: 200px">
+					<i class="icon-share-alt icon-white"></i>
+					返回
+				</button>
+			</div>
+		</div>
+
+            <!-- Modal -->
+        <div class="modal fade" id="selectServer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">选择目标机器</h4>
+              </div>
+              <div class="modal-body">
+                    <div id="authorized-box">
+                        <ul class="list-group" id="group-list">
+                            <li class="list-group-item">
+                                <span class="badge">{{ request.user.bind_hosts.select_related.count }}</span>
+                                未分组主机
+                            </li>
+
+                            {% for group in request.user.host_groups.select_related %}
+                            <li class="list-group-item">
+                                <input onclick="CheckAllToggle(this)" data="host-group" type="checkbox" value="{{ h.id }}">
+                                <a data="group" class="a-pointer">
+                                    {{ group.name }}
+                                    <span class="badge">{{ group.bindhosttouser_set.select_related.count }}</span>
+                                </a>
+
+                                <ul class="list-group hide">
+                                    {% for h in group.bindhosttouser_set.select_related %}
+                                        <li class="list-group-item list-tree"><span>-- </span><input data="bind-host" type="checkbox" value="{{ h.id }}">{{ h.host.hostname }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                          <div class="tab-content">
+                  <div class="tab-pane active" id="script_power_list">
+                    <div class="ujobs-power-tree">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="SelectHostFromList()">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+	</form>
+</div>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+{% block bottom-js %}
+
+    <script type="text/javascript">
+
+    function SelectHostFromList() {
+        var selected_host = VerifyHostSelection()
+
+        var data_list = {}
+        data_list["selected_hosts"] = selected_host
+        data_list["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+
+        $.post("{% url 'get_iplist' %}",data_list,function(callback){
+            console.log(callback)
+            $("textarea[name='ip_list']").html(callback)
+        })
+
+        console.log(selected_host)
+        //$("textarea[name='ip_list']").html(selected_host)
+        $("#selectServer").modal('hide')
+    }
+
+
+
+    </script>
+
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% load custom_tag %}
+{% block page-content-title %}
+作业管理
+{% endblock %}
+
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">History Show</li>
+</ol>
+{% endblock %}
+
+
+{% block page-content %}
+
+<div class="panel-default">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-9">
+        <div class="row-fluid edit-text-wrap">
+	<form id="edit_template_step_form" class="form-horizontal">
+        <div class="form-group">
+            <h3>{{ history.template.name }}</h3>
+        </div>
+		<div class="form-group">
+            <label class="control-label muted">创建人：</label>
+            <span class="control-label">{{ history.template.create_user}}</span>
+            <label class="control-label muted" style="position:absolute;left: 260px">启动人：</label>
+            <span class="control-label" style="position:absolute;left: 320px">{{ history.run_user }}</span>
+            <div class="controls pull-right" style="position: absolute;right: 120px;">
+                <button type="button" class="btn btn-info" onclick="show_history_info('{{ history.pk }}');">
+                    <i class="icon-file icon-white" ></i>
+                    查看作业实例
+                </button>
+            </div>
+		</div>
+		<div class="form-group">
+			<label class="control-label muted">总耗时：100000000000</label>
+            <span id="history_result_delta_time_{{check_id}}" class="control-label"></span>
+            <label class="control-label muted" style="position:absolute;left: 260px">开始时间：</label>
+            <span id="history_result_start_time_{{check_id}}" class="control-label" style="position:absolute;left: 320px">{{ history.start_time|date:"Y-m-d H:i:s" }}</span>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label muted">结束时间：</label>
+            <span id="history_result_end_time_{{check_id}}" class="control-label"></span>
+            <label class="control-label muted" style="position:absolute;left: 260px">作业备注：</label>
+            <span class="control-label" style="position:absolute;left: 320px">{{ history.template.comments|default_if_none:"" }}</span>
+		</div>
+        <br>
+        <div class="form-group">
+            <div class="controls pull-right">
+                <label class="control-label muted" style="position: absolute;right: 140px;top: 200px">作业状态：</label>
+                <span id="history_result_status_{{check_id}}" class="control-label" style="position: absolute;right: 100px;top: 200px">{{ history.get_status_display }}</span>
+            </div>
+        </div>
+
+        <table  class="table table-striped table-bordered table-hover cursor" id="history_result_{{check_id}}_example" style="width:93%;">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>步骤名称</th>
+                <th>步骤类型</th>
+                <th>目标机器(台)</th>
+                <th>步骤耗时(s)</th>
+                <th>步骤执行人</th>
+                <th>状态</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for history_step in template_steps %}
+            <tr onclick="show_detail('{{ history_step.pk }}');">
+                <td>{{ forloop.counter }}</td>
+                <td>{{ history_step.templatestep.name }}</td>
+                <td>{{ history_step.templatestep.get_step_type_display }}</td>
+                <td><div id='no_{{ history.template.target|length }}_{{check_id}}'></div>{% if history_step.templatestep.private_setting %}{{ history_step.templatestep.target|getlength }}{% else %}{{ history.template.target|getlength }}{% endif %}</td>
+                <td><div id='time_{{ history_step.pk }}_{{check_id}}'></div></td>
+                <td><div id='executor_{{ history_step.pk }}_{{check_id}}'>{{ history.run_user }}</div></td>
+                <td><div id='step_{{ history_step.pk }}_{{check_id}}'>未执行</div></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+	</form>
+</div>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+{% block bottom-js %}
+
+    <script type="text/javascript">
+
+
+
+    </script>
+
+{% endblock %}

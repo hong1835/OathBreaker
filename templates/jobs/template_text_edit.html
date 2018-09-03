@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+
+{% block page-content-title %}
+作业管理
+{% endblock %}
+
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">编辑模版步骤[文本步骤]</li>
+</ol>
+{% endblock %}
+
+
+{% block page-content %}
+
+<div class="panel-default">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-9">
+        <div class="row-fluid edit-text-wrap">
+	<form id="edit_template_step_form" class="form-horizontal" method="post">{% csrf_token %}
+		<div class="form-group">
+			<label class="col-sm-1 control-label">步骤名称：<span class="red">*</span></label>
+			<div class="controls col-md-8">
+                <input type="text" class="form-control hidden" id="templatestep_id" name="templatestep_id"  value={{ templatestep_obj.id }}>
+				<input id="step_name" size="80" class="edit-text-name" name="step_text_name" type="text" value='{{ templatestep_obj.name }}'>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-1 control-label muted">文本描述：<span class="red">*</span></label>
+			<div class="controls col-md-8">
+				<textarea id="step_description" rows="4" cols="81" name="step_text_description" class="txtstyle edit-text-content" placeholder="请输入文本描述">{{ templatesteptext_obj.description }}</textarea>
+			</div>
+		</div>
+		<br>
+		<div class="form-group">
+			<div class="controls col-sm-offset-4 col-sm-10">
+				<button class="btn btn-primary" style="right: 300px" data-type="text" type="submit">
+					<i class="icon-ok icon-white"></i>
+					保存步骤
+				</button>
+				<button class="btn btn-success" style="right: 200px" type="button" onclick="javascript:history.back()">
+					<i class="icon-share-alt icon-white"></i>
+					返回
+				</button>
+			</div>
+		</div>
+	</form>
+</div>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+{% block bottom-js %}
+    <script src="/static/js/CodeMirror.js"></script>
+    <script src="/static/js/shell.js"></script>
+    <script src="/static/js/vbscript.js"></script>
+    <script src="/static/js/python.js"></script>
+    <script src="/static/js/powershell.js"></script>
+    <script src="/static/js/icheck.min.js"></script>
+
+    <script type="text/javascript">
+
+
+
+    </script>
+
+{% endblock %}

@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+
+
+{% block page-content-title %}
+作业管理
+{% endblock %}
+
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">作业实例管理</li>
+</ol>
+{% endblock %}
+
+
+{% block page-content %}
+<div class="row-fluid edit-md-wrap">
+<form class="form-horizontal" action="{% url 'script_add' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <div class="panel-heading">
+            <h3 class="panel-title">新建实例</h3>
+
+    <div class="col-md-9">
+        <div class="panel panel-default panel-right">
+            <div class="panel-body">
+
+                <div class="form-group">
+                            <label class="col-sm-2 control-label">实例名称：</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="script_name" name="script_name">
+                            </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">作业实例类型：</label>
+                    <div class="col-sm-10">
+                        <select class="form-control">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">所属业务：</label>
+                    <div class="col-sm-10">
+                        <select class="form-control">
+                          <option>11</option>
+                          <option>22</option>
+                          <option>33</option>
+                          <option>44</option>
+                          <option>55</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">备注：</label>
+                    <div class="col-sm-10">
+                        <textarea id="template_comments" name="template_comments" rows="4" class="form-control" placeholder="请输入..."></textarea>
+                    </div>
+		        </div>
+
+                <div class="form-group" style="margin-left: 195px;">
+                    <span>提示：支持上下拖动排序</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10">
+                        <table class="table table-hover table-striped table-bordered edit_md_table table-link" id="edit_md_table_{{ template.id }}">
+                             <thead>
+                                <tr>
+                                    <th class="text-center"><input value="0" class="jobview-checked-all-{{ template.id }}" type="checkbox"></th>
+                                    <th>执行步骤</th>
+                                    <th width=200px>步骤名</th>
+                                    <th>步骤类型</th>
+                                    <th width=200px>操作</th>
+                                </tr>
+                             </thead>
+                             <tbody template_id="{{ template.id }}">
+                                {% for templateStep in templateStep_list %}
+                                <tr {% if templateStep.is_checked %}class='checknow'{% endif %}>
+                                    <td class="text-center"><input value="{{templateStep.id}}" class="jobview-checked-it-{{ template.id }}" type="checkbox" {% if templateStep.is_checked %}checked{% endif %}></td>
+                                    <td>第{{templateStep.order}}步</td>
+                                    <td><a href="javascript:void(0)" onclick="template_step_edit_v2('{{templateStep.id}}',{% if templateStep.step_type == 1 %}'script'{% else %}''{% endif %});">{{templateStep.name}}</a></td>
+                                    <td>{{templateStep.get_step_type_display}}</td>
+                                    <td><div class='btn-group'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>增加步骤</a><ul class='dropdown-menu add-step-list'><li value='1'><a>执行脚本</a></li><li value='2'><a>分发文件</a></li><li value='3'><a>拉取文件</a></li><li value='4'><a>文本步骤</a></li></ul></div>&nbsp;&nbsp;<a href='javascript:void(0)' class='remove-step' step_id="{{templateStep.id}}">删除</a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10">
+                        <div class="btn-group">
+                            <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                增加步骤
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="add_step_choose dropdown-menu">
+                                <li value="1"><a>执行脚本</a></li>
+                                <li value="2"><a>分发文件</a></li>
+                                <li value="3"><a>拉取文件</a></li>
+                                <li value="4"><a>文本步骤</a></li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-info" onclick="submit_edit_template_v2({{ template.id }});">
+                            <i class="glyphicon glyphicon-floppy-save"></i>
+                            保存作业
+                        </button>
+                        <button class="btn btn-success" data-toggle="modal" data-target="#comfirm_fullset_{{ template.id }}">
+                            <i class="glyphicon glyphicon-play"></i>
+                            立即启动
+                        </button>
+                        <button class="btn btn-success" data-toggle="modal" data-target="#set_timing_{{ template.id }}" onclick="show_schedule_new_v2({{ template.id }})">
+                            <i class="glyphicon glyphicon-time"></i>
+                            定时启动
+                        </button>
+                        <button class="full-set btn btn-success" data-msg="edit-md-wrap">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            全程设定
+                        </button>
+                        <button class="btn btn-warning" onclick="clear_settings({{ template.id }});">
+                            <i class="glyphicon glyphicon-repeat"></i>
+                            清空配置
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <p style="color: green">{{ template_success }}</p>
+                    <p style="color: red">{{ template_fail }}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        </div>
+        <div class="panel-body" >
+
+        </div>
+</form>
+</div>
+{% endblock %}
+
+{% block bottom-js %}
+
+    <script type="text/javascript">
+
+        function SaveScript(){
+            var script_name = $("input[name='script_name']").val()
+            var script_description = $.trim($("textarea[name='script_description']").val())
+            var script_type = $("input[name='script_type']:checked").val()
+            var script_content = editor.getValue()
+            //console.log("script_once_name--->",script_once_name)
+
+            var data_list = {}
+            data_list["script_name"] = script_name
+            data_list["script_description"] = script_description
+            data_list["script_type"] = script_type
+            data_list["script_content"] = script_content
+            data_list["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+            //$.post("{% url 'script_add' %}",data_list,function(callback){
+            //    console.log(callback)
+            //})
+
+
+        }
+
+            // 增加步骤
+    $(document).off("click", ".add_step_choose li a").on("click", ".add_step_choose li a", function () {
+        var $this = $(this);
+        var $parents = $this.parents(".edit-md-wrap");
+        var $tbody = $parents.find(".edit_md_table tbody");
+
+        $parents.find(".edit_md_table .dataTables_empty").parent().remove();
+
+        var add_type = $this.text();
+        var index = $tbody.find('tr').length;
+        var add_type_value = $this.parent('li').attr("value");
+        var template_id = $tbody.attr("template_id");
+
+        $.ajax({
+            type: 'POST',
+            url: "",
+            data: {
+                'index': index,
+                'type_value': add_type_value,
+                'template_id': template_id
+            },
+            dataType: 'json',
+            success: function (data) {
+                if (data.status == 200) {
+                    var step_id = data.result.step_id;
+
+                    // 简化版
+                    $tbody.append("<tr class='checknow' step_id=" + step_id + "><td><input value='" + step_id + "' class='jobview-checked-it-" + template_id + "' type='checkbox' checked></td><td></td><td><a href='javascript:void(0)' onclick='template_step_edit_v2(" + step_id + ");'>" + add_type + "</a></td><td>" + add_type + "</td><td><div class='btn-group'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>增加步骤</a><ul class='dropdown-menu add-step-list'><li value='1'><a>执行脚本</a></li><li value='2'><a>分发文件</a></li><li value='3'><a>拉取文件</a></li><li value='4'><a>文本步骤</a></li></ul></div>&nbsp;&nbsp;<a href='javascript:void(0)' class='remove-step' step_id=" + step_id + ">删除</a></td></tr>");
+                    sort_step($this);
+                    if ($tbody.find(":checked").length == $tbody.find('tr').length) {
+                        $parents.find("table thead :checkbox").prop("checked", true);
+                    }
+                } else {
+                    jError('操作失败！');
+                }
+            },
+        });
+
+    });
+    </script>
+
+{% endblock %}

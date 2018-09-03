@@ -774,9 +774,10 @@
 											</span>
 										</a>
                                         <ul class="collapse">
-											<li><a href="{% url 'jobs_instance_mgr' %}">作业实例管理</a></li>
+											<li><a href="{% url 'jobs_template_mgr' %}">作业实例管理</a></li>
 											<li class=""><a href="{% url 'jobs_script_mgr' %}">作业脚本管理</a></li>
 											<li class=""><a href="{% url 'jobs_schedule_mgr' %}">定时调度管理</a></li>
+											<li class=""><a href="{% url 'jobs_history_mgr' %}">作业执行历史</a></li>
 										</ul>
 									</li>
 
@@ -925,7 +926,8 @@
 
     <script src="/static/plugins/DatePicker/WdatePicker.js"></script>
     <script src="/static/plugins/jNotify/jNotify.jquery.js"></script>
-
+    {% include "hosts/multi_task_js_component.html" %}
+    {% include "jobs/jobs_js_component.html" %}
     <script type="text/javascript">
 
         $(document).ready(function(){

@@ -1,0 +1,294 @@
+{% extends 'base.html' %}
+
+{% load custom_tag %}
+{% block page-content-title %}
+作业管理
+{% endblock %}
+
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">模版脚本管理</li>
+</ol>
+{% endblock %}
+
+
+{% block page-content %}
+
+<form class="form-horizontal">
+        <div class="panel-heading">
+            <h3 class="panel-title">编辑模版步骤【执行脚本】</h3>
+
+    <div class="col-md-9">
+        <div class="panel panel-default panel-right">
+            <div class="panel-body">
+
+                <div class="form-group">
+                            <label class="col-sm-2 control-label">步骤名称：</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control hidden" id="templatestep_id" name="templatestep_id"  value={{ templatestep.id }}>
+                                <input type="text" class="form-control" id="step_script_name" name="step_script_name" value="{{ templatestep.name }}">
+                            </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">步骤描述：</label>
+                    <div class="col-sm-8">
+                        <textarea id="step_script_description" name="step_script_description" rows="4" class="form-control" placeholder="请输入...">{{ templatestep.description }}</textarea>
+                    </div>
+		        </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">步骤脚本：</label>
+                        <div class="col-sm-8">
+                            <select class="form-control" id="script-version" onchange="getScript(this)">
+                                {% for s in script_list %}
+                              <option {% if s.scriptname == script_name %}selected{% endif %}>{{ s }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label-label">&nbsp;</label>
+                <div class="col-sm-10">
+                    <p><select name="select" id="select" style="width: 200px;" disabled="disabled">
+                        <option>default</option>
+                        <option>3024-night</option>
+                        <option selected="">erlang-dark</option>
+                    </select></p>
+                    <textarea id="script_shell" name="script_content_shell">{{ script_content }}</textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">入口参数：</label>
+                <div class="col-sm-8">
+                    <input id="parameter" type="text" name="parameter" class="form-control" value="{{ parameter }}">
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-left: 105px;">
+                <div class="col-sm-10">
+                    <input id="dst_use_own" name="dst_use_own"  class="check-toggle" data-msg="box2" style="margin-top: 8px;" type="checkbox" onclick="CheckThis(this)" {% if templatestep.private_setting %}checked="checked"{% endif %}>
+                    <label style="display:inline-block;">本步骤使用如下设定取代全程设定</label>
+                </div>
+            </div>
+
+            <div class="form-group hidden" id="select_target_machine">
+                <label class="col-sm-2 control-label">目标机器：</label>
+                <div class="col-sm-8">
+                    <textarea id="ip_list" name="ip_list" rows="4" class="form-control" value="{{ templatestep.target }}">{{ target_machine|joincomma }}</textarea>
+                <div class="col-md-5">
+                <hr>
+            <div class="alert alert-success" role="alert" id="available_present" hidden>总共[]台机器，[]台可用</div>
+        <hr>
+            <ul class="list-group" id="checked_ip_host">
+
+            </ul>
+                </div>
+
+
+                </div>
+
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-default add-btn-status ip-add-btn" data-msg="script" data-loading-text="ip检测中,请稍后..." autocomplete="off" onclick="FilterHost()">
+                <i class="icon-plus"></i>
+                IP添加
+            </button>
+                    <button type="button" class="select-servers btn btn-default" id="btn_target_machine" data-msg="edit-script-wrap" data-toggle="modal" data-target="#selectServer" data-loading-text="ip验证中,请稍后..." autocomplete="off">
+                    <i class="icon-th-list"></i>
+                    选择目标机器
+                </button>
+                </div>
+
+            </div>
+
+                <div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button class="btn btn-primary pull-right" style="width:120px;" onclick="SaveStepScript()">
+					<i class="icon-ok icon-white"></i>
+					保存步骤
+				</button>
+                <button class="btn btn-primary pull-right" style="width:120px;" type="button" onclick="javascript:history.back()">
+					<i class="icon-share-alt icon-white"></i>
+					返回
+				</button>
+			</div>
+	   </div>
+
+                <div class="form-group">
+                    <p style="color: green">{{ script_success }}</p>
+                    <p style="color: red">{{ script_fail }}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        </div>
+        <div class="panel-body" >
+
+        </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="selectServer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">选择目标服务器</h4>
+      </div>
+      <div class="modal-body">
+            <div id="authorized-box">
+                <ul class="list-group" id="group-list">
+                    <li class="list-group-item">
+                        <span class="badge">{{ request.user.bind_hosts.select_related.count }}</span>
+                        未分组主机
+                    </li>
+
+                    {% for group in request.user.host_groups.select_related %}
+                    <li class="list-group-item">
+                        <input onclick="CheckAllToggle(this)" data="host-group" type="checkbox" value="{{ h.id }}">
+                        <a data="group" class="a-pointer">
+                            {{ group.name }}
+                            <span class="badge">{{ group.bindhosttouser_set.select_related.count }}</span>
+                        </a>
+
+                        <ul class="list-group hide">
+                            {% for h in group.bindhosttouser_set.select_related %}
+                                <li class="list-group-item list-tree"><span>-- </span><input data="bind-host" type="checkbox" value="{{ h.id }}">{{ h.host.hostname }}</li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+                  <div class="tab-content">
+          <div class="tab-pane active" id="script_power_list">
+            <div class="ujobs-power-tree">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="ModifyAuthorized('script')">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</form>
+
+
+{% endblock %}
+
+{% block bottom-js %}
+    <script src="/static/js/CodeMirror.js"></script>
+    <script src="/static/js/shell.js"></script>
+    <script src="/static/js/vbscript.js"></script>
+    <script src="/static/js/python.js"></script>
+    <script src="/static/js/powershell.js"></script>
+    <script src="/static/js/icheck.min.js"></script>
+
+    <script type="text/javascript">
+
+        var selected_script = 0
+
+        var editor = CodeMirror.fromTextArea($("#script_shell")[0], { //script_once_code为你的textarea的ID号
+          lineNumbers: true,//是否显示行号
+          mode:"shell",　//默认脚本编码
+         lineWrapping:true, //是否强制换行
+        });
+
+        //选择界面风格JS
+        $('#select').change(function(){
+             var theme = $('#select').val();
+                 editor.setOption("theme", theme); //editor.setOption()为codeMirror提供的设置风格的方法
+         });
+        $('#select').trigger("change")
+
+
+
+
+        function SaveScript(){
+            var script_name = $("input[name='script_name']").val()
+            var script_description = $.trim($("textarea[name='script_description']").val())
+            var script_type = $("input[name='script_type']:checked").val()
+            var script_content = editor.getValue()
+            //console.log("script_once_name--->",script_once_name)
+
+            var data_list = {}
+            data_list["script_name"] = script_name
+            data_list["script_description"] = script_description
+            data_list["script_type"] = script_type
+            data_list["script_content"] = script_content
+            data_list["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+            //$.post("{% url 'script_add' %}",data_list,function(callback){
+            //    console.log(callback)
+            //})
+        }
+
+
+        function getScript(selectObject) {
+            var value = selectObject.value;
+            console.log("value",value)
+            selected_script = value
+            var data_list = {}
+            data_list["scriptname"] = value
+            data_list["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+
+            $.post("{% url 'template_get_script' %}",data_list,function(callback){
+                //$("textarea[name='script_content_shell']").innerHTML = "aaaaaaaaaa"
+                editor.setValue(callback)
+            })
+        }
+
+
+
+        function SaveStepScript(){
+            var step_script_name = $("input[name='step_script_name']").val()
+            var templatestep_id = $("input[name='templatestep_id']").val()
+            var step_script_description = $("textarea[name='step_script_description']").val()
+            var selected_script = $( "#script-version option:selected" ).text();
+            var parameter = $("input[name='parameter']").val()
+            var target_machine = GetSelectedHost()
+            //console.log("selected_script",selected_script)
+            var data_list = {}
+            data_list["step_script_name"] = step_script_name
+            data_list["templatestep_id"] = templatestep_id
+            data_list["step_script_description"] = step_script_description
+            data_list["selected_script"] = selected_script
+            data_list["parameter"] = parameter
+            data_list["target_machine"] = target_machine
+            data_list["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+
+
+            $.post("{% url 'add_template_script' templatestep.id %}",data_list,function(callback){
+                console.log(callback)
+            })
+        }
+
+
+        function CheckThat(obj){
+            obj.checked()
+                       if($(obj).prop("checked")){//获取checked属性
+              $("input[name='dst_use_own']").prop("checked",true);//设置checked属性
+               $("#select_target_machine").removeClass("hidden")
+           }else{
+              $("input[name='dst_use_own']").prop("checked",false);//设置checked属性
+               $("#select_target_machine").addClass("hidden")
+           }
+
+        }
+
+
+
+
+
+    </script>
+
+{% endblock %}

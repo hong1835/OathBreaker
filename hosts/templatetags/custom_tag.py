@@ -7,6 +7,7 @@ from django import template
 from django.utils.safestring import mark_safe
 import re
 import sys
+from ast import literal_eval
 reload(sys)
 sys.setdefaultencoding('utf8')
 
@@ -166,4 +167,20 @@ def joinby(value, arg):
 
 @register.filter
 def joincomma(value):
-    return ",".join(value)
+    return "".join(value)
+
+
+
+@register.filter
+def getlength(value):
+    if isinstance(value, basestring):
+        target_list = []
+        if value not in ["NULL", "None"]:
+            for target in literal_eval(value):
+                target_list.append(target)
+            return len(target_list)
+    elif all(isinstance(item, basestring) for item in value):  # check iterable for stringness of all items. Will raise TypeError if some_object is not iterable
+        return len(value)
+    else:
+        raise TypeError  # or something along that line
+        return 0

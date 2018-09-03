@@ -2,7 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac6a3f40-253b-4ca1-997d-4470bafcdb17" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/jobs/history_ready.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/jobs/history_show.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/jobs/jobs_history_mgr.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/jobs/jobs_js_component.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/jobs/jobs_template_mgr.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/jobs/template_add.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/jobs/template_edit.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/jobs/template_globalsettings.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/jobs/template_script_add.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/jobs/template_script_edit.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/jobs/template_text_edit.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/templates/jobs/template_view.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/hosts/templatetags/custom_tag.py" afterPath="$PROJECT_DIR$/hosts/templatetags/custom_tag.py" />
+      <change beforePath="$PROJECT_DIR$/jobs/admin.py" afterPath="$PROJECT_DIR$/jobs/admin.py" />
+      <change beforePath="$PROJECT_DIR$/jobs/models.py" afterPath="$PROJECT_DIR$/jobs/models.py" />
+      <change beforePath="$PROJECT_DIR$/jobs/urls.py" afterPath="$PROJECT_DIR$/jobs/urls.py" />
+      <change beforePath="$PROJECT_DIR$/jobs/utils.py" afterPath="$PROJECT_DIR$/jobs/utils.py" />
+      <change beforePath="$PROJECT_DIR$/jobs/views.py" afterPath="$PROJECT_DIR$/jobs/views.py" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+      <change beforePath="$PROJECT_DIR$/templates/hosts/multi_cmd.html" afterPath="$PROJECT_DIR$/templates/hosts/multi_cmd.html" />
+      <change beforePath="$PROJECT_DIR$/templates/hosts/multi_file_transfer.html" afterPath="$PROJECT_DIR$/templates/hosts/multi_file_transfer.html" />
+      <change beforePath="$PROJECT_DIR$/templates/hosts/multi_scripts.html" afterPath="$PROJECT_DIR$/templates/hosts/multi_scripts.html" />
+      <change beforePath="$PROJECT_DIR$/templates/jobs/jobs_script_mgr.html" afterPath="$PROJECT_DIR$/templates/jobs/jobs_script_mgr.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,74 +37,28 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/OathBreaker$saltapi.coverage" NAME="saltapi Coverage Results" MODIFIED="1530841783649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hosts/backends" />
     <SUITE FILE_PATH="coverage/OathBreaker$utils.coverage" NAME="utils Coverage Results" MODIFIED="1530684746485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/hosts" />
-    <SUITE FILE_PATH="coverage/OathBreaker$manage.coverage" NAME="manage Coverage Results" MODIFIED="1533176652058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/OathBreaker$manage.coverage" NAME="manage Coverage Results" MODIFIED="1535529441880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/jobs/views.py">
+      <file leaf-file-name="history_ready.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/jobs/history_ready.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="215" column="8" lean-forward="false" selection-start-line="215" selection-start-column="8" selection-end-line="215" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#69#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="host_list_component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/hosts/host_list_component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="21" column="109" lean-forward="false" selection-start-line="21" selection-start-column="93" selection-end-line="21" selection-end-column="109" />
+            <state relative-caret-position="2451">
+              <caret line="129" column="34" lean-forward="false" selection-start-line="129" selection-start-column="23" selection-end-line="129" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jobs_script_mgr.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/jobs/jobs_script_mgr.html">
+      <file leaf-file-name="history_show.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/jobs/history_show.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="45" column="25" lean-forward="false" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-              <folding>
-                <element signature="e#345#378#0#HTML" expanded="true" />
-                <element signature="e#1074#1096#0#HTML" expanded="true" />
-                <element signature="e#1260#1280#0#HTML" expanded="true" />
-                <element signature="e#1387#1407#0#HTML" expanded="true" />
-                <element signature="e#1595#1615#0#HTML" expanded="true" />
-                <element signature="e#1774#1794#0#HTML" expanded="true" />
-                <element signature="e#3172#3191#0#HTML" expanded="true" />
-                <element signature="e#3723#3742#0#HTML" expanded="true" />
-                <element signature="e#4173#4180#1#HTML" expanded="true" />
-                <element signature="e#4278#4285#1#HTML" expanded="true" />
-                <element signature="e#4897#4904#1#HTML" expanded="true" />
-                <element signature="e#5002#5009#1#HTML" expanded="true" />
-                <element signature="e#5582#5589#1#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="script_edit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/jobs/script_edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1334">
-              <caret line="61" column="14" lean-forward="false" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="script_add.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/jobs/script_add.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="18" column="61" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="61" />
+            <state relative-caret-position="1330">
+              <caret line="70" column="27" lean-forward="false" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -90,18 +67,28 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jobs/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="12" column="67" lean-forward="false" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
+            <state relative-caret-position="570">
+              <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="multi_task_js_component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/hosts/multi_task_js_component.html">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hosts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-665">
-              <caret line="124" column="9" lean-forward="false" selection-start-line="124" selection-start-column="9" selection-end-line="124" selection-end-column="9" />
+            <state relative-caret-position="912">
+              <caret line="57" column="4" lean-forward="false" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jobs/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="419">
+              <caret line="669" column="0" lean-forward="true" selection-start-line="669" selection-start-column="0" selection-end-line="669" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -110,18 +97,48 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jobs/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" column="78" lean-forward="false" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
+            <state relative-caret-position="2394">
+              <caret line="127" column="5" lean-forward="false" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <file leaf-file-name="template_edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/jobs/template_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+            <state relative-caret-position="570">
+              <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template_script_add.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/jobs/template_script_add.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4807">
+              <caret line="253" column="12" lean-forward="false" selection-start-line="253" selection-start-column="12" selection-end-line="253" selection-end-column="74" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jobs/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4636">
+              <caret line="246" column="8" lean-forward="false" selection-start-line="246" selection-start-column="8" selection-end-line="246" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template_add.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/jobs/template_add.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1140">
+              <caret line="60" column="22" lean-forward="false" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -139,36 +156,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get_event_type_display</find>
-      <find>hosts_models</find>
-      <find>debug</find>
-      <find>Tags</find>
-      <find>res---task---</find>
-      <find>going to run</find>
-      <find>form-group</find>
-      <find>task_type</find>
-      <find>by_paramiko</find>
-      <find>take a min</find>
-      <find>rest_framework</find>
-      <find>AddingComponentException</find>
-      <find>mac</find>
-      <find>fa-server</find>
-      <find>script</find>
-      <find>UserProfile</find>
-      <find>/static</find>
-      <find>/statics</find>
-      <find>submit_task</find>
-      <find>csrfmiddlewaretoken</find>
-      <find>ck-code</find>
-      <find>request.user</find>
-      <find>manytomany</find>
-      <find>ManyToManyField('hosts.UserProfile</find>
-      <find>get_groups</find>
-      <find>custom_t</find>
-      <find>script_manage_name</find>
-      <find>script_manage_create_user</find>
-      <find>datetime</find>
-      <find>shared_with__</find>
+      <find>textarea</find>
+      <find>select_target_machine</find>
+      <find>selectServer</find>
+      <find>script-version</find>
+      <find>business_unit</find>
+      <find>template_step_edit_v2</find>
+      <find>template_script_add.html</find>
+      <find>template_id===&gt;</find>
+      <find>location.r</find>
+      <find>add_step_choose</find>
+      <find>SaveScript</find>
+      <find>edit_md_table</find>
+      <find>template_edit.html</find>
+      <find>dropdown-menu add-step-list</find>
+      <find>template_steps===&gt;</find>
+      <find>edit-md-wrap</find>
+      <find>show.bs.modal</find>
+      <find>script_select_power</find>
+      <find>templatestep</find>
+      <find>load custom</find>
+      <find>template_add</find>
+      <find>CheckThis</find>
+      <find>template_script_edit</find>
+      <find>target_machine</find>
+      <find>host_id===&gt;</find>
+      <find>prepare_job</find>
+      <find>None</find>
+      <find>template_edit</find>
+      <find>template.id</find>
+      <find>template_id</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\hongjian\PycharmProjects\OathBreaker\assets</dir>
@@ -183,21 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/hosts/host_list_component.html" />
-        <option value="$PROJECT_DIR$/hosts/admin.py" />
-        <option value="$PROJECT_DIR$/assets/admin.py" />
-        <option value="$PROJECT_DIR$/templates/hosts/hosts_mgr.html" />
-        <option value="$PROJECT_DIR$/assets/urls.py" />
-        <option value="$PROJECT_DIR$/assets/views.py" />
-        <option value="$PROJECT_DIR$/hosts/backends/paramiko_handle.py" />
-        <option value="$PROJECT_DIR$/templates/hosts/run_scripts.html" />
-        <option value="$PROJECT_DIR$/hosts/urls.py" />
-        <option value="$PROJECT_DIR$/templates/hosts/multi_task_js_component.html" />
-        <option value="$PROJECT_DIR$/hosts/backends/saltapi.py" />
-        <option value="$PROJECT_DIR$/hosts/task.py" />
-        <option value="$PROJECT_DIR$/assets/asset_handle.py" />
-        <option value="$PROJECT_DIR$/assets/core.py" />
-        <option value="$PROJECT_DIR$/assets/models.py" />
         <option value="$PROJECT_DIR$/assets/rest_urls.py" />
         <option value="$PROJECT_DIR$/assets/rest_views.py" />
         <option value="$PROJECT_DIR$/assets/serializers.py" />
@@ -213,7 +215,6 @@
         <option value="$PROJECT_DIR$/hosts/backends/multi_task.py" />
         <option value="$PROJECT_DIR$/hosts/models.py" />
         <option value="$PROJECT_DIR$/hosts/backends/saltstack_handle.py" />
-        <option value="$PROJECT_DIR$/templates/hosts/multi_scripts.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/OathBreaker/urls.py" />
         <option value="$PROJECT_DIR$/templates/jobs/jobs_instance_mgr.html" />
@@ -223,16 +224,32 @@
         <option value="$PROJECT_DIR$/templates/jobs/script_add.html" />
         <option value="$PROJECT_DIR$/hosts/views.py" />
         <option value="$PROJECT_DIR$/OathBreaker/settings.py" />
-        <option value="$PROJECT_DIR$/jobs/utils.py" />
         <option value="$PROJECT_DIR$/templates/jobs/script_edit.html" />
-        <option value="$PROJECT_DIR$/hosts/templatetags/custom_tag.py" />
-        <option value="$PROJECT_DIR$/jobs/models.py" />
-        <option value="$PROJECT_DIR$/jobs/admin.py" />
         <option value="$PROJECT_DIR$/templates/jobs/script_authorized.html" />
-        <option value="$PROJECT_DIR$/templates/hosts/multi_cmd.html" />
-        <option value="$PROJECT_DIR$/jobs/urls.py" />
-        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/jobs/template_view.html" />
         <option value="$PROJECT_DIR$/templates/jobs/jobs_script_mgr.html" />
+        <option value="$PROJECT_DIR$/templates/hosts/host_list_component.html" />
+        <option value="$PROJECT_DIR$/jobs/admin.py" />
+        <option value="$PROJECT_DIR$/templates/hosts/multi_cmd.html" />
+        <option value="$PROJECT_DIR$/templates/hosts/multi_scripts.html" />
+        <option value="$PROJECT_DIR$/templates/hosts/multi_file_transfer.html" />
+        <option value="$PROJECT_DIR$/templates/jobs/template_text_add.html" />
+        <option value="$PROJECT_DIR$/templates/jobs/template_globalsettings.html" />
+        <option value="$PROJECT_DIR$/templates/jobs/template_text_edit.html" />
+        <option value="$PROJECT_DIR$/templates/jobs/template_add.html" />
+        <option value="$PROJECT_DIR$/templates/jobs/template_script_add.html" />
+        <option value="$PROJECT_DIR$/templates/jobs/jobs_js_component.html" />
+        <option value="$PROJECT_DIR$/templates/jobs/template_script_edit.html" />
+        <option value="$PROJECT_DIR$/jobs/models.py" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/jobs/jobs_history_mgr.html" />
+        <option value="$PROJECT_DIR$/hosts/templatetags/custom_tag.py" />
+        <option value="$PROJECT_DIR$/templates/jobs/history_show.html" />
+        <option value="$PROJECT_DIR$/templates/jobs/jobs_template_mgr.html" />
+        <option value="$PROJECT_DIR$/templates/jobs/history_ready.html" />
+        <option value="$PROJECT_DIR$/jobs/utils.py" />
+        <option value="$PROJECT_DIR$/jobs/urls.py" />
+        <option value="$PROJECT_DIR$/templates/jobs/template_edit.html" />
         <option value="$PROJECT_DIR$/jobs/views.py" />
       </list>
     </option>
@@ -303,6 +320,12 @@
             <path>
               <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
               <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
+              <item name="hosts" type="462c0819:PsiDirectoryNode" />
+              <item name="templatetags" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
               <item name="jobs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -331,32 +354,6 @@
               <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
               <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
               <item name="statics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
-              <item name="statics" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
-              <item name="statics" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-              <item name="show" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
-              <item name="statics" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
-              <item name="statics" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
-              <item name="jNotify" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
@@ -396,7 +393,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../glances" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -635,15 +632,22 @@
       <option name="project" value="LOCAL" />
       <updated>1533178267717</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add authorization,search future for scripts">
+      <created>1533178848251</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1533178848251</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="4">
+  <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
     <todo-panel id="all">
-      <are-packages-shown value="true" />
+      <flatten-packages value="true" />
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
@@ -652,18 +656,18 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3300866" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3300866" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1663113" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16791044" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -700,209 +704,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-403">
-          <caret line="174" column="27" lean-forward="true" selection-start-line="174" selection-start-column="27" selection-end-line="174" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/statics/css/font-awesome.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="3" column="13448" lean-forward="false" selection-start-line="3" selection-start-column="13434" selection-end-line="3" selection-end-column="13448" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OathBreaker/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding>
-            <element signature="e#564#605#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-684">
-          <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/backends/paramiko_handle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="108" column="20" lean-forward="false" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/backends/saltapi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="20" column="46" lean-forward="false" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/backends/saltstack_handle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1691">
-          <caret line="97" column="55" lean-forward="false" selection-start-line="94" selection-start-column="16" selection-end-line="97" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="49" column="32" lean-forward="false" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
-          <folding>
-            <element signature="e#20#69#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobs/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="96" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/backends/multi_task.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-551">
-          <caret line="19" column="57" lean-forward="true" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/jobs/jobs_instance_mgr.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-194">
-          <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/jobs/script_new.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="17" column="56" lean-forward="false" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hosts/multi_file_transfer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
-          <caret line="77" column="5" lean-forward="false" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/assets/model_obj_list_components.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hosts/operation_audit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="23" column="57" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/assets/model_list_filter_component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/tables.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1767">
-          <caret line="95" column="4" lean-forward="false" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts_upload/python/python-script-1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hosts/multi_scripts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="115" column="4" lean-forward="false" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts_upload/shell/shell-script-1.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="5" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OathBreaker/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1442">
-          <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/hosts/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-137">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -910,15 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-95">
           <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/templatetags/custom_tag.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="168" column="25" lean-forward="false" selection-start-line="168" selection-start-column="25" selection-end-line="168" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -926,145 +722,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="201" column="85" lean-forward="true" selection-start-line="201" selection-start-column="85" selection-end-line="201" selection-end-column="85" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobs/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="4" column="34" lean-forward="true" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/jobs/script_authorized.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2432">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1877">
-          <caret line="268" column="29" lean-forward="true" selection-start-line="268" selection-start-column="29" selection-end-line="268" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hosts/hosts_mgr.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-593">
-          <caret line="26" column="39" lean-forward="false" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hosts/multi_cmd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hosts/task_exec_component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="94" lean-forward="false" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="59" column="22" lean-forward="true" selection-start-line="59" selection-start-column="22" selection-end-line="59" selection-end-column="22" />
-          <folding>
-            <element signature="e#20#89#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobs/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-840">
-          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/task.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1349">
-          <caret line="96" column="34" lean-forward="true" selection-start-line="96" selection-start-column="34" selection-end-line="96" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/statics/js/WdatePicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="22" column="11" lean-forward="true" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/script_authorized.html" />
+    <entry file="file://$PROJECT_DIR$/statics/js/WdatePicker.js" />
     <entry file="file://$PROJECT_DIR$/statics/plugins/DatePicker/lang/en.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hosts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="92" column="9" lean-forward="false" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hosts/multi_task_js_component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-665">
-          <caret line="124" column="9" lean-forward="false" selection-start-line="124" selection-start-column="9" selection-end-line="124" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobs/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="12" column="67" lean-forward="false" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jobs/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="78" lean-forward="false" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/jobs/script_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1334">
-          <caret line="61" column="14" lean-forward="false" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1072,45 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="232" column="4" lean-forward="false" selection-start-line="232" selection-start-column="4" selection-end-line="232" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/jobs/script_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="18" column="61" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hosts/host_list_component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="21" column="109" lean-forward="false" selection-start-line="21" selection-start-column="93" selection-end-line="21" selection-end-column="109" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/jobs/jobs_script_mgr.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="45" column="25" lean-forward="false" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-          <folding>
-            <element signature="e#345#378#0#HTML" expanded="true" />
-            <element signature="e#1074#1096#0#HTML" expanded="true" />
-            <element signature="e#1260#1280#0#HTML" expanded="true" />
-            <element signature="e#1387#1407#0#HTML" expanded="true" />
-            <element signature="e#1595#1615#0#HTML" expanded="true" />
-            <element signature="e#1774#1794#0#HTML" expanded="true" />
-            <element signature="e#3172#3191#0#HTML" expanded="true" />
-            <element signature="e#3723#3742#0#HTML" expanded="true" />
-            <element signature="e#4173#4180#1#HTML" expanded="true" />
-            <element signature="e#4278#4285#1#HTML" expanded="true" />
-            <element signature="e#4897#4904#1#HTML" expanded="true" />
-            <element signature="e#5002#5009#1#HTML" expanded="true" />
-            <element signature="e#5582#5589#1#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1119,13 +746,313 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/jobs_instance_mgr.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="22" column="14" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/template_view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="221" column="0" lean-forward="false" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="49" column="32" lean-forward="false" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hosts/task_exec_component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="76" lean-forward="false" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1763">
+          <caret line="268" column="29" lean-forward="true" selection-start-line="268" selection-start-column="29" selection-end-line="268" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5510">
+          <caret line="356" column="0" lean-forward="true" selection-start-line="356" selection-start-column="0" selection-end-line="356" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hosts/multi_cmd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hosts/multi_file_transfer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="59" column="10" lean-forward="true" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/template_text_add.html" />
+    <entry file="file://$USER_HOME$/.PyCharm2017.3/system/python_stubs/-762174762/__builtin__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="3379" column="8" lean-forward="false" selection-start-line="3379" selection-start-column="8" selection-end-line="3379" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/jobs_script_mgr.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1117">
+          <caret line="276" column="9" lean-forward="true" selection-start-line="276" selection-start-column="9" selection-end-line="276" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/assets/model_list_filter_component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/template_text_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="41" column="100" lean-forward="true" selection-start-line="41" selection-start-column="100" selection-end-line="41" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/jobs_js_component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hosts/host_list_component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-99">
+          <caret line="13" column="49" lean-forward="false" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hosts/hosts_mgr.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="41" column="16" lean-forward="true" selection-start-line="41" selection-start-column="16" selection-end-line="66" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/template_globalsettings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/template_script_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1254">
+          <caret line="78" column="41" lean-forward="false" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hosts/multi_scripts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-650">
+          <caret line="79" column="111" lean-forward="false" selection-start-line="79" selection-start-column="111" selection-end-line="79" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/backends/multi_task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="48" column="128" lean-forward="false" selection-start-line="48" selection-start-column="120" selection-end-line="48" selection-end-column="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hosts/multi_task_js_component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="145" column="39" lean-forward="true" selection-start-line="145" selection-start-column="39" selection-end-line="145" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/backends/saltstack_handle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="36" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="92" column="50" lean-forward="false" selection-start-line="92" selection-start-column="36" selection-end-line="92" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="779" column="90" lean-forward="false" selection-start-line="779" selection-start-column="74" selection-end-line="779" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/jobs_template_mgr.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="333" column="8" lean-forward="false" selection-start-line="333" selection-start-column="8" selection-end-line="333" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/templatetags/custom_tag.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="185" column="16" lean-forward="true" selection-start-line="175" selection-start-column="4" selection-end-line="185" selection-end-column="16" />
+          <folding>
+            <element signature="e#21#36#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/script_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-570">
+          <caret line="18" column="105" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/script_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="64" column="49" lean-forward="false" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/jobs_history_mgr.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1258">
+          <caret line="68" column="66" lean-forward="false" selection-start-line="68" selection-start-column="66" selection-end-line="68" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3876">
+          <caret line="204" column="0" lean-forward="true" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4636">
+          <caret line="246" column="8" lean-forward="false" selection-start-line="246" selection-start-column="8" selection-end-line="246" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/template_script_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4807">
+          <caret line="253" column="12" lean-forward="false" selection-start-line="253" selection-start-column="12" selection-end-line="253" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/template_add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1140">
+          <caret line="60" column="22" lean-forward="false" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/template_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/history_show.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1330">
+          <caret line="70" column="27" lean-forward="false" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/jobs/history_ready.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2451">
+          <caret line="129" column="34" lean-forward="false" selection-start-line="129" selection-start-column="23" selection-end-line="129" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2394">
+          <caret line="127" column="5" lean-forward="false" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hosts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="57" column="4" lean-forward="false" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jobs/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="215" column="8" lean-forward="false" selection-start-line="215" selection-start-column="8" selection-end-line="215" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#69#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="419">
+          <caret line="669" column="0" lean-forward="true" selection-start-line="669" selection-start-column="0" selection-end-line="669" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

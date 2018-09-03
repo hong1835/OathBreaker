@@ -1,0 +1,16 @@
+
+<script type="text/javascript">
+
+    function CheckThis(obj){
+           if($(obj).prop("checked")){//获取checked属性
+              $("input[name='dst_use_own']").prop("checked",true);//设置checked属性
+               $("#select_target_machine").removeClass("hidden")
+           }else{
+              $("input[name='dst_use_own']").prop("checked",false);//设置checked属性
+               $("#select_target_machine").addClass("hidden")
+           }
+    }
+
+
+
+</script>

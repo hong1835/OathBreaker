@@ -8,7 +8,7 @@
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <ol class="breadcrumb">
     <li><a href="/">Home</a></li>
-    <li class="active">作业脚本管理</li>
+    <li class="active">作业实例管理</li>
 </ol>
 {% endblock %}
 
@@ -17,9 +17,9 @@
 <div class="panel">
     <div class="panel-body panel-title" style="background-color: #e8ebf0">
         <div class="controls pull-right">
-			<button class="btn btn-primary" onclick="location.href='{% url 'script_add' %}'" type="button">
+			<button class="btn btn-primary" onclick="location.href='{% url 'template_add' %}'" type="button">
         <i class="glyphicon glyphicon-plus"></i>
-        新建脚本实例
+        新建作业实例
       </button>
       <button disabled="" class="btn btn-primary select-power" id="script_btn_power" type="button" data-target="#script_select_power" data-toggle="modal" data-auth-type="script" data-msg="scriptcontent">
         <i class="glyphicon glyphicon-random"></i>
@@ -33,7 +33,7 @@
         <fieldset>
     		<legend style="font-size:12px"><span class="glyphicon glyphicon-search"></span>查询条件</legend>
     		<div class="form-group" id="search-box">
-    			<label>脚本名称：</label>
+    			<label>作业名称：</label>
     			<input type="text" style="width:150px;" id='script_manage_name' name="script_manage_name">
     			<label>创建人：</label>
       			<input type="text" style="width:150px;" id='script_manage_create_user' name="script_manage_create_user">
@@ -57,9 +57,9 @@
                     <table class="table table-bordered table-hover table-striped">
                         <tr>
                             <th><input type="checkbox" class="script_checked_all"></th>
-                            <th>脚本名称</th>
-                            <th>脚本描述</th>
-                            <th>脚本类型</th>
+                            <th>作业名称</th>
+                            <th>作业描述</th>
+                            <th>所属业务</th>
                             <th>创建人</th>
                             <th>创建日期</th>
                             <th>最后修改人</th>
@@ -68,39 +68,39 @@
                             <th>操作</th>
                         </tr>
 
-                        {% for s in script_list %}
+                        {% for t in template_list %}
                         <tr>
                             <td><input data="script_checked_single" type="checkbox" class="script_checked_single"></td>
-                            <td id="script-name"><a style="color: blue" href="{% url 'script_edit' s.id %}">{{ s.scriptname }}</a></td>
-                            <td>{{ s.description }}</td>
-                            <td>{{ s.script_type }}</td>
-                            <td>{{ s.create_user }}</td>
-                            <td>{{ s.create_date }}</td>
-                            <td>{{ s.update_user }}</td>
-                            <td>{{ s.update_date }}</td>
-                            <td>{{ s.shared_with.all|join:", " }}</td>
-                            <td id="delete-script"><a style="color: blue" onclick="DeleteScript('{{ s.scriptname }}')"  class="glyphicon glyphicon-trash"></a></td>
+                            <td id="template-name"><a style="color: blue" href="{% url 'template_edit' t.id %}">{{ t.name }}</a></td>
+                            <td>{{ t.comments }}</td>
+                            <td>{{ t.business_unit }}</td>
+                            <td>{{ t.create_user }}</td>
+                            <td>{{ t.create_date|date:"Y-m-d H:i:s" }}</td>
+                            <td>{{ t.update_user }}</td>
+                            <td>{{ t.update_date|date:"Y-m-d H:i:s" }}</td>
+                            <td>{{ t.shared_with.all|join:", " }}</td>
+                            <td id="delete-template"><a style="color: blue" onclick="DeleteScript('{{ t.name }}')"  class="glyphicon glyphicon-trash"></a></td>
                         </tr>
                     {% endfor %}
 
                     </table>
 
-                    {% if script_list.has_other_pages %}
+                    {% if template_list.has_other_pages %}
                       <ul class="pagination">
-                        {% if script_list.has_previous %}
-                          <li><a href="?page={{ script_list.previous_page_number }}">&laquo;</a></li>
+                        {% if template_list.has_previous %}
+                          <li><a href="?page={{ template_list.previous_page_number }}">&laquo;</a></li>
                         {% else %}
                           <li class="disabled"><span>&laquo;</span></li>
                         {% endif %}
-                        {% for i in script_list.paginator.page_range %}
-                          {% if script_list.number == i %}
+                        {% for i in template_list.paginator.page_range %}
+                          {% if template_list.number == i %}
                             <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
                           {% else %}
                             <li><a href="?page={{ i }}">{{ i }}</a></li>
                           {% endif %}
                         {% endfor %}
-                        {% if script_list.has_next %}
-                          <li><a href="?page={{ script_list.next_page_number }}">&raquo;</a></li>
+                        {% if template_list.has_next %}
+                          <li><a href="?page={{ template_list.next_page_number }}">&raquo;</a></li>
                         {% else %}
                           <li class="disabled"><span>&raquo;</span></li>
                         {% endif %}
@@ -124,11 +124,15 @@
       <div class="modal-body">
             <div id="authorized-box">
                 <ul class="list-group" id="script-list">
+
                 </ul>
             </div>
+
+
                   <div class="tab-content">
           <div class="tab-pane active" id="script_power_list">
             <div class="ujobs-power-tree">
+
             </div>
           </div>
         </div>
