@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^prepare_job/(\d+)/$',views.prepare_job,name="prepare_job"),
     url(r'^show_history/(\d+)/(\d+)/$',views.show_history,name="show_history"),
     url(r'^history_step_execute/$',views.history_step_execute,name="history_step_execute"),
-    url(r'^submit_Job/$',views.submit_Job,name="submit_Job")
+    url(r'^submit_Job/$',views.submit_Job,name="submit_Job"),
+    url(r'^show_result/(\d+)/$',views.show_result,name="show_result")
 ]
 

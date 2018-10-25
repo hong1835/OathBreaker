@@ -283,10 +283,10 @@ class RunJobStep(object):
 
             if target_hosts not in ["NULL", "None"]:
                 for target in literal_eval(target_hosts):
-                    target_list.append(target)
+                    target_list.append(target-1)
         elif all(isinstance(item, basestring) for item in target_hosts):  # check iterable for stringness of all items. Will raise TypeError if some_object is not iterable
             for target in target_hosts:
-                target_list.append(target)
+                target_list.append(target-1)
         else:
             raise TypeError  # or something along that line
 
@@ -309,15 +309,15 @@ class RunJobStep(object):
         script_param = templatescript_obj.parameter
         print "script_param===>",script_param
         #script abs path
-        script_abs_path = script_obj.abs_path
-        print "script_abs_path===>",script_abs_path
+        script_rel_path = script_obj.rel_path
+        print "script_abs_path===>",script_rel_path
 
         task_obj = TaskLog(
             task_type="multi_script",
             user_id=self.request.user.id,
             script_type=script_type,
             script_param=script_param,
-            script_path=script_abs_path
+            script_path=script_rel_path
         )
         task_obj.save()
         task_obj.hosts.add(*target_list)
@@ -332,11 +332,11 @@ class RunJobStep(object):
 
 
         # invoke backend multitask script
-        # p = subprocess.Popen([
-        #     'python',
-        #     settings.MultiTaskScript,
-        #     '-task_id', str(task_obj.id),
-        #     '-run_type', settings.MultiTaskRunType, ])
+        p = subprocess.Popen([
+            'python',
+            settings.MultiTaskScript,
+            '-task_id', str(task_obj.id),
+            '-run_type', settings.MultiTaskRunType, ])
         # ], preexec_fn=os.setsid)
         # print '----->pid:', p.pid
 

@@ -45,7 +45,8 @@ class SaltAPI(object):
         print "data",data
         req = urllib2.Request(url, data, headers)  # obj为传入data参数字典，data为None 则方法为get，有date为post方法
         opener = urllib2.urlopen(req)
-        content = json.loads(opener.read())
+        middle_str = unicode(opener.read(), errors='ignore')
+        content = json.loads(middle_str)
         return content
 
     def asyncMasterToMinion(self, tgt, fun, arg):

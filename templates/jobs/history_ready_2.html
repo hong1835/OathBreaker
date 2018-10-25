@@ -9,7 +9,7 @@
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <ol class="breadcrumb">
     <li><a href="/">Home</a></li>
-    <li class="active">History Show</li>
+    <li class="active">Ready to go</li>
 </ol>
 {% endblock %}
 
@@ -22,9 +22,10 @@
     </div>
     <div class="col-md-9">
         <div class="row-fluid edit-text-wrap">
-	<form id="edit_template_step_form" class="form-horizontal">
+	<form id="edit_template_step_form">
         <div class="form-group">
-            <h3>{{ history.template.name }}</h3>
+            <h3>{{history.template.name}}</h3>
+            <input type="text" class="form-control hidden" id="template_id" name="template_id"  value={{ history.template.id }}>
         </div>
 		<div class="form-group">
             <label class="control-label muted">创建人：</label>
@@ -50,6 +51,23 @@
             <span id="history_result_end_time_{{check_id}}" class="control-label"></span>
             <label class="control-label muted" style="position:absolute;left: 260px">作业备注：</label>
             <span class="control-label" style="position:absolute;left: 320px">{{ history.template.comments|default_if_none:"" }}</span>
+            {% if history.template.template_type != "restart" and history.template.template_type != "password" %}
+            {% if history.status != "success" %}
+           	<div id="job_step_operation_{{check_id}}" class="step-position" style="position: fixed;right: 0;width:85px;z-index: 2;">
+	        	{% if history.startup_type == "manual" %}
+	        	<button class="btn btn-default" id="history_step_restart_{{check_id}}" onclick="history_step_restart(this);" value="{{ current_historystep_id }}">从头开始</button>
+	        	<button class="btn btn-default" id="history_step_stop_{{check_id}}" onclick="history_step_stop(this);" value="{{current_historystep_id}}">提前结束</button>
+                <button class="btn btn-default" id="history_step_skip_{{check_id}}" onclick="history_step_skip(this);" value="{{current_historystep_id}}">跳过步骤</button>
+	        	<button class="btn btn-default" id="history_step_execute_{{check_id}}" onclick="history_step_execute2({{ current_historystep_id }});" value="{{ current_historystep_id }}">执行步骤</button>
+	            {% else %}
+	            <button class="btn btn-default hide" id="history_step_restart_{{check_id}}" onclick="history_step_restart(this);" value="{{current_historystep_id}}">从头开始</button>
+	            <button class="btn btn-default" id="history_step_stop_{{check_id}}" onclick="history_step_stop(this);" value="{{current_historystep_id}}">提前结束</button>
+                <button class="btn btn-default hide" id="history_step_skip_{{check_id}}" onclick="history_step_skip(this);" value="{{current_historystep_id}}">跳过步骤</button>
+	            <button class="btn btn-default hide" id="history_step_execute_{{check_id}}" onclick="history_step_execute2({{ current_historystep_id }});" value="{{ current_historystep_id }}">执行步骤</button>
+	            {% endif %}
+	        </div>
+	        {% endif %}
+	        {% endif %}
 		</div>
         <br>
         <div class="form-group">
@@ -98,7 +116,23 @@
 {% block bottom-js %}
 
     <script type="text/javascript">
+        function history_step_execute2(history_step_id){
 
+            console.log(history_step_id)
+            if(!history_step_id){
+                return false
+            }
+
+            var data_list = {}
+            var template_id = $("input[name='template_id']").val()
+            data_list["history_step_id"] = history_step_id
+            data_list["template_id"] = template_id
+            data_list["csrfmiddlewaretoken"] = $("input[name='csrfmiddlewaretoken']").val()
+
+            $.post("{% url 'history_step_execute' %}",data_list,function(callback){
+                console.log(callback)
+            })
+        }
 
     </script>
 

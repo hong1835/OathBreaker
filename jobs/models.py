@@ -151,6 +151,7 @@ class HistoryStep(models.Model):
         ("not_start", u'未执行'),
         ("running", u'正在执行'),
         ("success", u'执行成功'),
+        ("complete",u"执行完毕"),
         ("fail", u'执行失败'),
         ("skip", u'跳过'),
         ("ignore", u'忽略错误'),
@@ -165,6 +166,7 @@ class HistoryStep(models.Model):
     total_hosts = models.TextField(verbose_name=u"目标机器",blank=True,null=True)
     success_hosts = models.TextField(verbose_name=u"执行成功的机器",blank=True,null=True)
     fail_hosts = models.TextField(verbose_name=u"执行失败的机器",blank=True,null=True)
+    task_id = models.IntegerField(verbose_name=u"TaskID",default=0)
 
     def __unicode__(self):
         return self.templatestep.name

@@ -1,3 +1,4 @@
+#_*_coding:utf-8_*_
 import time
 import json
 from hosts import models

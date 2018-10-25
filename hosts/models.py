@@ -1,12 +1,14 @@
 #_*_coding:utf-8_*_
 from django.db import models
-
+from django.utils import timezone
 
 
 # Create your models here.
 from myauth import UserProfile
 from assets.models import Asset
 import assets
+from datetime import datetime
+from pytz import timezone
 
 # class Host(models.Model):
 #     hostname = models.CharField(max_length=64)
@@ -71,7 +73,7 @@ class BindHostToUser(models.Model):
     host_groups = models.ManyToManyField("HostGroup")
 
     def __unicode__(self):
-        return "%s:%s" % (self.host.hostname,self.host_user.username)
+        return "%s(%s):%s" % (self.host.hostname,self.host.ip_addr,self.host_user.username)
 
     class Meta:
         unique_together = ("host","host_user")
@@ -104,7 +106,9 @@ class TaskLog(models.Model):
 class TaskLogDetail(models.Model):
     child_of_task = models.ForeignKey('TaskLog')
     bind_host  = models.ForeignKey('BindHostToUser')
-    date = models.DateTimeField(auto_now_add=True) #finished date
+    #default=datetime.now().replace(tzinfo=utc)
+    #date = models.DateTimeField(auto_now_add=True) #finished date
+    date = models.DateTimeField(default=datetime.now().replace(tzinfo=timezone("UTC")))
     event_log = models.TextField()
     result_choices= (('success','Success'),('failed','Failed'),('unknown','Unknown'))
     result = models.CharField(choices=result_choices,max_length=30,default='unknown')

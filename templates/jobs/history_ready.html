@@ -58,12 +58,12 @@
 	        	<button class="btn btn-default" id="history_step_restart_{{check_id}}" onclick="history_step_restart(this);" value="{{ template_steps.0.id }}">从头开始</button>
 	        	<button class="btn btn-default" id="history_step_stop_{{check_id}}" onclick="history_step_stop(this);" value="{{template_steps.0.id}}">提前结束</button>
                 <button class="btn btn-default" id="history_step_skip_{{check_id}}" onclick="history_step_skip(this);" value="{{template_steps.0.id}}">跳过步骤</button>
-	        	<button class="btn btn-default" id="history_step_execute_{{check_id}}" onclick="history_step_execute(this);" value="{{ template_steps.0.id }}">执行步骤</button>
+	        	<button class="btn btn-default" id="history_step_execute_{{check_id}}" onclick="history_step_execute({{ template_steps.0.id }});" value="{{ template_steps.0.id }}">执行步骤</button>
 	            {% else %}
 	            <button class="btn btn-default hide" id="history_step_restart_{{check_id}}" onclick="history_step_restart(this);" value="{{template_steps.0.id}}">从头开始</button>
 	            <button class="btn btn-default" id="history_step_stop_{{check_id}}" onclick="history_step_stop(this);" value="{{template_steps.0.id}}">提前结束</button>
                 <button class="btn btn-default hide" id="history_step_skip_{{check_id}}" onclick="history_step_skip(this);" value="{{template_steps.0.id}}">跳过步骤</button>
-	            <button class="btn btn-default hide" id="history_step_execute_{{check_id}}" onclick="history_step_execute(this);" value="{{ template_steps.0.id }}">执行步骤</button>
+	            <button class="btn btn-default hide" id="history_step_execute_{{check_id}}" onclick="history_step_execute({{ template_steps.0.id }});" value="{{ template_steps.0.id }}">执行步骤</button>
 	            {% endif %}
 	        </div>
 	        {% endif %}
@@ -91,14 +91,14 @@
             </thead>
             <tbody>
             {% for history_step in template_steps %}
-            <tr onclick="show_detail('{{ history_step.pk }}');">
+            <tr onclick="location.href='{% url 'show_result' history_step.pk %}'">
                 <td>{{ forloop.counter }}</td>
                 <td>{{ history_step.templatestep.name }}</td>
                 <td>{{ history_step.templatestep.get_step_type_display }}</td>
                 <td><div id='no_{{ history.template.target|length }}_{{check_id}}'></div>{% if history_step.templatestep.private_setting %}{{ history_step.templatestep.target|getlength }}{% else %}{{ history.template.target|getlength }}{% endif %}</td>
                 <td><div id='time_{{ history_step.pk }}_{{check_id}}'></div></td>
                 <td><div id='executor_{{ history_step.pk }}_{{check_id}}'>{{ history.run_user }}</div></td>
-                <td><div id='step_{{ history_step.pk }}_{{check_id}}'>未执行</div></td>
+                <td><div id='step_{{ history_step.pk }}_{{check_id}}'>{{ history_step.result }}</div></td>
             </tr>
             {% endfor %}
             </tbody>
@@ -117,9 +117,9 @@
 
     <script type="text/javascript">
 
-        function history_step_execute(obj){
-            var history_step_id = $(obj).val();
+        function history_step_execute(history_step_id){
 
+            console.log(history_step_id)
             if(!history_step_id){
                 return false
             }
@@ -134,6 +134,11 @@
                 console.log(callback)
             })
         }
+
+
+
+
+
 
     </script>
 

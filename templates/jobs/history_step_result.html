@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+
+{% block page-content-title %}
+作业步骤详情
+{% endblock %}
+
+{% block page-nav-tab %}
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">作业步骤详情</li>
+</ol>
+{% endblock %}
+
+
+{% block page-content %}
+
+<div class="panel-default">
+    <div class="col-md-2">
+        <input type="text" class="form-control hidden" id="task_id" name="task_id"  value={{ task_id }}>
+    </div>
+    <div class="col-md-8">
+        <div class="panel panel-default panel-right">
+            <div class="panel-body">
+
+                <div id="err-msgs"></div>
+
+                <br>
+
+                <div id="result-box">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+{% block bottom-js %}
+    <script type="text/javascript">
+
+    var task_id = $("input[name='task_id']").val()
+    GetTaskResult(task_id)
+            GetTaskResultInterval = setInterval(function(){
+                GetTaskResult(task_id)
+            },3000)
+
+    </script>
+
+{% endblock %}

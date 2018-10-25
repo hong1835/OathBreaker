@@ -638,7 +638,26 @@ def submit_Job(request):
                                                          "check_id":check_id})
 
     else:
-        return HttpResponse("OK")
+        print "going to get sth..."
+        print "user_id",request.user.id
+        history_id = models.History.objects.filter(run_user_id=request.user.id).last().id
+        history_obj = models.History.objects.get(id=history_id)
+        template_id = history_obj.template_id
+        print "get---->history_obj",history_obj
+        check_id = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+
+        historysteps_obj = models.HistoryStep.objects.filter(
+            Q(history_id=history_id) & Q(templatestep__template_id=template_id))
+
+        try:
+            current_historystep_id = models.HistoryStep.objects.filter(Q(history_id=history_id) & Q(templatestep__template_id=template_id) & Q(task_id=0)).last().id
+        except AttributeError:
+            current_historystep_id = 0
+
+        return render(request,"jobs/history_ready_2.html",{"history":history_obj,
+                                                         "template_steps":historysteps_obj,
+                                                         "check_id":check_id,
+                                                         "current_historystep_id":current_historystep_id})
 
     #return HttpResponse("OK")
 
@@ -660,12 +679,53 @@ def show_history(request,history_id,template_id):
                                                     "target_machine":target_list})
 
 
-
+@transaction.atomic
 def history_step_execute(request):
     print "history_step_execute===>",request.POST
     history_step_id = request.POST.get("history_step_id")
     jobrun_obj = utils.RunJobStep(request)
     res = jobrun_obj.handle()
+    task_id = res["task_id"]
+    history_step_obj = models.HistoryStep.objects.get(id=history_step_id)
+    history_step_obj.result = "complete"
+    history_step_obj.task_id = task_id
+    history_step_obj.save()
+    history_id = (models.HistoryStep.objects.filter(id=history_step_id).values_list("history_id",flat=True))[0]
+    history_obj = models.History.objects.get(id=history_id)
+    template_id = request.POST.get("template_id")
+    historysteps_obj = models.HistoryStep.objects.filter(Q(history_id=history_id) & Q(templatestep__template_id=template_id))
+
+    try:
+        current_historystep_id = models.HistoryStep.objects.filter(
+            Q(history_id=history_id) & Q(templatestep__template_id=template_id) & Q(task_id=0)).last().id
+    except AttributeError:
+        current_historystep_id = 0
+
+
+
+    if current_historystep_id:
+        history_obj.status = "in_process"
+        history_obj.save()
+    else:
+        history_obj.status = "success"
+        history_obj.save()
+
+    total_hosts_count = len(hosts_models.TaskLog.objects.filter(id=task_id).values_list("hosts",flat=True))
+
     print "----res--->",res
 
     return HttpResponse(json.dumps(res))
+
+    # return render(request, "jobs/history_show.html", {"history": history_obj,
+    #                                                   "template_steps": historysteps_obj,
+    #                                                   "target_machine": target_list})
+
+
+
+def show_result(request,historystep_id):
+    print request.POST
+    print "historystep_id===>",historystep_id
+    historystep_obj = models.HistoryStep.objects.get(id=historystep_id)
+    print "task_id===>",historystep_obj.task_id
+    return render(request,"jobs/history_step_result.html",{"task_id":historystep_obj.task_id})
+    #return HttpResponse(historystep_obj.task_id)
