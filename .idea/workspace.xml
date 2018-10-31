@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac6a3f40-253b-4ca1-997d-4470bafcdb17" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-10.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-11.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-4.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-5.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-6.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-7.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-8.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-9.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change beforePath="$PROJECT_DIR$/README.md.bak" afterPath="$PROJECT_DIR$/README.md.bak" />
-      <change beforePath="$PROJECT_DIR$/jobs/views.py" afterPath="$PROJECT_DIR$/jobs/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/jobs/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="651">
-              <caret line="660" column="0" lean-forward="true" selection-start-line="660" selection-start-column="0" selection-end-line="660" selection-end-column="0" />
+              <caret line="660" column="0" lean-forward="false" selection-start-line="660" selection-start-column="0" selection-end-line="660" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -663,7 +651,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540455831510</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="add jobs/jobs_history">
+      <created>1540970404986</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1540970404986</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1116,7 +1111,7 @@
     <entry file="file://$PROJECT_DIR$/jobs/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
-          <caret line="660" column="0" lean-forward="true" selection-start-line="660" selection-start-column="0" selection-end-line="660" selection-end-column="0" />
+          <caret line="660" column="0" lean-forward="false" selection-start-line="660" selection-start-column="0" selection-end-line="660" selection-end-column="0" />
           <folding />
         </state>
       </provider>
