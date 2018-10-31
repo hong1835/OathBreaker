@@ -65,6 +65,24 @@ web页面执行powershell脚本
 脚本管理
 ![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/script-mgr.png)
 
+作业管理
+![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/job-1.png)
+
+作业步骤
+![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/job-2.png)
+
+作业对象
+![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/job-3.png)
+
+执行作业
+![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/job-6.png)
+
+作业完成
+![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/job-8.png)
+
+步骤详情
+![download](https://github.com/hong1835/OathBreaker/blob/master/statics/img/show/job-10.png)
+
 ### Required
 1. Django 1.8.18
 2. django_filters 1.1.0
@@ -74,9 +92,9 @@ web页面执行powershell脚本
 
 ### Update
 2018/08/02 增加了脚本的授权功能，可以共享脚本给其他用户使用、编辑，支持搜索脚本
+2018/10/31 增加了任务编排功能，可以将日常作业脚本组合成"作业",选中目标机器,按步骤顺序执行
 
 
 ### To do
-1. 任务编排
-2. 页面优化
-3. 用saltstack grains来收集服务器信息
+1. 页面优化
+2. 用saltstack grains来收集服务器信息

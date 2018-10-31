@@ -650,7 +650,7 @@ def submit_Job(request):
             Q(history_id=history_id) & Q(templatestep__template_id=template_id))
 
         try:
-            current_historystep_id = models.HistoryStep.objects.filter(Q(history_id=history_id) & Q(templatestep__template_id=template_id) & Q(task_id=0)).last().id
+            current_historystep_id = models.HistoryStep.objects.filter(Q(history_id=history_id) & Q(templatestep__template_id=template_id) & Q(task_id=0)).first().id
         except AttributeError:
             current_historystep_id = 0
 

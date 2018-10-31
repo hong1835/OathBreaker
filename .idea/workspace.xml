@@ -2,19 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac6a3f40-253b-4ca1-997d-4470bafcdb17" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/jobs/history_ready_2.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/jobs/history_step_result.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-10.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-11.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-5.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-6.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-7.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-8.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/statics/img/show/job-9.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/hosts/backends/saltapi.py" afterPath="$PROJECT_DIR$/hosts/backends/saltapi.py" />
-      <change beforePath="$PROJECT_DIR$/hosts/backends/saltstack_handle.py" afterPath="$PROJECT_DIR$/hosts/backends/saltstack_handle.py" />
-      <change beforePath="$PROJECT_DIR$/hosts/models.py" afterPath="$PROJECT_DIR$/hosts/models.py" />
-      <change beforePath="$PROJECT_DIR$/jobs/models.py" afterPath="$PROJECT_DIR$/jobs/models.py" />
-      <change beforePath="$PROJECT_DIR$/jobs/urls.py" afterPath="$PROJECT_DIR$/jobs/urls.py" />
-      <change beforePath="$PROJECT_DIR$/jobs/utils.py" afterPath="$PROJECT_DIR$/jobs/utils.py" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/README.md.bak" afterPath="$PROJECT_DIR$/README.md.bak" />
       <change beforePath="$PROJECT_DIR$/jobs/views.py" afterPath="$PROJECT_DIR$/jobs/views.py" />
-      <change beforePath="$PROJECT_DIR$/templates/jobs/history_ready.html" afterPath="$PROJECT_DIR$/templates/jobs/history_ready.html" />
-      <change beforePath="$PROJECT_DIR$/templates/jobs/history_show.html" afterPath="$PROJECT_DIR$/templates/jobs/history_show.html" />
-      <change beforePath="$PROJECT_DIR$/templates/jobs/jobs_template_mgr.html" afterPath="$PROJECT_DIR$/templates/jobs/jobs_template_mgr.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,21 +35,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jobs/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-18">
-              <caret line="644" column="34" lean-forward="false" selection-start-line="644" selection-start-column="34" selection-end-line="644" selection-end-column="34" />
+            <state relative-caret-position="651">
+              <caret line="660" column="0" lean-forward="true" selection-start-line="660" selection-start-column="0" selection-end-line="660" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jobs/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="266" column="67" lean-forward="true" selection-start-line="266" selection-start-column="67" selection-end-line="266" selection-end-column="67" />
+            <state relative-caret-position="280">
+              <caret line="268" column="61" lean-forward="false" selection-start-line="268" selection-start-column="61" selection-end-line="268" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -97,7 +99,7 @@
         <entry file="file://$PROJECT_DIR$/hosts/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="309">
-              <caret line="70" column="40" lean-forward="true" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
+              <caret line="70" column="40" lean-forward="false" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
               <folding>
                 <element signature="e#20#48#0" expanded="true" />
               </folding>
@@ -109,7 +111,7 @@
         <entry file="file://$PROJECT_DIR$/assets/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="602">
-              <caret line="133" column="0" lean-forward="true" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+              <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -129,7 +131,7 @@
         <entry file="file://$PROJECT_DIR$/templates/jobs/jobs_template_mgr.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-2660">
-              <caret line="140" column="89" lean-forward="true" selection-start-line="140" selection-start-column="89" selection-end-line="140" selection-end-column="89" />
+              <caret line="140" column="89" lean-forward="false" selection-start-line="140" selection-start-column="89" selection-end-line="140" selection-end-column="89" />
               <folding />
             </state>
           </provider>
@@ -147,7 +149,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>edit-md-wrap</find>
       <find>show.bs.modal</find>
       <find>script_select_power</find>
       <find>templatestep</find>
@@ -177,6 +178,7 @@
       <find>创建日期</find>
       <find>pytz</find>
       <find>timezone</find>
+      <find>order</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -239,13 +241,13 @@
         <option value="$PROJECT_DIR$/templates/jobs/history_ready_2.html" />
         <option value="$PROJECT_DIR$/hosts/task.py" />
         <option value="$PROJECT_DIR$/templates/jobs/jobs_template_mgr.html" />
-        <option value="$PROJECT_DIR$/jobs/views.py" />
         <option value="$PROJECT_DIR$/hosts/backends/saltstack_handle.py" />
         <option value="$PROJECT_DIR$/hosts/backends/saltapi.py" />
         <option value="$PROJECT_DIR$/templates/hosts/multi_task_js_component.html" />
         <option value="$PROJECT_DIR$/templates/jobs/history_step_result.html" />
         <option value="$PROJECT_DIR$/hosts/models.py" />
         <option value="$PROJECT_DIR$/jobs/utils.py" />
+        <option value="$PROJECT_DIR$/jobs/views.py" />
       </list>
     </option>
   </component>
@@ -354,6 +356,19 @@
             <path>
               <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
               <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
+              <item name="statics" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
+              <item name="statics" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+              <item name="show" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OathBreaker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OathBreaker" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -391,15 +406,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../glances" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\css\codemirror" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\img\show" />
       <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\plugins" />
       <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\js" />
       <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\templates\jobs" />
       <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\static\rest_framework\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hongjian\PycharmProjects\OathBreaker\statics\css\codemirror" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -641,7 +656,14 @@
       <option name="project" value="LOCAL" />
       <updated>1535954370045</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add jobs/jobs_history">
+      <created>1540455831509</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1540455831510</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">
@@ -692,7 +714,8 @@
     <MESSAGE value="create/edit/manage scripts" />
     <MESSAGE value="add authorization,search future for scripts" />
     <MESSAGE value="add templates" />
-    <option name="LAST_COMMIT_MESSAGE" value="add templates" />
+    <MESSAGE value="add jobs/jobs_history" />
+    <option name="LAST_COMMIT_MESSAGE" value="add jobs/jobs_history" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -853,6 +876,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2675">
           <caret line="779" column="90" lean-forward="false" selection-start-line="779" selection-start-column="74" selection-end-line="779" selection-end-column="90" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -936,6 +960,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-969">
           <caret line="48" column="33" lean-forward="true" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
+          <folding>
+            <element signature="e#20#31#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -943,6 +970,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="42" column="13" lean-forward="true" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+          <folding>
+            <element signature="e#21#50#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1020,7 +1050,7 @@
     <entry file="file://$PROJECT_DIR$/templates/jobs/jobs_template_mgr.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2660">
-          <caret line="140" column="89" lean-forward="true" selection-start-line="140" selection-start-column="89" selection-end-line="140" selection-end-column="89" />
+          <caret line="140" column="89" lean-forward="false" selection-start-line="140" selection-start-column="89" selection-end-line="140" selection-end-column="89" />
           <folding />
         </state>
       </provider>
@@ -1049,14 +1079,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobs/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="644" column="34" lean-forward="false" selection-start-line="644" selection-start-column="34" selection-end-line="644" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hosts/task.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1862">
@@ -1068,7 +1090,7 @@
     <entry file="file://$PROJECT_DIR$/hosts/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
-          <caret line="70" column="40" lean-forward="true" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
+          <caret line="70" column="40" lean-forward="false" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
           <folding>
             <element signature="e#20#48#0" expanded="true" />
           </folding>
@@ -1078,15 +1100,23 @@
     <entry file="file://$PROJECT_DIR$/assets/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
-          <caret line="133" column="0" lean-forward="true" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jobs/utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="266" column="67" lean-forward="true" selection-start-line="266" selection-start-column="67" selection-end-line="266" selection-end-column="67" />
+        <state relative-caret-position="280">
+          <caret line="268" column="61" lean-forward="false" selection-start-line="268" selection-start-column="61" selection-end-line="268" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="660" column="0" lean-forward="true" selection-start-line="660" selection-start-column="0" selection-end-line="660" selection-end-column="0" />
           <folding />
         </state>
       </provider>
