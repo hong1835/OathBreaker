@@ -1,8 +1,0 @@
-孔雀工作室:
-          		管理账号: arkparkadmin
-           		RAM用户登录链接http://signin.aliyun.com/snailgame/login.htm 
-           		初始密码:Snail@123
-                    AccessKeyID： LTAI11pkm8LQQ24u
-	         					AccessKeySecret： RKkdYrkrO4uj79IEQtnMUqmlHHVSSV
-	         					存贮名(OSS): arkparkserver
-	         					正式域名: arkparkserverupdate.snail.com CNAME: arkparkserverupdate.snail.com.w.alikunlun.com
